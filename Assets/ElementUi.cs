@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Android;
+using UnityEngine.iOS;
 
-public class ElementUi : MonoBehaviour
+public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
-    private Canvas canvas;
+    private GameObject SubMenu;
 
+    private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private PanelOpener po; // initializat
     private LongClick my_long_click;
     private ZoomIn zoom_plus;
     private ZoomOut zoom_minus;
+    private float TouchTime;
+    private bool DragAndDrop = false;
+    private bool TouchingCurrent;
+
+
 
     private void Awake()
     {
@@ -23,15 +31,30 @@ public class ElementUi : MonoBehaviour
         my_long_click = GetComponent<LongClick>();
         zoom_plus = GetComponent<ZoomIn>();
         zoom_minus = GetComponent<ZoomOut>();
+        SubMenu = transform.parent.transform.Find("Sub menu").gameObject;
     }
 
-    void Update() // updates at each frame
+    void LateUpdate() // updates at each frame
     {
-        Debug.Log("OnPointerDown");
-        if (my_long_click.lk == true)
+        if (Input.touchCount > 0)
         {
-            po.OpenPanel();
-            my_long_click.lk = false;
+            Touch touch = Input.GetTouch(0);
+
+            // Move the cube if the screen has the finger moving.
+            if (touch.phase == TouchPhase.Began)
+            {
+                TouchTime = Time.time;
+                DragAndDrop = false;
+            }
+            if (touch.phase == TouchPhase.Moved)
+            {
+                DragAndDrop = true;
+            }
+            // Check if finger is over a UI element
+            if (touch.phase == TouchPhase.Ended && Time.time - TouchTime >= 0.3f && !DragAndDrop && TouchingCurrent)
+            {
+                SubMenu.SetActive(!SubMenu.activeSelf);
+            }
         }
     }
 
@@ -48,5 +71,17 @@ public class ElementUi : MonoBehaviour
     public void Reflect()
     {
         rectTransform.Rotate(new Vector3(0, 180, 0));
+    }
+
+    public void OnSelect(BaseEventData eventData)
+    {
+        Debug.Log("selected");
+        TouchingCurrent = true;
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        Debug.Log("unselected");
+        TouchingCurrent = false;
     }
 }
