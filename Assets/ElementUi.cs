@@ -13,7 +13,6 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private PanelOpener po; // initializat
-    private LongClick my_long_click;
     private ZoomIn zoom_plus;
     private ZoomOut zoom_minus;
     private float TouchTime;
@@ -27,8 +26,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
         canvas = GetComponentInParent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        po = GetComponent<PanelOpener>(); // asignare
-        my_long_click = GetComponent<LongClick>();
+        po = GetComponent<PanelOpener>(); 
         zoom_plus = GetComponent<ZoomIn>();
         zoom_minus = GetComponent<ZoomOut>();
         SubMenu = transform.parent.transform.Find("Sub menu").gameObject;
