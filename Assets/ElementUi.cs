@@ -32,7 +32,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
         SubMenu = transform.parent.transform.Find("Sub menu").gameObject;
     }
 
-    void LateUpdate() // updates at each frame
+    void Update() // updates at each frame
     {
         if (Input.touchCount > 0)
         {
