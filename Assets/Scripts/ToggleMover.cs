@@ -7,9 +7,7 @@ using UnityEngine.UI;
 public class ToggleMover : MonoBehaviour
 {
     public GameObject ButtonToggle;
-    // public bool bt = false;
-    // public Vector3 upPosition;
-    // public Vector3 downPosition;
+    //public bool bt = false;
     
     
     public void ToggleButton()
@@ -20,23 +18,5 @@ public class ToggleMover : MonoBehaviour
             ButtonToggle.SetActive(!isActive);
             //bt = true;
         }
-        
-    //     if (bt == true)
-    //     {
-    //         transform.DOMoveY(-1, 1);
-    //     }
-    // }
-
-    // public void moveToggle()
-    // {
-    //     Toggle toggle = ButtonToggle.GetComponent<Toggle>();
-    //     RectTransform rt = GetComponent<RectTransform>();
-    //     if(toggle.isOn)
-    //     {
-    //         rt.anchoredPosition = upPosition;
-    //     } else 
-    //     {
-    //         rt.anchoredPosition = downPosition;
-    //     }
      }
 }
