@@ -7,14 +7,13 @@ using UnityEngine.iOS;
 
 public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
-    private GameObject SubMenu;
+    public GameObject SubMenu;
 
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private PanelOpener po; // initializat
-    private ZoomIn zoom_plus;
-    private ZoomOut zoom_minus;
+    private Zoom zoom;
     private float TouchTime;
     private bool DragAndDrop = false;
     private bool TouchingCurrent;
@@ -27,9 +26,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         po = GetComponent<PanelOpener>(); 
-        zoom_plus = GetComponent<ZoomIn>();
-        zoom_minus = GetComponent<ZoomOut>();
-        SubMenu = transform.parent.transform.Find("Sub menu").gameObject;
+        zoom = GetComponent<Zoom>();
     }
 
     void Update() // updates at each frame
@@ -49,8 +46,9 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
                 DragAndDrop = true;
             }
             // Check if finger is over a UI element
-            if (touch.phase == TouchPhase.Ended && Time.time - TouchTime >= 0.3f && !DragAndDrop && TouchingCurrent)
+            if (touch.phase == TouchPhase.Ended && Time.time - TouchTime >= 0.03f && !DragAndDrop && TouchingCurrent)
             {
+                Debug.Log(SubMenu.activeSelf);
                 SubMenu.SetActive(!SubMenu.activeSelf);
             }
         }
@@ -58,12 +56,12 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void ZoomBig()
     {
-        zoom_plus.Zoomplus();
+        zoom.ZoomIn();
     }
 
     public void ZoomSmall()
     {
-        zoom_minus.ZoomMinus();
+        zoom.ZoomOut();
     }
 
     public void Reflect()
