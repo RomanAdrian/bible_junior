@@ -12,7 +12,7 @@ public class PSBoundariesOrthographic : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void LateUpdate(){
+    void Update(){
         Vector3 viewPos = transform.position;
         viewPos.x = Mathf.Clamp(viewPos.x, -screenBounds.x, screenBounds.x);
         viewPos.y = Mathf.Clamp(viewPos.y, -screenBounds.y, screenBounds.y); // min value is positive in world, max value is negative in world

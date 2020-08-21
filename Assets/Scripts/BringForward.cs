@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class BringForward : MonoBehaviour
 {
-   public void BringFront()
+    public void OnEnable()
     {
         transform.SetSiblingIndex(transform.GetSiblingIndex() + 1); // object.(+)method(object+method)
     }
-
-    public void Start()
+    public void BringFront()
     {
-      transform.SetSiblingIndex(transform.parent.childCount - 3); // object.(+)method(object+method)
+        transform.SetSiblingIndex(transform.GetSiblingIndex() + 1); // object.(+)method(object+method)
     }
 }

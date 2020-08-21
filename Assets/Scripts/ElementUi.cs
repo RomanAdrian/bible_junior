@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Android;
-using UnityEngine.iOS;
 
 public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
@@ -17,8 +16,6 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
     private float TouchTime;
     private bool DragAndDrop = false;
     private bool TouchingCurrent;
-
-
 
     private void Awake()
     {
@@ -66,13 +63,22 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void Reflect()
     {
-        rectTransform.Rotate(new Vector3(0, 180, 0));
+        //rectTransform.Rotate(new Vector3(0, 180, 0));
+        Vector3 reference = gameObject.transform.localScale;
+        gameObject.transform.localScale = new Vector3( -reference.x , reference.y , reference.z );
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         Debug.Log("selected");
         TouchingCurrent = true;
+        GameObject[] subMenus = GameObject.FindGameObjectsWithTag("Submenu");
+
+        foreach(GameObject subMenu in subMenus)
+        {
+            if(subMenu != this.SubMenu)
+                subMenu.SetActive(false);
+        }
     }
 
     public void OnDeselect(BaseEventData eventData)

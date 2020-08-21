@@ -14,10 +14,15 @@ public class Zoom : MonoBehaviour
         initialScale = transform.localScale;
     }
 
+    void OnEnable()
+    {
+        // transform.localScale = initialScale;
+    }
+
     public void ZoomIn()
     {
         Vector3 scaleChange = transform.localScale * zoomInAmount;
-        if (transform.localScale.x <= initialScale.x)
+        if (Mathf.Abs(transform.localScale.x) <= Mathf.Abs(initialScale.x))
         {
             transform.localScale = scaleChange;
         }
@@ -27,7 +32,7 @@ public class Zoom : MonoBehaviour
     public void ZoomOut()
     {
         Vector3 scaleChange = transform.localScale * zoomOutAmount;
-        if (transform.localScale.x >= initialScale.x)
+        if (Mathf.Abs(transform.localScale.x) >= Mathf.Abs(initialScale.x))
         {
             transform.localScale = transform.localScale * zoomOutAmount;
         }
