@@ -24,8 +24,6 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
         canvasGroup = GetComponent<CanvasGroup>();
         po = GetComponent<PanelOpener>(); 
         zoom = GetComponent<Zoom>();
-
-        
     }
 
     void Update() // updates at each frame
@@ -47,7 +45,6 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
             // Check if finger is over a UI element
             if (touch.phase == TouchPhase.Ended && Time.time - TouchTime >= 0.03f && !DragAndDrop && TouchingCurrent)
             {
-                Debug.Log(SubMenu.activeSelf);
                 SubMenu.SetActive(!SubMenu.activeSelf);
             }
         }

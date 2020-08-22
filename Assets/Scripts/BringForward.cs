@@ -10,6 +10,6 @@ public class BringForward : MonoBehaviour
     }
     public void BringFront()
     {
-        transform.SetSiblingIndex(transform.GetSiblingIndex() + 1); // object.(+)method(object+method)
+        transform.transform.SetAsLastSibling(); // object.(+)method(object+method)
     }
 }

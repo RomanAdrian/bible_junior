@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Zoom : MonoBehaviour
 {
-    public float zoomOutAmount = .5f;
-    public float zoomInAmount = 2f;
-
     private Vector3 scaleChange;
     private Vector3 initialScale;
     private Vector3 initialPos;
 
-    void Start(){
+    public float[] scales = { 0.7f, 1f, 1.5f };
+
+    void Start()
+    {
         initialScale = transform.localScale;
         initialPos = transform.position;
     }
@@ -24,20 +25,23 @@ public class Zoom : MonoBehaviour
 
     public void ZoomIn()
     {
-        Vector3 scaleChange = transform.localScale * zoomInAmount;
-        if (Mathf.Abs(transform.localScale.x) <= Mathf.Abs(initialScale.x))
+        int currentSize = System.Array.IndexOf(scales, transform.localScale.y / initialScale.y);
+        if (currentSize < 2)
         {
-            transform.localScale = scaleChange;
+            float sign = transform.localScale.x >= 0 ? 1 : -1;
+            Vector3 modifiedScale = initialScale * scales[currentSize + 1];
+            transform.localScale = new Vector3(modifiedScale.x * sign, modifiedScale.y, modifiedScale.z);
         }
     }
 
-
     public void ZoomOut()
     {
-        Vector3 scaleChange = transform.localScale * zoomOutAmount;
-        if (Mathf.Abs(transform.localScale.x) >= Mathf.Abs(initialScale.x))
+        int currentSize = System.Array.IndexOf(scales, transform.localScale.y / initialScale.y);
+        if (currentSize > 0)
         {
-            transform.localScale = transform.localScale * zoomOutAmount;
+            float sign = transform.localScale.x >= 0 ? 1 : -1;
+            Vector3 modifiedScale = initialScale * scales[currentSize - 1];
+            transform.localScale = new Vector3(modifiedScale.x * sign, modifiedScale.y, modifiedScale.z);
         }
     }
 }
