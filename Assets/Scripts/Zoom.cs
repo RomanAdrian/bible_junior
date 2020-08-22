@@ -9,14 +9,17 @@ public class Zoom : MonoBehaviour
 
     private Vector3 scaleChange;
     private Vector3 initialScale;
+    private Vector3 initialPos;
 
     void Start(){
         initialScale = transform.localScale;
+        initialPos = transform.position;
     }
 
-    void OnEnable()
+    void OnDisable()
     {
-        // transform.localScale = initialScale;
+        transform.localScale = initialScale;
+        transform.position = initialPos;
     }
 
     public void ZoomIn()

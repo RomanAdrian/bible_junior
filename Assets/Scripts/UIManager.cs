@@ -20,11 +20,11 @@ public class UIManager : MonoBehaviour
         
         if (scrollable.activeSelf) 
         {
-            listMenu.DOAnchorPos(new Vector2(865, -456), 0.25f);
+            listMenu.DOAnchorPos(new Vector2(-3f, -(Screen.currentResolution.height * 0.4f)), 0.25f);
         }
         else
         {
-            listMenu.DOAnchorPos(new Vector2(865, -200), 0.25f);
+            listMenu.DOAnchorPos(new Vector2(-3, -(Screen.currentResolution.height * 0.15f)), 0.25f);
         }
     }
 }

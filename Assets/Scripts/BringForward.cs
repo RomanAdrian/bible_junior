@@ -6,7 +6,7 @@ public class BringForward : MonoBehaviour
 {
     public void OnEnable()
     {
-        transform.SetSiblingIndex(transform.GetSiblingIndex() + 1); // object.(+)method(object+method)
+        BringFront();
     }
     public void BringFront()
     {

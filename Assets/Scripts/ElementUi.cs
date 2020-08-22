@@ -24,6 +24,8 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
         canvasGroup = GetComponent<CanvasGroup>();
         po = GetComponent<PanelOpener>(); 
         zoom = GetComponent<Zoom>();
+
+        
     }
 
     void Update() // updates at each frame
