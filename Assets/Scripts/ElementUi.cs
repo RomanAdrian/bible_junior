@@ -4,18 +4,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Android;
 
-public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragHandler
 {
     public GameObject SubMenu;
 
-    private Canvas canvas;
-    private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
     private PanelOpener po; // initializat
     private Zoom zoom;
     private float TouchTime;
     private bool DragAndDrop = false;
     private bool TouchingCurrent;
+    private RectTransform rectTransform;
+    private Canvas canvas;
+    private CanvasGroup canvasGroup;
+    private int count = 0;
 
     private void Awake()
     {
@@ -50,6 +51,13 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
         }
     }
 
+     public void OnDrag(PointerEventData eventData)
+     {    
+            if (Input.touchCount == 1 || count == 2)
+            {
+                rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            }
+    }
     public void ZoomBig()
     {
         zoom.ZoomIn();
@@ -69,6 +77,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
+        count = 1;
         Debug.Log("selected");
         TouchingCurrent = true;
         GameObject[] subMenus = GameObject.FindGameObjectsWithTag("Submenu");
@@ -82,6 +91,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnDeselect(BaseEventData eventData)
     {
+        count = 2;
         Debug.Log("unselected");
         TouchingCurrent = false;
     }
