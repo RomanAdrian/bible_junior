@@ -17,6 +17,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
     private Canvas canvas;
     private CanvasGroup canvasGroup;
     private int count = 0;
+    public GameObject ScrollArea;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         canvasGroup = GetComponent<CanvasGroup>();
         po = GetComponent<PanelOpener>(); 
         zoom = GetComponent<Zoom>();
+        ScrollArea = GameObject.Find("ScrollableArea");
     }
 
     void Update() // updates at each frame
@@ -77,6 +79,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
 
     public void OnSelect(BaseEventData eventData)
     {
+        ScrollArea.SetActive(false);
         count = 1;
         Debug.Log("selected");
         TouchingCurrent = true;

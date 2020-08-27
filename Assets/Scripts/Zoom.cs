@@ -9,7 +9,7 @@ public class Zoom : MonoBehaviour
     private Vector3 initialScale;
     private Vector3 initialPos;
 
-    public float[] scales = { 0.7f, 1f, 1.5f };
+    public float[] scales;
 
     void Start()
     {
@@ -26,7 +26,8 @@ public class Zoom : MonoBehaviour
     public void ZoomIn()
     {
         int currentSize = System.Array.IndexOf(scales, transform.localScale.y / initialScale.y);
-        if (currentSize < 2)
+        Debug.Log(transform.localScale.y / initialScale.y);
+        if (currentSize < 6)
         {
             float sign = transform.localScale.x >= 0 ? 1 : -1;
             Vector3 modifiedScale = initialScale * scales[currentSize + 1];
