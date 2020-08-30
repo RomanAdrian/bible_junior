@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Android;
 
-public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragHandler
+public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragHandler, IPointerUpHandler
 {
     public GameObject SubMenu;
 
     private PanelOpener po; // initializat
     private Zoom zoom;
-    private float TouchTime;
-    private bool DragAndDrop = false;
     private bool TouchingCurrent;
     private RectTransform rectTransform;
     private Canvas canvas;
@@ -29,28 +27,15 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         ScrollArea = GameObject.Find("ScrollableArea");
     }
 
-    void Update() // updates at each frame
-    {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
 
-            // Move the cube if the screen has the finger moving.
-            if (touch.phase == TouchPhase.Began)
-            {
-                TouchTime = Time.time;
-                DragAndDrop = false;
-            }
-            if (touch.phase == TouchPhase.Moved)
-            {
-                DragAndDrop = true;
-            }
-            // Check if finger is over a UI element
-            if (touch.phase == TouchPhase.Ended && Time.time - TouchTime >= 0.03f && !DragAndDrop && TouchingCurrent)
-            {
-                SubMenu.SetActive(!SubMenu.activeSelf);
-            }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (eventData.dragging)
+        {
+            return;
         }
+
+        SubMenu.SetActive(!SubMenu.activeSelf);
     }
 
      public void OnDrag(PointerEventData eventData)
@@ -82,7 +67,6 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         ScrollArea.SetActive(false);
         count = 1;
         Debug.Log("selected");
-        TouchingCurrent = true;
         GameObject[] subMenus = GameObject.FindGameObjectsWithTag("Submenu");
 
         foreach(GameObject subMenu in subMenus)
@@ -96,6 +80,5 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
     {
         count = 2;
         Debug.Log("unselected");
-        TouchingCurrent = false;
     }
 }

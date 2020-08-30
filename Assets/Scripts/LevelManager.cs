@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
 
         AsyncOperation op = SceneManager.LoadSceneAsync(levelName);
 
-        while ( !op.isDone )
+        while (!op.isDone )
         {
             float progress = Mathf.Clamp01(op.progress / .9f);
 

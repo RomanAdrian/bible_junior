@@ -4,47 +4,47 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Selected : MonoBehaviour
+public class Selected : MonoBehaviour, IPointerUpHandler
 {
     public Button btn;
     public Color newColor;
-    private bool s = false;
+    private bool selected = false;
 
     void Start()
     {
-        //btn = gameObject.GetComponent<Button> ();
-        //btn.onClick.AddListener(TaskOnClick);
+        btn = gameObject.GetComponent<Button> ();
     }
 
-    //     if (btn != null || btn.SetActive(true))
-    //     {
-    //         ColorBlock cb = btn.colors;
-    //         cb.selectedColor = newColor;
-    //         cb.pressedColor = newColor;
-    //         btn.colors = cb;
-    //     }
-    //  }
-
-    public void TaskOnClick()
+    public void OnPointerUp(PointerEventData eventData)
     {
-        if (s == true || s == false)
+        if (eventData.dragging)
+        {
+            return;
+        }
+
+        selected = !selected;
+
+        if (selected)
         {
             ColorBlock cb = btn.colors;
             cb.selectedColor = newColor;
-            cb.normalColor = newColor;
             cb.highlightedColor = newColor;
             cb.pressedColor = newColor;
+            cb.disabledColor = newColor;
+            cb.normalColor = newColor;
             btn.colors = cb;
         }
-    }
- 
-    void OnSelect(BaseEventData eventData)
-    {
-        s = true;
-    }
+        else
+        {
+            ColorBlock cb = btn.colors;
+            cb.normalColor = Color.white;
+            cb.highlightedColor = Color.white;
+            cb.selectedColor = Color.white;
+            cb.selectedColor = Color.white;
+            cb.pressedColor = Color.white;
+            cb.disabledColor = Color.white;
+            btn.colors = cb;
+        }
 
-    void OnDeselect(BaseEventData eventData)
-    {
-        s = false;
     }
 }
