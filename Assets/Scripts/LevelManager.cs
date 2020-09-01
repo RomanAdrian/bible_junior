@@ -9,12 +9,6 @@ public class LevelManager : MonoBehaviour
     public Slider loadingBar;
     public Text loadingText;
 
-    public void QuitGame()
-    {
-        Application.Quit();
-        Debug.Log("Quit!");
-    }
-
     public void LoadLevel(string levelName)
     {
         StartCoroutine(LoadSceneAsync(levelName));
