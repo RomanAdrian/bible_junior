@@ -37,7 +37,7 @@ RectTransform:
   m_GameObject: {fileID: 1285457975118576732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 1285457975532561712}
   m_Father: {fileID: 0}
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SubMenu: {fileID: 0}
+  ScrollArea: {fileID: 0}
 --- !u!114 &1285457975118576677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,8 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e824480c1ca0f44a2df7ea4c490d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomOutAmount: 0.5
-  zoomInAmount: 2
+  scales:
+  - 0.7
+  - 1
+  - 1.5
 --- !u!114 &1285457975118576681
 MonoBehaviour:
   m_ObjectHideFlags: 0
