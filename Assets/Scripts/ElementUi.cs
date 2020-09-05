@@ -7,6 +7,7 @@ using UnityEngine.Android;
 public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragHandler, IPointerUpHandler
 {
     public GameObject SubMenu;
+    public bool draggable = true;
 
     private PanelOpener po; // initializat
     private Zoom zoom;
@@ -40,7 +41,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
 
      public void OnDrag(PointerEventData eventData)
      {    
-            if (Input.touchCount == 1 || count == 2)
+            if (draggable && (Input.touchCount == 1 || count == 2))
             {
                 rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
             }
