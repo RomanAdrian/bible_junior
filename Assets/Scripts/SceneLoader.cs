@@ -20,9 +20,9 @@ using UnityEngine.UI;
       }
 
       public void LoadLevel(string levelName)
-    {
+      {
         StartCoroutine(LoadSceneAsync(levelName));
-    }
+      }
 
     IEnumerator LoadSceneAsync ( string levelName )
     {
