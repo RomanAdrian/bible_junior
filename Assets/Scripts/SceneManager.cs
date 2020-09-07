@@ -1,55 +1,98 @@
-﻿ using UnityEngine;
- using System.Collections.Generic;
- using System.Collections;
- using UnityEngine.UI;
- 
- [CreateAssetMenu( fileName = "SceneManager")]
- public class SceneManager : ScriptableObject
- {
-     private Stack<int> loadedLevels;
- 
-     [System.NonSerialized]
-     private bool initialized;
- 
-     private void Init()
-     {
-         loadedLevels = new Stack<int>();
-         initialized = true;
-     }
-  
-     public UnityEngine.SceneManagement.Scene GetActiveScene()
-     {
-         return UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-     }
+﻿    using UnityEngine;
+     using System.Collections;
+     using System.Collections.Generic;
      
-     public void LoadScene( int buildIndex )
+     public class SceneManager : MonoBehaviour
      {
-         if ( !initialized ) Init();
-         loadedLevels.Push( GetActiveScene().buildIndex );
-         UnityEngine.SceneManagement.SceneManager.LoadScene( buildIndex );
-     }
- 
-     public void LoadScene( string sceneName )
-     {
-         if ( !initialized ) Init();
-         loadedLevels.Push( GetActiveScene().buildIndex );
-         UnityEngine.SceneManagement.SceneManager.LoadScene( sceneName );
-     }
- 
-     public void LoadPreviousScene()
-     {
-         if ( !initialized )
+         private static bool destroyed = false;
+         private static object lockObject = new object();
+         private static SceneManager instance;
+         public Stack<int> loadedLevels;
+      
+         public static SceneManager Instance
          {
-             Debug.LogError( "You haven't used the LoadScene functions of the scriptable object. Use them instead of the LoadScene functions of Unity's SceneManager." );
+             get
+             {
+                 if (destroyed)
+                 {
+                     Debug.LogWarning("[Singleton] Instance '" + typeof(SceneManager) +
+                         "' already destroyed. Returning null.");
+                     return null;
+                 }
+      
+                 lock (lockObject)
+                 {
+                     if (instance == null)
+                     {
+                         // Search for existing instance.
+                         instance = (SceneManager)FindObjectOfType(typeof(SceneManager));
+      
+                         // Create new instance if one doesn't already exist.
+                         if (instance == null)
+                         {
+                             // Need to create a new GameObject to attach the singleton to.
+                             var singletonObject = new GameObject();
+                             instance = singletonObject.AddComponent<SceneManager>();
+                             singletonObject.name = typeof(SceneManager).ToString() + " (Singleton)";
+      
+                             // Make instance persistent.
+                             DontDestroyOnLoad(singletonObject);
+                         }
+                     }
+      
+                     return instance;
+                 }
+             }
          }
-         if ( loadedLevels.Count > 0 )
+     
+         public static UnityEngine.SceneManagement.Scene GetActiveScene()
          {
-             UnityEngine.SceneManagement.SceneManager.LoadScene( loadedLevels.Pop() );
+             return UnityEngine.SceneManagement.SceneManager.GetActiveScene();
          }
-         else
+     
+         public static void LoadScene( int buildIndex )
          {
-             Debug.LogError( "No previous scene loaded" );
-             // If you want, you can call `Application.Quit()` instead
+             Instance.loadedLevels.Push( GetActiveScene().buildIndex );
+             UnityEngine.SceneManagement.SceneManager.LoadScene( buildIndex );
+         }
+     
+         public static void LoadScene( string sceneName )
+         {
+             Instance.loadedLevels.Push( GetActiveScene().buildIndex );
+             UnityEngine.SceneManagement.SceneManager.LoadScene( sceneName );
+         }
+
+         public static AsyncOperation LoadSceneAsync(string sceneName)
+         {
+            Instance.loadedLevels.Push( GetActiveScene().buildIndex );
+            return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync( sceneName );
+         }
+     
+         public static void LoadPreviousScene()
+         {
+             if ( Instance.loadedLevels.Count > 0 )
+             {
+                 UnityEngine.SceneManagement.SceneManager.LoadScene( Instance.loadedLevels.Pop() );
+             }
+             else
+             {
+                 Debug.LogError( "No previous scene loaded" );
+                 // If you want, you can call `Application.Quit()` instead
+             }
+         }
+     
+         private void Awake()
+         {
+             loadedLevels = new Stack<int>();
+         }
+     
+         private void OnApplicationQuit()
+         {
+             destroyed = true;
+         } 
+      
+         private void OnDestroy()
+         {
+             destroyed = true;
          }
      }
- }
