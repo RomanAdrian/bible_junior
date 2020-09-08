@@ -1,6 +1,7 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Android;
 
@@ -8,8 +9,9 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
 {
     public GameObject SubMenu;
     public bool draggable = true;
+    public bool movesInBothDirections = true;
 
-    private PanelOpener po; // initializat
+    private PanelOpener po; // variabila initializata
     private Zoom zoom;
     private bool TouchingCurrent;
     private RectTransform rectTransform;
@@ -17,6 +19,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
     private CanvasGroup canvasGroup;
     private int count = 0;
     public GameObject ScrollArea;
+    public Selectable btn;
 
     private void Awake()
     {
@@ -26,6 +29,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         po = GetComponent<PanelOpener>(); 
         zoom = GetComponent<Zoom>();
         ScrollArea = GameObject.Find("ScrollableArea");
+        btn = GetComponent<Selectable> ();
     }
 
 
@@ -43,7 +47,13 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
      {    
             if (draggable && (Input.touchCount == 1 || count == 2))
             {
-                rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+                if (movesInBothDirections)
+                    rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+                else
+                    rectTransform.anchoredPosition += new Vector2(0, eventData.delta.y) / canvas.scaleFactor;
+                ColorBlock cb = btn.colors;
+                cb.pressedColor = Color.cyan;
+                btn.colors = cb;
             }
     }
     public void ZoomBig()
@@ -79,6 +89,9 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
 
     public void OnDeselect(BaseEventData eventData)
     {
+        ColorBlock cb = btn.colors;
+        cb.pressedColor = Color.white;
+        btn.colors = cb;
         count = 2;
         Debug.Log("unselected");
     }

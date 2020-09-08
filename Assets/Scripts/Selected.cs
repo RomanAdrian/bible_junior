@@ -12,7 +12,7 @@ public class Selected : MonoBehaviour, IPointerUpHandler
 
     void Start()
     {
-        btn = gameObject.GetComponent<Button> ();
+        btn = GetComponent<Button> ();
     }
 
     public void OnPointerUp(PointerEventData eventData)
