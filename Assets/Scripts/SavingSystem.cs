@@ -5,19 +5,20 @@ public class SavingSystem : MonoBehaviour
 {
    public GameObject masks;
    public CanvasData[] MaskData = new CanvasData[80];
-   //public static readonly string SAVE_FOLDER = Application.dataPath + "/Saves/";
+   public string SAVE_FOLDER;
 
-//    public static void Init()
-//    {
-//        // Test if Save folder exists
-//        if (!Directory.Exists(SAVE_FOLDER))
-//        {
-//            // Create save folder
-//            Directory.CreateDirectory(SAVE_FOLDER);
-//        }
-//    }
+   private void Awake()
+   {
+       SAVE_FOLDER = Application.dataPath + "/Saves/";
+       // Test if Save folder exists
+       if (!Directory.Exists(SAVE_FOLDER))
+       {
+           // Create save folder
+           Directory.CreateDirectory(SAVE_FOLDER);
+       }
+   }
 
-   public void Looping()
+   public void Save()
    {
        int childcount = masks.transform.childCount;
 
@@ -31,24 +32,24 @@ public class SavingSystem : MonoBehaviour
 
            CanvasData date = new CanvasData(name, pozitii, i, active); // call pe constructorul din clasa respectiva
            MaskData[i] = date;
-       } 
+       }
+       
+       string json = JsonHelper.ToJson(MaskData, true);
+       File.WriteAllText(SAVE_FOLDER + "/save.txt", json);
    }
 
-//    public static string Load()
-//    {
-//        if (File.Exists(SAVE_FOLDER + "/save.txt"))
-//        {
-//            if (File.Exists(SAVE_FOLDER + "/save.txt"))
-//            {
-//                string saveString = File.ReadAllText(SAVE_FOLDER + "/save.txt");
-//                return saveString;
-//            }
-//            else
-//            {
-//                {
-//                    return null;
-//                }
-//            }
-//        }
-//    }
+   public string Load()
+   {
+       if (File.Exists(SAVE_FOLDER + "/save.txt"))
+       {
+            string saveString = File.ReadAllText(SAVE_FOLDER + "/save.txt");
+            return saveString;
+       }
+       else
+       {
+            {
+                return null;
+            }
+        }
+   }
 }
