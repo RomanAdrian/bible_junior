@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class MarkScene : MonoBehaviour
 {
     private ElementUi detector;
-    private PanelOpener mesaj2;
-    private SavingSystem salvari;
+    //private PanelOpener mesaj;
+    //private SavingSystem salvari;
 
-    public GameObject mesaj_salvat;
-    public GameObject mesaj_nesalvat;
+    // public GameObject mesaj_salvat;
+    // public GameObject mesaj_nesalvat;
 
 
     public GameObject butonschimbari;
@@ -18,18 +18,15 @@ public class MarkScene : MonoBehaviour
     private void Awake()
     {
         detector = GetComponent<ElementUi>();
-        mesaj2 = GetComponent<PanelOpener>();
-        salvari = GetComponent<SavingSystem>();
+        //mesaj = GetComponent<PanelOpener>();
+        //salvari = GetComponent<SavingSystem>();
     }
 
     public void ChangesMade()
     {
-        if (changesMade)
+        if (SavingSystem.changesMade == true)
         {
-            mesaj_nesalvat.SetActive(true);
-        } else 
-        {
-            mesaj_salvat.SetActive(true);
+            butonschimbari.SetActive(true);
         }
     }
 }

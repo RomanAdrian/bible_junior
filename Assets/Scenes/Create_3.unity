@@ -3232,7 +3232,6 @@ MonoBehaviour:
     childcount: 0
     active: 0
   SAVE_FOLDER: 
-  salvat: 0
 --- !u!1001 &444185813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5672,13 +5671,14 @@ GameObject:
   - component: {fileID: 822146965}
   - component: {fileID: 822146967}
   - component: {fileID: 822146964}
+  - component: {fileID: 822146968}
   m_Layer: 5
   m_Name: Mesaj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &822146963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5766,6 +5766,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panel: {fileID: 822146962}
   pls: 1
+--- !u!114 &822146968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822146962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59156f095f6c6eb478b1e2aeafe29e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  butonschimbari: {fileID: 822146962}
 --- !u!1 &827133682
 GameObject:
   m_ObjectHideFlags: 0
@@ -12413,7 +12426,6 @@ GameObject:
   - component: {fileID: 1589036031}
   - component: {fileID: 1589036030}
   - component: {fileID: 1589036029}
-  - component: {fileID: 1589036032}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -12484,21 +12496,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 822146968}
         m_TargetAssemblyTypeName: MarkScene, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 822146967}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
+        m_MethodName: ChangesMade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12546,21 +12546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589036027}
   m_CullTransparentMesh: 0
---- !u!114 &1589036032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589036027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59156f095f6c6eb478b1e2aeafe29e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mesaj_salvat: {fileID: 0}
-  mesaj_nesalvat: {fileID: 822146962}
-  butonschimbari: {fileID: 0}
 --- !u!1 &1613590918
 GameObject:
   m_ObjectHideFlags: 0

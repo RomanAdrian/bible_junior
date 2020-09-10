@@ -6,7 +6,7 @@ public class SavingSystem : MonoBehaviour
    public GameObject masks;
    public CanvasData[] MaskData = new CanvasData[80];
    public string SAVE_FOLDER;
-   public static bool changesMade;
+   public static bool changesMade = false;
 
    private void Awake()
    {
@@ -37,11 +37,8 @@ public class SavingSystem : MonoBehaviour
        
        string json = JsonHelper.ToJson(MaskData, true);
        File.WriteAllText(SAVE_FOLDER + "/save.txt", json);
-       salvat = true;
        
-       Debug.Log("Saving" + MarkScene.changesMade);
-        MarkScene.changesMade = false;
-       Debug.Log("Saving" + MarkScene.changesMade);
+       changesMade = false;
    }
 
    public string Load()

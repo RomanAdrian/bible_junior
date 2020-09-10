@@ -86,10 +86,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
                 subMenu.SetActive(false);
         }
         
-       Debug.Log("ui " + MarkScene.changesMade);
-        MarkScene.changesMade = true;
-        
-       Debug.Log("ui " + MarkScene.changesMade);
+        SavingSystem.changesMade = true;
     }
 
     public void OnDeselect(BaseEventData eventData)
