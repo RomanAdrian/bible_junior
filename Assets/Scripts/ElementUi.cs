@@ -17,7 +17,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
     private RectTransform rectTransform;
     private Canvas canvas;
     private CanvasGroup canvasGroup;
-    private int count = 0;
+    public int count = 0;
     public GameObject ScrollArea;
     public Selectable btn;
 
@@ -85,6 +85,11 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
             if(subMenu != this.SubMenu)
                 subMenu.SetActive(false);
         }
+        
+       Debug.Log("ui " + MarkScene.changesMade);
+        MarkScene.changesMade = true;
+        
+       Debug.Log("ui " + MarkScene.changesMade);
     }
 
     public void OnDeselect(BaseEventData eventData)

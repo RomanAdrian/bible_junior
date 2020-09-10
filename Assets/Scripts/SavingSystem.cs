@@ -6,10 +6,11 @@ public class SavingSystem : MonoBehaviour
    public GameObject masks;
    public CanvasData[] MaskData = new CanvasData[80];
    public string SAVE_FOLDER;
+   public static bool changesMade;
 
    private void Awake()
    {
-       SAVE_FOLDER = Application.dataPath + "/Saves/";
+       SAVE_FOLDER = Application.persistentDataPath + "/Saves/";
        // Test if Save folder exists
        if (!Directory.Exists(SAVE_FOLDER))
        {
@@ -36,6 +37,11 @@ public class SavingSystem : MonoBehaviour
        
        string json = JsonHelper.ToJson(MaskData, true);
        File.WriteAllText(SAVE_FOLDER + "/save.txt", json);
+       salvat = true;
+       
+       Debug.Log("Saving" + MarkScene.changesMade);
+        MarkScene.changesMade = false;
+       Debug.Log("Saving" + MarkScene.changesMade);
    }
 
    public string Load()

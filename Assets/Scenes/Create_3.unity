@@ -3232,6 +3232,7 @@ MonoBehaviour:
     childcount: 0
     active: 0
   SAVE_FOLDER: 
+  salvat: 0
 --- !u!1001 &444185813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5669,6 +5670,7 @@ GameObject:
   - component: {fileID: 822146963}
   - component: {fileID: 822146966}
   - component: {fileID: 822146965}
+  - component: {fileID: 822146967}
   - component: {fileID: 822146964}
   m_Layer: 5
   m_Name: Mesaj
@@ -5676,7 +5678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &822146963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5708,10 +5710,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 822146962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f70b8360fb71b994a95f5224a804753a, type: 3}
+  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonToggle: {fileID: 822146962}
+  Panel2: {fileID: 822146962}
 --- !u!114 &822146965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5750,6 +5752,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822146962}
   m_CullTransparentMesh: 0
+--- !u!114 &822146967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822146962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 822146962}
+  pls: 1
 --- !u!1 &827133682
 GameObject:
   m_ObjectHideFlags: 0
@@ -6310,8 +6326,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 822146964}
-        m_TargetAssemblyTypeName: ToggleMover, Assembly-CSharp
-        m_MethodName: ToggleButton
+        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
+        m_MethodName: ClosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10219,7 +10235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1303739726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12397,6 +12413,7 @@ GameObject:
   - component: {fileID: 1589036031}
   - component: {fileID: 1589036030}
   - component: {fileID: 1589036029}
+  - component: {fileID: 1589036032}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -12467,9 +12484,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 822146964}
-        m_TargetAssemblyTypeName: ToggleMover, Assembly-CSharp
-        m_MethodName: ToggleButton
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MarkScene, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 822146967}
+        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
+        m_MethodName: OpenPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12517,6 +12546,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589036027}
   m_CullTransparentMesh: 0
+--- !u!114 &1589036032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589036027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59156f095f6c6eb478b1e2aeafe29e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesaj_salvat: {fileID: 0}
+  mesaj_nesalvat: {fileID: 822146962}
+  butonschimbari: {fileID: 0}
 --- !u!1 &1613590918
 GameObject:
   m_ObjectHideFlags: 0
@@ -15465,6 +15509,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1687922477}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974142170666
@@ -15778,6 +15823,7 @@ MonoBehaviour:
   SubMenu: {fileID: 306674544}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974190058706
@@ -16017,6 +16063,7 @@ MonoBehaviour:
   SubMenu: {fileID: 220269364}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974196040642
@@ -16422,6 +16469,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1117178784}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!224 &1285457974203860964
@@ -16570,6 +16618,7 @@ MonoBehaviour:
   SubMenu: {fileID: 246999983}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974244636882
@@ -16750,6 +16799,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1230796009}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974279239442
@@ -17149,6 +17199,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1032180830}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974403341924
@@ -17363,6 +17414,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1007461947}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974530008762
@@ -17692,6 +17744,7 @@ MonoBehaviour:
   SubMenu: {fileID: 458560798}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!224 &1285457974538826436
@@ -18117,6 +18170,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1087044677}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974671801357
@@ -18602,6 +18656,7 @@ MonoBehaviour:
   SubMenu: {fileID: 238201465}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457974992209915
@@ -18980,6 +19035,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1208855849}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975140863839
@@ -19142,6 +19198,7 @@ MonoBehaviour:
   SubMenu: {fileID: 977447285}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975145455946
@@ -19407,6 +19464,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1782594287}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975297111372
@@ -19548,6 +19606,7 @@ MonoBehaviour:
   SubMenu: {fileID: 64317131}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975313009449
@@ -19872,6 +19931,7 @@ MonoBehaviour:
   SubMenu: {fileID: 22462921}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975320394059
@@ -20069,6 +20129,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1253073164}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975327746472
@@ -20284,6 +20345,7 @@ MonoBehaviour:
   SubMenu: {fileID: 1006097840}
   draggable: 1
   movesInBothDirections: 0
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975344145548
@@ -20761,6 +20823,7 @@ MonoBehaviour:
   SubMenu: {fileID: 578236344}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975592380228
@@ -21081,6 +21144,7 @@ MonoBehaviour:
   SubMenu: {fileID: 9093526380974688087}
   draggable: 1
   movesInBothDirections: 0
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975678788397
@@ -21179,7 +21243,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -692.083}
+  m_SizeDelta: {x: 0, y: -601.569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285457975678788440
 MonoBehaviour:
@@ -21362,6 +21426,7 @@ MonoBehaviour:
   SubMenu: {fileID: 861851339}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975761329318
@@ -21757,6 +21822,7 @@ MonoBehaviour:
   SubMenu: {fileID: 444185814}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975892346108
@@ -22032,6 +22098,7 @@ MonoBehaviour:
   SubMenu: {fileID: 157566445}
   draggable: 1
   movesInBothDirections: 1
+  count: 0
   ScrollArea: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &1285457975914005625
