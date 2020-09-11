@@ -11,7 +11,7 @@ public class ConstraintCount : MonoBehaviour
         GridLayoutGroup constr = GetComponent<GridLayoutGroup>();
         float cam = Camera.main.aspect;
         
-        if (cam < 1.5f)
+        if (cam < 1.5f || cam == 3f / 2f)
         {
             constr.constraintCount = 4;
         }
