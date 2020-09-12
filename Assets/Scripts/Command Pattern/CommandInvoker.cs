@@ -20,6 +20,31 @@ public class CommandInvoker : MonoBehaviour
     //     this.zoomOut = zoomOut;
     //     this.reflect = reflect;
     // }
+
+    // public void DeleteButton()
+    // {
+    //     this.delete.execute();
+    // }
+
+    // public void BringFrontButton()
+    // {
+    //     this.bringFront.execute();
+    // }
+
+    // public void ZoomInButton()
+    // {
+    //     this.zoomIn.execute();
+    // }
+
+    // public void ZoomOutButton()
+    // {
+    //     this.zoomOut.execute();
+    // }
+
+    // public void ReflectButton()
+    // {
+    //     this.reflect.execute();
+    // }
     
     static Queue<ICommand> commandBuffer;
 
