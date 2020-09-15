@@ -12,7 +12,7 @@
 //         GameEvents.current.onSubMenuTriggerExit += OnSubMenuExit;
 //     }
 
-//     // Update is called once per frame
+//   
 //     private void OnSubMenuOpen()
 //     {
 //         if(id == this.id)
