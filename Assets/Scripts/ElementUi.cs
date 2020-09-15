@@ -28,7 +28,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         canvasGroup = GetComponent<CanvasGroup>();
         po = GetComponent<PanelOpener>(); 
         zoom = GetComponent<Zoom>();
-        ScrollArea = GameObject.Find("ScrollableArea");
+        ScrollArea = GameObject.Find("Chat Side-Menu");
         btn = GetComponent<Selectable> ();
     }
 
@@ -75,7 +75,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
 
     public void OnSelect(BaseEventData eventData)
     {
-        ScrollArea.SetActive(false);
+        ScrollArea.GetComponent<DanielLochner.Assets.SimpleSideMenu.SimpleSideMenu>().Close();
         count = 1;
         Debug.Log("selected");
         GameObject[] subMenus = GameObject.FindGameObjectsWithTag("Submenu");

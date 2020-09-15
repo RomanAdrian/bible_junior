@@ -934,7 +934,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0.15852642, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0.21097279, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1916,8 +1916,8 @@ MonoBehaviour:
     defaultMaxValue: 1
     defaultMinDisplacement: -600
     defaultMaxDisplacement: 600
-    showPanel: 1
-    showDisplacement: 0
+    showPanel: 0
+    showDisplacement: 1
     showValue: 1
     label: color.a
     function:
@@ -1989,7 +1989,7 @@ MonoBehaviour:
     simpleScrollSnap: {fileID: 6107451778954564417}
   - minDisplacement: -1000
     maxDisplacement: 1000
-    minValue: -60
+    minValue: -30
     maxValue: 60
     defaultMinValue: -60
     defaultMaxValue: 60
@@ -1997,7 +1997,7 @@ MonoBehaviour:
     defaultMaxDisplacement: 1000
     showPanel: 0
     showDisplacement: 0
-    showValue: 0
+    showValue: 1
     label: localRotation.y
     function:
       serializedVersion: 2
@@ -2058,7 +2058,7 @@ MonoBehaviour:
     defaultMaxDisplacement: 1000
     showPanel: 0
     showDisplacement: 0
-    showValue: 0
+    showValue: 1
     label: localPosition.z
     function:
       serializedVersion: 2
@@ -2117,6 +2117,67 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 1000
         value: 500
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    simpleScrollSnap: {fileID: 6107451778954564417}
+  - minDisplacement: 0
+    maxDisplacement: 0
+    minValue: 0
+    maxValue: 0
+    defaultMinValue: 0
+    defaultMaxValue: 0
+    defaultMinDisplacement: 0
+    defaultMaxDisplacement: 0
+    showPanel: 0
+    showDisplacement: 0
+    showValue: 0
+    label: localRotation.x
+    function:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    defaultFunction:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
