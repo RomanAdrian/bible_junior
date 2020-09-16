@@ -1602,7 +1602,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.8784314}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1735,7 +1735,7 @@ MonoBehaviour:
   snapTarget: 0
   snappingSpeed: 10
   thresholdSnappingSpeed: 150
-  hardSnap: 0
+  hardSnap: 1
   useUnscaledTime: 0
   onPanelChanged:
     m_PersistentCalls:
@@ -1908,15 +1908,15 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     simpleScrollSnap: {fileID: 6107451778954564417}
-  - minDisplacement: -600
+  - minDisplacement: 1
     maxDisplacement: 600
-    minValue: 0.1
+    minValue: 1
     maxValue: 1
     defaultMinValue: 0.05
     defaultMaxValue: 1
     defaultMinDisplacement: -600
     defaultMaxDisplacement: 600
-    showPanel: 0
+    showPanel: 1
     showDisplacement: 1
     showValue: 1
     label: color.a
@@ -2206,7 +2206,7 @@ MonoBehaviour:
   m_MovementType: 0
   m_Elasticity: 1
   m_Inertia: 1
-  m_DecelerationRate: 0.00001
+  m_DecelerationRate: 0.009
   m_ScrollSensitivity: 0
   m_Viewport: {fileID: 6107451778383146637}
   m_HorizontalScrollbar: {fileID: 0}
@@ -2298,7 +2298,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.8784314}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
