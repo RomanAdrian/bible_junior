@@ -28,5 +28,9 @@ public class MarkScene : MonoBehaviour
         {
             butonschimbari.SetActive(true);
         }
+        else
+        {
+            SceneManager.LoadPreviousScene();
+        }
     }
 }

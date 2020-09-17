@@ -1,4 +1,4 @@
-﻿//Dependencies:
+﻿ //Dependencies:
 // - Scroller: Source > Scripts > HelperClasses
 // - DirectionalScrollSnapEditor: Source > Editor (optional)
 
