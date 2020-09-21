@@ -22,7 +22,7 @@ public class ScaleImage : MonoBehaviour
 
         else if (cam >= 2f)
         {
-            this.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+            this.transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 }

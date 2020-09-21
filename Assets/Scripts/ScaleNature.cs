@@ -22,7 +22,7 @@ public class ScaleNature : MonoBehaviour
         
         else if (cam == 16f / 9f) // 1280x720, 1920x1080, 2560x1440
         {
-            this.transform.localScale = new Vector3(0.865f, 0.865f, 0.865f);
+            this.transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
         else if (cam == 18f / 9f) // 18:9, 2160x1080
