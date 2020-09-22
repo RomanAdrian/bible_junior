@@ -639,7 +639,18 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: EASY_MOBILE;EASY_MOBILE_PRO
+    4: EASY_MOBILE;EASY_MOBILE_PRO
+    7: EASY_MOBILE;EASY_MOBILE_PRO
+    13: EASY_MOBILE;EASY_MOBILE_PRO
+    14: EASY_MOBILE;EASY_MOBILE_PRO
+    19: EASY_MOBILE;EASY_MOBILE_PRO
+    21: EASY_MOBILE;EASY_MOBILE_PRO
+    25: EASY_MOBILE;EASY_MOBILE_PRO
+    27: EASY_MOBILE;EASY_MOBILE_PRO
+    28: EASY_MOBILE;EASY_MOBILE_PRO
+    29: EASY_MOBILE;EASY_MOBILE_PRO
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
@@ -651,7 +662,8 @@ PlayerSettings:
   scriptingRuntimeVersion: 1
   gcIncremental: 1
   gcWBarrierValidation: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Android: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: 2D_BuiltInRenderer
