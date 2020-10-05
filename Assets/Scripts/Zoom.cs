@@ -19,8 +19,8 @@ public class Zoom : MonoBehaviour
 
     void OnDisable()
     {
-        transform.localScale = initialScale;
-        transform.position = initialPos;
+        //transform.localScale = initialScale || new Vector3(0, 0, 0);
+        //transform.position = initialPos;
     }
 
     public void ZoomIn()

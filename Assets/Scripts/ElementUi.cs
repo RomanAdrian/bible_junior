@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Android;
 
-public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragHandler, IPointerUpHandler
+public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragHandler
 {
-    public GameObject SubMenu;
+    
     public bool draggable = true;
     public bool movesInBothDirections = true;
 
@@ -32,18 +32,15 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         btn = GetComponent<Selectable> ();
     }
 
-
     public void OnPointerUp(PointerEventData eventData)
     {
         if (eventData.dragging)
         {
             return;
         }
-
-        SubMenu.SetActive(!SubMenu.activeSelf);
     }
 
-     public void OnDrag(PointerEventData eventData)
+    public void OnDrag(PointerEventData eventData)
      {    
             if (draggable && (Input.touchCount == 1 || count == 2))
             {
@@ -51,9 +48,9 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
                     rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
                 else
                     rectTransform.anchoredPosition += new Vector2(0, eventData.delta.y) / canvas.scaleFactor;
-                ColorBlock cb = btn.colors;
-                cb.pressedColor = Color.cyan;
-                btn.colors = cb;
+                    ColorBlock cb = btn.colors;
+                    cb.pressedColor = Color.cyan;
+                    btn.colors = cb;
             }
     }
     public void ZoomBig()
@@ -77,24 +74,16 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
     {
         ScrollArea.GetComponent<DanielLochner.Assets.SimpleSideMenu.SimpleSideMenu>().Close();
         count = 1;
-        Debug.Log("selected");
-        GameObject[] subMenus = GameObject.FindGameObjectsWithTag("Submenu");
-
-        foreach(GameObject subMenu in subMenus)
-        {
-            if(subMenu != this.SubMenu)
-                subMenu.SetActive(false);
-        }
         
         SavingSystem.changesMade = true;
     }
 
     public void OnDeselect(BaseEventData eventData)
     {
+        Debug.Log("Deselected");
         ColorBlock cb = btn.colors;
         cb.pressedColor = Color.white;
         btn.colors = cb;
         count = 2;
-        Debug.Log("unselected");
     }
 }

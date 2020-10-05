@@ -6,29 +6,39 @@ using System;
 public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
 {
     public string id;
+    public string SubmenuType = "Submenu";
+    EventsGroup eventsGroup = new EventsGroup();
 
     private void Awake()
     {
         SetId();
-        EventManager.StartListening("ENABLE_ELEMENT", OnReceivedEnable);
+
+        eventsGroup.Add("ENABLE_ELEMENT", OnReceivedEnable);
+        eventsGroup.Add("DELETE", OnDelete);
+        eventsGroup.Add("BRING_FORWARD", OnBringForward);
+        eventsGroup.Add("ZOOM_IN", OnZoomIn);
+        eventsGroup.Add("ZOOM_OUT", OnZoomOut);
+        eventsGroup.Add("REFLECT", OnReflect);
+        eventsGroup.StartListening();
+
         gameObject.SetActive(false);
     }
 
     private void OnDestroy()
     {
-        EventManager.StopListening("ENABLE_ELEMENT", OnReceivedEnable);
+        eventsGroup.StopListening();
     }
 
-    private void OnDisable()
+    private void OnDelete()
     {
-        EventManager.SetData("DISABLED_ELEMENT", id);
-        EventManager.EmitEvent("DISABLED_ELEMENT");
+        if (IsAddressingDifferentObject("DELETE")) return;
+        SetActive(false);
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         EventManager.SetData("LINK_MENU", id);
-        EventManager.EmitEvent("LINK_MENU");
+        EventManager.EmitEvent("LINK_MENU", $"tag:{SubmenuType}");
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -39,22 +49,65 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         EventManager.EmitEvent("OPEN_MENU");
     }
 
+    private bool IsAddressingDifferentObject(string EventName)
+    {
+        string eventId = EventManager.GetString(EventName);
+        return eventId != id;
+    }
+
     private void OnReceivedEnable()
     {
-        string eventId = EventManager.GetString("ENABLE_ELEMENT");
-        if (eventId == id) Activate();
+        if (IsAddressingDifferentObject("ENABLE_ELEMENT")) return;
+
+        SetActive(true);
+        BringForward();
     }
 
-    private void Activate()
+    private void OnBringForward()
     {
-        gameObject.SetActive(true);
+        if (IsAddressingDifferentObject("BRING_FORWARD")) return;
+
+        BringForward();
     }
 
+    private void OnReflect()
+    {
+        if (IsAddressingDifferentObject("REFLECT")) return;
+
+        Vector3 scale = gameObject.transform.localScale;
+        gameObject.transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
+    }
+
+    private void OnZoomIn()
+    {
+        if (IsAddressingDifferentObject("ZOOM_IN")) return;
+
+        Zoom zoom = GetComponent<Zoom>();
+        if (zoom != null) zoom.ZoomIn();
+    }
+
+    private void OnZoomOut()
+    {
+        if (IsAddressingDifferentObject("ZOOM_OUT")) return;
+
+        Zoom zoom = GetComponent<Zoom>();
+        if (zoom != null) zoom.ZoomOut();
+    }
+
+    private void SetActive(bool state)
+    {
+        gameObject.SetActive(state);
+    }
+
+    private void BringForward()
+    {
+        transform.transform.SetAsLastSibling();
+    }
 
     private void SetId()
     {
         if (!String.IsNullOrWhiteSpace(id)) return;
 
-        id = (transform.GetSiblingIndex()).ToString("D3");
+        id = transform.GetSiblingIndex().ToString("D3");
     }
 }

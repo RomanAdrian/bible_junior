@@ -9,12 +9,12 @@ public class Thumbnail : MonoBehaviour, IPointerClickHandler
     public void Start()
     {
         SetId();
-        EventManager.StartListening("DISABLED_ELEMENT", OnElementWasDisabled);
+        EventManager.StartListening("DELETE", OnElementWasDisabled);
     }
 
     private void OnDestroy()
     {
-        EventManager.StopListening("DISABLED_ELEMENT", OnElementWasDisabled);
+        EventManager.StopListening("DELETE", OnElementWasDisabled);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -26,7 +26,7 @@ public class Thumbnail : MonoBehaviour, IPointerClickHandler
 
     private void OnElementWasDisabled()
     {
-        string eventId = EventManager.GetString("DISABLED_ELEMENT");
+        string eventId = EventManager.GetString("DELETE");
 
         if (eventId == id) gameObject.SetActive(true);
     }

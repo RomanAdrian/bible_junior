@@ -6,7 +6,7 @@ public class BringForward : MonoBehaviour
 {
     public void OnEnable()
     {
-        BringFront();
+        // BringFront();
     }
     public void BringFront()
     {
