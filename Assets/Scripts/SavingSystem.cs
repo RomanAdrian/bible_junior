@@ -36,16 +36,16 @@ public class SavingSystem : MonoBehaviour
        }
        
        string json = JsonHelper.ToJson(MaskData, true);
-       File.WriteAllText(SAVE_FOLDER + "/save.txt", json);
+       File.WriteAllText(SAVE_FOLDER + "/save.json", json);
        
        changesMade = false;
    }
 
    public string Load()
    {
-       if (File.Exists(SAVE_FOLDER + "/save.txt"))
+       if (File.Exists(SAVE_FOLDER + "/save.json"))
        {
-            string saveString = File.ReadAllText(SAVE_FOLDER + "/save.txt");
+            string saveString = File.ReadAllText(SAVE_FOLDER + "/save.json");
             return saveString;
        }
        else

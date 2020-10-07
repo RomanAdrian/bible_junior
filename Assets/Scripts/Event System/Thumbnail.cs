@@ -2,7 +2,7 @@
 using TigerForge;
 using UnityEngine.EventSystems;
 
-public class Thumbnail : MonoBehaviour, IPointerClickHandler
+public class Thumbnail : MonoBehaviour, IPointerDownHandler
 {
     public string id;
 
@@ -17,7 +17,7 @@ public class Thumbnail : MonoBehaviour, IPointerClickHandler
         EventManager.StopListening("DELETE", OnElementWasDisabled);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         EventManager.SetData("ENABLE_ELEMENT", id);
         EventManager.EmitEvent("ENABLE_ELEMENT");

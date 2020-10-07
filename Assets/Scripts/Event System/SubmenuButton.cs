@@ -4,8 +4,7 @@ using UnityEngine.EventSystems;
 
 public class SubmenuButton : MonoBehaviour, IPointerClickHandler
 {
-    // primeste event link - menu
-    // trimite actiunea care corespunde butonului respectiv
+    // sets the action for every button
 
     public string Action;
     public string id;

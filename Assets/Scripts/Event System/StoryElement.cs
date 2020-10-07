@@ -13,6 +13,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
     {
         SetId();
 
+        // submenu buttons
         eventsGroup.Add("ENABLE_ELEMENT", OnReceivedEnable);
         eventsGroup.Add("DELETE", OnDelete);
         eventsGroup.Add("BRING_FORWARD", OnBringForward);
@@ -35,12 +36,14 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         SetActive(false);
     }
 
+    // link-menu event sent
     public void OnSelect(BaseEventData eventData)
     {
         EventManager.SetData("LINK_MENU", id);
         EventManager.EmitEvent("LINK_MENU", $"tag:{SubmenuType}");
     }
 
+    // open menu event sent
     public void OnPointerUp(PointerEventData eventData)
     {
         if (eventData.dragging) return;
@@ -55,6 +58,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         return eventId != id;
     }
 
+    // when element is activated from the thumbnail it's positioned in front of the other elements
     private void OnReceivedEnable()
     {
         if (IsAddressingDifferentObject("ENABLE_ELEMENT")) return;
@@ -63,6 +67,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         BringForward();
     }
 
+    // button bring front
     private void OnBringForward()
     {
         if (IsAddressingDifferentObject("BRING_FORWARD")) return;
@@ -74,8 +79,8 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
     {
         if (IsAddressingDifferentObject("REFLECT")) return;
 
-        Vector3 scale = gameObject.transform.localScale;
-        gameObject.transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
+        Vector3 scale = transform.localScale;
+        transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
     }
 
     private void OnZoomIn()
@@ -101,9 +106,10 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
 
     private void BringForward()
     {
-        transform.transform.SetAsLastSibling();
+       transform.SetAsLastSibling();
     }
 
+    // seteaza id-ul dinamic
     private void SetId()
     {
         if (!String.IsNullOrWhiteSpace(id)) return;

@@ -31,6 +31,7 @@ public class Submenu : MonoBehaviour
             SetActive(false);
     }
 
+    // submeniul primeste "delete" pentru ca se inchide si el cand apesi "X"
     private void OnDisableElement()
     {
         string eventId = EventManager.GetString("DELETE");
