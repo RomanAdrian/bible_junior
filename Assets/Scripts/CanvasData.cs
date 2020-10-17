@@ -9,6 +9,7 @@ public class CanvasData
    public float[] scale;
    public int childcount; // pozitia in ierarhie
    public bool active;
+    public DateTime MyDateTime { get; set; }
 
    // constructor (parametri) 
    public CanvasData (string name, RectTransform transform, int childcount, bool active)
@@ -26,5 +27,7 @@ public class CanvasData
        this.name = name;
        this.childcount = childcount;
        this.active = active;
+
+        MyDateTime = DateTime.Now;
    }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TigerForge;
 
-public class Demo : MonoBehaviour
+public class Demo1 : MonoBehaviour
 {
     // Link to the Pooler that contains the Prefabs and Audio Clips I need.
     public EasyPoolingPlus pooler;

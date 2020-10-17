@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.IO;
+using EasyMobile;
 
 public class SavingSystem : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class SavingSystem : MonoBehaviour
    public CanvasData[] MaskData = new CanvasData[80];
    public string SAVE_FOLDER;
    public static bool changesMade = false;
+
+    [SerializeField]
+    private SavedGame[] saveSlots;
 
    private void Awake()
    {
@@ -17,16 +21,22 @@ public class SavingSystem : MonoBehaviour
            // Create save folder
            Directory.CreateDirectory(SAVE_FOLDER);
        }
+
+       foreach (SavedGame saved in saveSlots)
+        {
+            // ShowSavedFiles(saved);
+        }
    }
 
    public void Save()
    {
-       int childcount = masks.transform.childCount;
+        int childcount = masks.transform.childCount;
+        int saveNumber = 1;
 
        for (int i = 0; i < childcount; i++)
        {
            Transform Mcount = masks.transform.GetChild(i);
-           RectTransform pozitii = Mcount.transform.GetComponent<RectTransform>(); // cauti componenta RectTransf
+           RectTransform pozitii = Mcount.transform.GetComponent<RectTransform>(); 
 
            bool active = Mcount.gameObject.activeSelf;
            string name = Mcount.gameObject.name;
@@ -36,13 +46,19 @@ public class SavingSystem : MonoBehaviour
        }
        
        string json = JsonHelper.ToJson(MaskData, true);
-       File.WriteAllText(SAVE_FOLDER + "/save.json", json);
+       while(File.Exists(SAVE_FOLDER + "save_" + saveNumber + ".json"))
+        {
+            saveNumber++;
+        }
        
-       changesMade = false;
+        File.WriteAllText(SAVE_FOLDER + "save_" + saveNumber + ".json", json);
+       
+        changesMade = false;
    }
 
    public string Load()
    {
+
        if (File.Exists(SAVE_FOLDER + "/save.json"))
        {
             string saveString = File.ReadAllText(SAVE_FOLDER + "/save.json");
