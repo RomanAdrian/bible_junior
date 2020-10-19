@@ -11,7 +11,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
 
     // SUBSCRIBING TO EVENTS
 
-    private void Awake()
+    private void Start()
     {
         SetId(); // Sets this object's id, so we can identify if the events are addressing it or another StoryElement
 
@@ -50,7 +50,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         if (eventData.dragging) return;
 
         EventManager.SetData("OPEN_MENU", id);
-        EventManager.EmitEvent("OPEN_MENU", $"tag:{SubmenuType}");
+        EventManager.EmitEvent("OPEN_MENU");
     }
 
     // RECEIVING EVENTS
