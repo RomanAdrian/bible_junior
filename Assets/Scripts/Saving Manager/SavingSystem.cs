@@ -37,7 +37,7 @@ public class SavingSystem : MonoBehaviour
         int i = 0;
         foreach (GameObject StoryElement in StoryElements)
         {
-            CanvasData date = new CanvasData(StoryElement); // call pe constructorul din clasa respectiva
+            CanvasData date = new CanvasData(StoryElement);
             MaskData[i] = date;
             i++;
         }
@@ -77,7 +77,7 @@ public class SavingSystem : MonoBehaviour
 
             currentObj.SetActive(obj.active);
 
-            char index = obj.name.Split('(')[1][0];
+            string index = obj.name.Split('(')[1].Split(')')[0]; // split makes an array of substrings
 
             Debug.Log(thumbName(index));
             GameObject currentThumb = Array.Find(Thumbnails, t => t.name == thumbName(index));
@@ -97,7 +97,7 @@ public class SavingSystem : MonoBehaviour
         return SAVE_FOLDER + "save_" + num + ".json";
     }
 
-    private string thumbName(char index)
+    private string thumbName(string index)
     {
         return "Button (" + index + ")";
     }
