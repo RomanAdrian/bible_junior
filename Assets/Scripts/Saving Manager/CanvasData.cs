@@ -9,7 +9,7 @@ public class CanvasData
     public float[] scale;
     public int childcount; // pozitia in ierarhie
     public bool active;
-    private DateTime MyDateTime { get; set; }
+    public DateTime MyDateTime { get; set; }
 
     public GameObject StoryElementPrefab;
     public GameObject Parent;
@@ -30,10 +30,6 @@ public class CanvasData
         this.name = StoryElement.name;
         this.childcount = StoryElement.transform.GetSiblingIndex();
         this.active = StoryElement.activeSelf;
-
-        MyDateTime = DateTime.Now;
-
-
     }
 
     public GameObject ToGameObject()
