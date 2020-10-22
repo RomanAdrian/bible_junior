@@ -30,6 +30,11 @@ public class SavingSystem : MonoBehaviour
         StoryElements = GameObject.FindGameObjectsWithTag("StoryElement");
         MaskData = new CanvasData[StoryElements.Count()];
 
+        foreach (SavedGame saved in saveSlots)
+        {
+
+        }
+
     }
 
     public void Save()

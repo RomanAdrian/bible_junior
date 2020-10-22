@@ -30,6 +30,8 @@ public class CanvasData
         this.name = StoryElement.name;
         this.childcount = StoryElement.transform.GetSiblingIndex();
         this.active = StoryElement.activeSelf;
+
+        MyDateTime = DateTime.Now;
     }
 
     public GameObject ToGameObject()

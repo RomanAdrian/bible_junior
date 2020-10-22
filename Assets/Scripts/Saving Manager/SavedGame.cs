@@ -9,7 +9,7 @@ public class SavedGame : MonoBehaviour
     private Text dateTime;
 
     [SerializeField]
-    private Image background;
+    private Image image;
 
     [SerializeField]
     private GameObject visuals;
