@@ -12,7 +12,7 @@ public class SavedGame : MonoBehaviour
     private Image image;
 
     [SerializeField]
-    private GameObject visuals;
+    private Button btn;
 
     [SerializeField]
     private int Myindex;
@@ -25,11 +25,17 @@ public class SavedGame : MonoBehaviour
         }
     }
 
-    private void Awake() => visuals.SetActive(false);
+    private void Awake()
+    {
+        image.enabled = false;
+        btn.gameObject.SetActive(false);
+        dateTime.enabled = false;
+    }
 
     public void ShowInfo(CanvasData date)
     {
-        visuals.SetActive(true);
-        dateTime.text = "Date: " + date.MyDateTime.ToString("dd/MM/yyy") + " - Time: " + date.MyDateTime.ToString("H:mm");
+        image.enabled = true;
+        dateTime.text = "Data: " + date.MyDateTime.ToString("dd/MM/yyy") + " - Ora: " + date.MyDateTime.ToString("H:mm");
+        btn.gameObject.SetActive(true);
     }
 }

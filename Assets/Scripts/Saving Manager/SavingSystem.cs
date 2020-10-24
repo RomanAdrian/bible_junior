@@ -32,12 +32,22 @@ public class SavingSystem : MonoBehaviour
 
         foreach (SavedGame saved in saveSlots)
         {
-
+            ShowSavedFiles(saved);
         }
+
+
 
     }
 
-    public void Save()
+    private void ShowSavedFiles(SavedGame savedGame)
+    {
+        if (File.Exists(Application.persistentDataPath + "/Saves/" + savedGame.gameObject.name + ".json"));
+        string show = File.ReadAllText(FilePath());
+        CanvasData[] objects = JsonHelper.FromJson<CanvasData>(show);
+        savedGame.ShowInfo(objects[2]);
+    }
+
+    public void Save(SavedGame savedGame)
     {
         int i = 0;
         foreach (GameObject StoryElement in StoryElements)
@@ -57,6 +67,8 @@ public class SavingSystem : MonoBehaviour
         Debug.Log(FilePath());
 
         changesMade = false;
+
+        ShowSavedFiles(savedGame);
     }
 
     public void Load(string num)
