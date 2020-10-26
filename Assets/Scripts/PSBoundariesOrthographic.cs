@@ -8,6 +8,7 @@ public class PSBoundariesOrthographic : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        MainCamera = Camera.main;
         screenBounds = MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, MainCamera.transform.position.z));
     }
 

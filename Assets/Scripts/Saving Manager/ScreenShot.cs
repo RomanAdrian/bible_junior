@@ -3,10 +3,10 @@ using System.Collections;
 
 public class ScreenShot : MonoBehaviour
 {
-    public int resWidth = 2550;
-    public int resHeight = 3300;
+    private int resWidth = 577;
+    private int resHeight = 294;
 
-    public Camera camera;
+    private Camera camera;
 
     private bool takeHiResShot = false;
 

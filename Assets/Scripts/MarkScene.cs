@@ -24,13 +24,13 @@ public class MarkScene : MonoBehaviour
 
     public void ChangesMade()
     {
-        if (SavingSystem.changesMade == true)
-        {
-            butonschimbari.SetActive(true);
-        }
-        else
-        {
-            SceneManager.LoadPreviousScene();
-        }
+        //if (SavingSystem.changesMade == true)
+        //{
+        //    butonschimbari.SetActive(true);
+        //}
+        //else
+        //{
+        //    SceneManager.LoadPreviousScene();
+        //}
     }
 }

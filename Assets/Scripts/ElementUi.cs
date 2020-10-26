@@ -75,7 +75,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         ScrollArea.GetComponent<DanielLochner.Assets.SimpleSideMenu.SimpleSideMenu>().Close();
         count = 1;
         
-        SavingSystem.changesMade = true;
+       // SavingSystem.changesMade = true;
     }
 
     public void OnDeselect(BaseEventData eventData)
