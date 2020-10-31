@@ -1,0 +1,23 @@
+﻿// using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.AddressableAssets;
+
+//public class AssetRefObjectData : MonoBehaviour
+//{
+//    [SerializeField] private AssetReference _elementRef; // sprite attached to a gameobj and made into a prefab
+//    [SerializeField] private List<AssetReference> _references = new List<AssetReference>();
+
+//    [SerializeField] private List<GameObject> _completedObj = new List<GameObject>();
+//    private void Start()
+//    {
+//        _references.Add(_elementRef);
+
+//        StartCoroutine(routine: LoadAndWaitUntilComplete());
+//    }
+
+//    private IEnumerator LoadAndWaitUntilComplete()
+//    {
+//        yield return AssetRefLoader.CreateAssetsAddToList(_references, _completedObj);
+//    }
+//}
