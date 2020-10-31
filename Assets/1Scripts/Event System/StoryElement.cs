@@ -6,14 +6,15 @@ using System;
 public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
 {
     public string id;
-    public string SubmenuType = "Submenu";
+    public string SubmenuType;
     EventsGroup eventsGroup = new EventsGroup();
 
     // SUBSCRIBING TO EVENTS
 
-    private void Start()
+    public void Setup(string id, string submenuType="Submenu")
     {
-        SetId(); // Sets this object's id, so we can identify if the events are addressing it or another StoryElement
+        SetId(id); // Sets this object's id, so we can identify if the events are addressing it or another StoryElement
+        SubmenuType = submenuType;
 
         // We set StoryElements to listen for these events ("ENABLE_ELEMENT", "DELETE", etc) and respond with their respective callback methods (OnReceivedEnable, OnDelete, etc) 
         eventsGroup.Add("ENABLE_ELEMENT", OnReceivedEnable); // Triggered when you click the thumbnail and enable the StoryElement
@@ -23,8 +24,6 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         eventsGroup.Add("ZOOM_OUT", OnZoomOut);              // Triggered when you zoom out in the submenu
         eventsGroup.Add("REFLECT", OnReflect);               // Triggered when you click reflect in the submenu
         eventsGroup.StartListening();
-
-        gameObject.SetActive(false); // Set to inactive before the scene starts
     }
 
     // UNSUBSCRIBING TO EVENTS
@@ -129,10 +128,8 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         transform.transform.SetAsLastSibling();
     }
 
-    private void SetId()
+    private void SetId(string id)
     {
-        if (!String.IsNullOrWhiteSpace(id)) return;
-
-        id = transform.GetSiblingIndex().ToString("D3");
+       this.id = id;
     }
 }

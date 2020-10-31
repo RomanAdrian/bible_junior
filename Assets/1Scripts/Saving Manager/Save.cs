@@ -12,7 +12,6 @@ public class Save : MonoBehaviour
     public ThumbnailData[] SerializedThumbs;
     public SaveData[] Saves;
     public int SaveIndex = 0;
-    public int MaxSaves = 6;
 
     public string SaveFolder;
     public string SaveFileName = "player_saves.json";
@@ -21,9 +20,11 @@ public class Save : MonoBehaviour
 
     [SerializeField]
     private SavedGame[] saveSlots;
-
-    private void Awake()
+    
+    public void SaveGame(string SaveFile, int index)
     {
+        SaveFileName = SaveFile;
+        SaveIndex = index; 
 
         // Test if Save folder exists
         if (!Directory.Exists(GetSaveFolder()))
@@ -32,15 +33,25 @@ public class Save : MonoBehaviour
             Directory.CreateDirectory(GetSaveFolder());
         }
 
-        Thumbnails = GameObject.FindGameObjectsWithTag("Thumbnail");
-        StoryElements = GameObject.FindGameObjectsWithTag("StoryElement");
-        SerializedElements = new ElementData[StoryElements.Count()];
-        SerializedThumbs = new ThumbnailData[Thumbnails.Count()];
-        Saves = new SaveData[MaxSaves];
-    }
+        string saveString = File.ReadAllText(GetFilePath());
+        Saves = JsonHelper.FromJson<SaveData>(saveString);
 
-    public void SaveGame()
-    {
+
+        Transform ThumbContainer = GameObject.FindGameObjectWithTag("ButtonList").transform;
+        Transform ElementsContainer = GameObject.FindGameObjectWithTag("Canvas").transform;
+
+        Thumbnails = new GameObject[ThumbContainer.childCount];
+        StoryElements = new GameObject[ElementsContainer.childCount];
+
+        for (int i = 0; i < ThumbContainer.childCount; i++)
+        {
+            Thumbnails[i] = ThumbContainer.GetChild(i).gameObject;
+            StoryElements[i] = ElementsContainer.GetChild(i + 1).gameObject;
+        }
+
+        SerializedElements = new ElementData[Thumbnails.Count()];
+        SerializedThumbs = new ThumbnailData[Thumbnails.Count()];
+ 
         Saves[SaveIndex] = CreateSaveObject();
         string SavesString = JsonHelper.ToJson(Saves, true);
 
@@ -51,14 +62,15 @@ public class Save : MonoBehaviour
 
     public SaveData CreateSaveObject()
     {
-        for (int i = 0; i < StoryElements.Count(); i++)
+        for (int i = 0; i < Thumbnails.Count(); i++)
         {
-            SerializedElements[i] = new ElementData(StoryElements[i]); ;
-            
+            SerializedElements[i] = new ElementData(StoryElements[i]);
             SerializedThumbs[i] = new ThumbnailData(Thumbnails[i]);
         }
 
-        return new SaveData("name", SerializedElements, SerializedThumbs, DateTime.Now);
+        string ScreenShotPath = new ScreenShot().TakeHiResShot();
+
+        return new SaveData("name", SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath);
     }
 
     public string GetFilePath()

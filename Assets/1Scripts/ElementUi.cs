@@ -21,7 +21,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
     public GameObject ScrollArea;
     public Selectable btn;
 
-    private void Awake()
+    private void Start()
     {
         canvas = GetComponentInParent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
@@ -30,6 +30,7 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         zoom = GetComponent<Zoom>();
         ScrollArea = GameObject.Find("Chat Side-Menu");
         btn = GetComponent<Selectable> ();
+        movesInBothDirections = (GetComponent<StoryElement>().SubmenuType == "Submenu");
     }
 
     public void OnPointerUp(PointerEventData eventData)

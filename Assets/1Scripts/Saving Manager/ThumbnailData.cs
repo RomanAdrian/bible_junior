@@ -9,7 +9,8 @@ public class ThumbnailData
     public int Index; // pozitia in ierarhie
     public bool Active;
     public string Image;
-    public float[] Size;
+    public TransformData Transform;
+    public String Id;
 
     public ThumbnailData(GameObject Thumbnail)
     {
@@ -18,22 +19,21 @@ public class ThumbnailData
         Index = Thumbnail.transform.GetSiblingIndex();
         Image = Thumbnail.GetComponent<Image>().sprite.name;
 
-        Size = new float[2];
-        Rect sizeDelta = Thumbnail.GetComponent<RectTransform>().rect;
-        Size[0] = sizeDelta.x;
-        Size[1] = sizeDelta.y;
+        Id = Thumbnail.GetComponent<Thumbnail>().id;
+
+        TransformData transformData = new TransformData();
+        transformData.PullFromTransform(Thumbnail.GetComponent<RectTransform>());
+        Transform = transformData;
     }
 
-    public void ToGameObject()
+    public void ToGameObject(GameObject obj, string pathToImage)
     {
-        //StoryElementPrefab.transform.SetParent(Parent.transform);
-        //StoryElementPrefab.name = Name;
-        //StoryElementPrefab.transform.localPosition = new Vector3(Position[0], Position[1], 0);
-        //StoryElementPrefab.transform.localScale = new Vector3(Scale[0], Scale[1], 0);
-        //StoryElementPrefab.transform.SetSiblingIndex(Index);
-        //StoryElementPrefab.SetActive(Active);
-
-        //return StoryElementPrefab;
+        Sprite img = Resources.Load<Sprite>(pathToImage + Image);
+        obj.GetComponent<Image>().sprite = img;
+        obj.transform.SetSiblingIndex(Index);
+        Transform.PushToTransform(obj.GetComponent<RectTransform>());
+        obj.GetComponent<Thumbnail>().Setup(Id);
+        obj.SetActive(Active);
     }
 
 }

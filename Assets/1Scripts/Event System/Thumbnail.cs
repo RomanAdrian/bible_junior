@@ -6,9 +6,9 @@ public class Thumbnail : MonoBehaviour, IPointerDownHandler
 {
     public string id;
 
-    public void Start()
+    public void Setup(string id)
     {
-        SetId();
+        SetId(id);
         EventManager.StartListening("DELETE", OnElementWasDisabled);
     }
 
@@ -31,10 +31,8 @@ public class Thumbnail : MonoBehaviour, IPointerDownHandler
         if (eventId == id) gameObject.SetActive(true);
     }
 
-    private void SetId()
+    private void SetId(string id)
     {
-        if (!System.String.IsNullOrWhiteSpace(id)) return;
-
-        id = (transform.GetSiblingIndex() + 1).ToString("D3");
+        this.id = id;
     }
 }
