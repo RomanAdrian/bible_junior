@@ -1421,12 +1421,10 @@ GameObject:
   - component: {fileID: 603088865}
   - component: {fileID: 603088864}
   - component: {fileID: 603088863}
-  - component: {fileID: 603088862}
-  - component: {fileID: 603088861}
   - component: {fileID: 603088860}
   m_Layer: 5
   m_Name: Button (5)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1460,37 +1458,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 603088858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 603088858}
---- !u!114 &603088861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603088858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 603088858}
---- !u!114 &603088862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603088858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457974530008771}
-  pls: 1
+  id: 
 --- !u!114 &603088863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,31 +1504,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 603088864}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 603088862}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 603088861}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &603088864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1790,7 +1737,7 @@ GameObject:
   - component: {fileID: 727868719}
   m_Layer: 5
   m_Name: Content
-  m_TagString: Untagged
+  m_TagString: ButtonList
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2116,12 +2063,10 @@ GameObject:
   - component: {fileID: 795181442}
   - component: {fileID: 795181441}
   - component: {fileID: 795181440}
-  - component: {fileID: 795181439}
-  - component: {fileID: 795181438}
   - component: {fileID: 795181437}
   m_Layer: 5
   m_Name: Button (23)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2155,37 +2100,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 795181435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 795181435}
---- !u!114 &795181438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795181435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 795181435}
---- !u!114 &795181439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795181435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457974403341849}
-  pls: 1
+  id: 
 --- !u!114 &795181440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2228,31 +2146,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 795181441}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 795181439}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 795181438}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &795181441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2303,12 +2197,10 @@ GameObject:
   - component: {fileID: 814848827}
   - component: {fileID: 814848826}
   - component: {fileID: 814848825}
-  - component: {fileID: 814848824}
-  - component: {fileID: 814848823}
   - component: {fileID: 814848822}
   m_Layer: 5
   m_Name: Button (11)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2342,37 +2234,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 814848820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 814848820}
---- !u!114 &814848823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814848820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 814848820}
---- !u!114 &814848824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814848820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457974279239531}
-  pls: 1
+  id: 
 --- !u!114 &814848825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2415,31 +2280,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 814848826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 814848824}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 814848823}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &814848826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2490,12 +2331,10 @@ GameObject:
   - component: {fileID: 827133689}
   - component: {fileID: 827133688}
   - component: {fileID: 827133687}
-  - component: {fileID: 827133686}
-  - component: {fileID: 827133685}
   - component: {fileID: 827133684}
   m_Layer: 5
   m_Name: Button (4)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2529,37 +2368,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 827133682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 827133682}
---- !u!114 &827133685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827133682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 827133682}
---- !u!114 &827133686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827133682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457974196040635}
-  pls: 1
+  id: 
 --- !u!114 &827133687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,31 +2414,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 827133688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 827133686}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 827133685}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &827133688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2756,12 +2544,10 @@ GameObject:
   - component: {fileID: 848292003}
   - component: {fileID: 848292002}
   - component: {fileID: 848292001}
-  - component: {fileID: 848292000}
-  - component: {fileID: 848291999}
   - component: {fileID: 848291998}
   m_Layer: 5
   m_Name: Button (22)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2775,37 +2561,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 848291997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 848291997}
---- !u!114 &848291999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848291997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 848291997}
---- !u!114 &848292000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848291997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975320394032}
-  pls: 1
+  id: 
 --- !u!114 &848292001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,31 +2607,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 848292002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 848292000}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 848291999}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &848292002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3341,12 +3076,10 @@ GameObject:
   - component: {fileID: 905253436}
   - component: {fileID: 905253435}
   - component: {fileID: 905253434}
-  - component: {fileID: 905253433}
-  - component: {fileID: 905253432}
   - component: {fileID: 905253431}
   m_Layer: 5
   m_Name: Button (7)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3380,37 +3113,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 905253429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 905253429}
---- !u!114 &905253432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905253429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 905253429}
---- !u!114 &905253433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905253429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457974142170707}
-  pls: 1
+  id: 
 --- !u!114 &905253434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3453,31 +3159,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 905253435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 905253433}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 905253432}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &905253435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3637,12 +3319,10 @@ GameObject:
   - component: {fileID: 1090472451}
   - component: {fileID: 1090472450}
   - component: {fileID: 1090472449}
-  - component: {fileID: 1090472448}
-  - component: {fileID: 1090472447}
   - component: {fileID: 1090472446}
   m_Layer: 5
   m_Name: Button (12)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3676,37 +3356,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1090472444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1090472444}
---- !u!114 &1090472447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090472444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1090472444}
---- !u!114 &1090472448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090472444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975313009490}
-  pls: 1
+  id: 
 --- !u!114 &1090472449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3749,31 +3402,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1090472450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1090472448}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1090472447}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1090472450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4258,12 +3887,10 @@ GameObject:
   - component: {fileID: 1349682144}
   - component: {fileID: 1349682143}
   - component: {fileID: 1349682142}
-  - component: {fileID: 1349682141}
-  - component: {fileID: 1349682140}
   - component: {fileID: 1349682139}
   m_Layer: 5
   m_Name: Button (13)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4297,37 +3924,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1349682137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1349682137}
---- !u!114 &1349682140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349682137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1349682137}
---- !u!114 &1349682141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349682137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457974203860965}
-  pls: 1
+  id: 
 --- !u!114 &1349682142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4370,31 +3970,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1349682143}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1349682141}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1349682140}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1349682143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4445,12 +4021,10 @@ GameObject:
   - component: {fileID: 1369434281}
   - component: {fileID: 1369434280}
   - component: {fileID: 1369434279}
-  - component: {fileID: 1369434278}
-  - component: {fileID: 1369434277}
   - component: {fileID: 1369434276}
   m_Layer: 5
   m_Name: Button (2)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4484,37 +4058,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1369434274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1369434274}
---- !u!114 &1369434277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369434274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1369434274}
---- !u!114 &1369434278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369434274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975344145649}
-  pls: 1
+  id: 
 --- !u!114 &1369434279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4557,31 +4104,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1369434280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1369434278}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1369434277}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1369434280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4986,12 +4509,10 @@ GameObject:
   - component: {fileID: 1571125799}
   - component: {fileID: 1571125798}
   - component: {fileID: 1571125797}
-  - component: {fileID: 1571125796}
-  - component: {fileID: 1571125795}
   - component: {fileID: 1571125794}
   m_Layer: 5
   m_Name: Button (14)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5025,37 +4546,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1571125792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1571125792}
---- !u!114 &1571125795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571125792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1571125792}
---- !u!114 &1571125796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571125792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975140863780}
-  pls: 1
+  id: 
 --- !u!114 &1571125797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,31 +4592,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1571125798}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1571125796}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1571125795}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1571125798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5173,12 +4643,10 @@ GameObject:
   - component: {fileID: 1571821436}
   - component: {fileID: 1571821435}
   - component: {fileID: 1571821434}
-  - component: {fileID: 1571821433}
-  - component: {fileID: 1571821432}
   - component: {fileID: 1571821431}
   m_Layer: 5
   m_Name: Button (8)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5212,37 +4680,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1571821429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1571821429}
---- !u!114 &1571821432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571821429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1571821429}
---- !u!114 &1571821433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571821429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975297111345}
-  pls: 1
+  id: 
 --- !u!114 &1571821434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5285,31 +4726,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1571821435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1571821433}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1571821432}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1571821435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5360,12 +4777,10 @@ GameObject:
   - component: {fileID: 1584076479}
   - component: {fileID: 1584076478}
   - component: {fileID: 1584076477}
-  - component: {fileID: 1584076476}
-  - component: {fileID: 1584076475}
   - component: {fileID: 1584076474}
   m_Layer: 5
   m_Name: Button (1)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5399,37 +4814,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584076472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1584076472}
---- !u!114 &1584076475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584076472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1584076472}
---- !u!114 &1584076476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584076472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975678788438}
-  pls: 1
+  id: 
 --- !u!114 &1584076477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5472,31 +4860,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1584076478}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1584076476}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1584076475}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1584076478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5639,12 +5003,10 @@ GameObject:
   - component: {fileID: 1597379226}
   - component: {fileID: 1597379225}
   - component: {fileID: 1597379224}
-  - component: {fileID: 1597379223}
-  - component: {fileID: 1597379222}
   - component: {fileID: 1597379221}
   m_Layer: 5
   m_Name: Button (24)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5658,37 +5020,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1597379220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1597379220}
---- !u!114 &1597379222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597379220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1597379220}
---- !u!114 &1597379223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597379220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 2028054984}
-  pls: 1
+  id: 
 --- !u!114 &1597379224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5731,31 +5066,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1597379225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1597379223}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1597379222}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1597379225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6377,12 +5688,10 @@ GameObject:
   - component: {fileID: 1714959949}
   - component: {fileID: 1714959948}
   - component: {fileID: 1714959947}
-  - component: {fileID: 1714959946}
-  - component: {fileID: 1714959945}
   - component: {fileID: 1714959944}
   m_Layer: 5
   m_Name: Button (9)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6416,37 +5725,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714959942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1714959942}
---- !u!114 &1714959945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714959942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1714959942}
---- !u!114 &1714959946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714959942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975145455923}
-  pls: 1
+  id: 
 --- !u!114 &1714959947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6489,31 +5771,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1714959948}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1714959946}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1714959945}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1714959948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6682,12 +5940,10 @@ GameObject:
   - component: {fileID: 1769742622}
   - component: {fileID: 1769742621}
   - component: {fileID: 1769742620}
-  - component: {fileID: 1769742619}
-  - component: {fileID: 1769742618}
   - component: {fileID: 1769742617}
   m_Layer: 5
   m_Name: Button (3)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6721,37 +5977,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1769742615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1769742615}
---- !u!114 &1769742618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769742615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1769742615}
---- !u!114 &1769742619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769742615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457974190058667}
-  pls: 1
+  id: 
 --- !u!114 &1769742620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6794,31 +6023,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1769742621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1769742619}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1769742618}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1769742621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6948,12 +6153,10 @@ GameObject:
   - component: {fileID: 1832579330}
   - component: {fileID: 1832579329}
   - component: {fileID: 1832579328}
-  - component: {fileID: 1832579327}
-  - component: {fileID: 1832579326}
   - component: {fileID: 1832579325}
   m_Layer: 5
   m_Name: Button (10)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6987,37 +6190,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1832579323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1832579323}
---- !u!114 &1832579326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832579323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1832579323}
---- !u!114 &1832579327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832579323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457974671801462}
-  pls: 1
+  id: 
 --- !u!114 &1832579328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7060,31 +6236,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1832579329}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1832579327}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1832579326}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1832579329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7173,12 +6325,10 @@ GameObject:
   - component: {fileID: 1856721992}
   - component: {fileID: 1856721991}
   - component: {fileID: 1856721990}
-  - component: {fileID: 1856721989}
-  - component: {fileID: 1856721988}
   - component: {fileID: 1856721987}
   m_Layer: 5
   m_Name: Button (15)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7212,37 +6362,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1856721985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1856721985}
---- !u!114 &1856721988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856721985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1856721985}
---- !u!114 &1856721989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856721985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975327746525}
-  pls: 1
+  id: 
 --- !u!114 &1856721990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7285,31 +6408,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1856721991}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1856721989}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1856721988}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1856721991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7390,12 +6489,10 @@ GameObject:
   - component: {fileID: 1987529670}
   - component: {fileID: 1987529669}
   - component: {fileID: 1987529668}
-  - component: {fileID: 1987529667}
-  - component: {fileID: 1987529666}
   - component: {fileID: 1987529665}
   m_Layer: 5
   m_Name: Button (21)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7429,37 +6526,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987529663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 1987529663}
---- !u!114 &1987529666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987529663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 1987529663}
---- !u!114 &1987529667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987529663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975892345985}
-  pls: 1
+  id: 
 --- !u!114 &1987529668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7502,31 +6572,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1987529669}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1987529667}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1987529666}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1987529669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7876,7 +6922,7 @@ GameObject:
   - component: {fileID: 2112168323}
   m_Layer: 5
   m_Name: Painting
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7932,12 +6978,10 @@ GameObject:
   - component: {fileID: 2124530088}
   - component: {fileID: 2124530087}
   - component: {fileID: 2124530086}
-  - component: {fileID: 2124530085}
-  - component: {fileID: 2124530084}
   - component: {fileID: 2124530083}
   m_Layer: 5
   m_Name: Button (6)
-  m_TagString: Untagged
+  m_TagString: Thumbnail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7971,37 +7015,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2124530081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e799087d2229449abf2abd15e980ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 15abbcdd1f8eb58469f410efa3d94b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 2124530081}
---- !u!114 &2124530084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124530081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 007e2e6bb3f9ce04c86755164cdda16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel2: {fileID: 2124530081}
---- !u!114 &2124530085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124530081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 834ae56524c78ec4f8c0dc84f6881176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Panel: {fileID: 1285457975761329375}
-  pls: 1
+  id: 
 --- !u!114 &2124530086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8044,31 +7061,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2124530087}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2124530085}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2124530084}
-        m_TargetAssemblyTypeName: PanelCloser, Assembly-CSharp
-        m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2124530087
 MonoBehaviour:
   m_ObjectHideFlags: 0
