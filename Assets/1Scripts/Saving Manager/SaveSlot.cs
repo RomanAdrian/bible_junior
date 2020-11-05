@@ -21,7 +21,6 @@ public class SaveSlot : MonoBehaviour
 
         PlayerPrefs.SetString("SaveFile", SaveFile);
         PlayerPrefs.SetInt("Index", SaveIndex);
-        SceneManager.LoadScene("Create_FromSave");
     }
     public void SaveScene()
     {

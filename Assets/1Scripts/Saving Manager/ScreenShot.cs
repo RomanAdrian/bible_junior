@@ -13,7 +13,7 @@ public class ScreenShot : MonoBehaviour
     public static string ScreenShotName(int width, int height)
     {
         return string.Format("{0}/screenshots/screen_{1}x{2}_{3}.png",
-                             Application.dataPath,
+                             Application.persistentDataPath,
                              width, height,
                              System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
     }

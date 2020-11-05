@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.IO;
 using EasyMobile;
 using System.Linq;
@@ -21,7 +21,7 @@ public class Save : MonoBehaviour
 
     public void SaveGame(string saveFile, string createFile, int index)
     {
-        //SetUpSaveFolder();
+        SetUpSaveFolder();
         CreateSaveFile(index, saveFile);
         AddObjectsToCreate(createFile);
 
@@ -48,9 +48,9 @@ public class Save : MonoBehaviour
 
     private SaveData CreateSaveObject()
     {
-        string ScreenShotPath = new ScreenShot().TakeHiResShot();
+        //string ScreenShotPath = new ScreenShot().TakeHiResShot();
 
-        return new SaveData("name", SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath);
+        return new SaveData("name", SerializedElements, SerializedThumbs, DateTime.Now);
     }
 
     private void SerializeElements()
