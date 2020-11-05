@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using TigerForge;
 using UnityEngine.EventSystems;
+using System;
 
 public class Thumbnail : MonoBehaviour, IPointerDownHandler
 {
     public string id;
-
+    public void Awake()
+    {
+        SetId();
+        EventManager.StartListening("DELETE", OnElementWasDisabled);
+    }
     public void Setup(string id)
     {
         SetId(id);
@@ -34,5 +39,12 @@ public class Thumbnail : MonoBehaviour, IPointerDownHandler
     private void SetId(string id)
     {
         this.id = id;
+    }
+
+    private void SetId()
+    {
+        if (!String.IsNullOrWhiteSpace(id)) return;
+
+        id = transform.GetSiblingIndex().ToString("D3");
     }
 }

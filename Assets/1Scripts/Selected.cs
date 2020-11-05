@@ -33,6 +33,7 @@ public class Selected : MonoBehaviour, IPointerUpHandler
             cb.disabledColor = newColor;
             cb.normalColor = newColor;
             btn.colors = cb;
+            LoadHandler.AddItem(gameObject.GetComponent<CreateItemButton>().ItemNameAndType);
         }
         else
         {
@@ -44,6 +45,7 @@ public class Selected : MonoBehaviour, IPointerUpHandler
             cb.pressedColor = Color.white;
             cb.disabledColor = Color.white;
             btn.colors = cb;
+            LoadHandler.RemoveItem(gameObject.GetComponent<Image>().sprite.name);
         }
 
     }

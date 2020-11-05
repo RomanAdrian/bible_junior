@@ -13,6 +13,19 @@ public class ElementData
     public string SubmenuType;
     public String Id;
 
+    public ElementData(string image, string submenuType, string id, RectTransform transform)
+    {
+        Name = "Element";
+        Index = 1;
+        Active = true;
+        Image = image;
+        SubmenuType = submenuType;
+        Id = id;
+        TransformData transformData = new TransformData();
+        transformData.PullFromTransform(transform);
+        Transform = transformData;
+    }
+
     public ElementData(GameObject StoryElement)
     {
         Name = StoryElement.name;
@@ -34,6 +47,7 @@ public class ElementData
     {
         //StoryElementPrefab.transform.SetParent(Parent.transform);
         Sprite img = Resources.Load<Sprite>(pathToImage + Image);
+        Debug.Log(pathToImage + Image);
         obj.GetComponent<Image>().sprite = img;
 
         obj.transform.SetSiblingIndex(Index + 1);
@@ -42,4 +56,16 @@ public class ElementData
         obj.SetActive(Active);
     }
 
+    public void ToDefaultGameObject(GameObject obj, string pathToImage)
+    {
+        //StoryElementPrefab.transform.SetParent(Parent.transform);
+        Sprite img = Resources.Load<Sprite>(pathToImage + Image);
+        Debug.Log(pathToImage + Image);
+        obj.GetComponent<Image>().sprite = img;
+
+        obj.transform.SetSiblingIndex(Index + 1);
+        Transform.PushToTransform(obj.GetComponent<RectTransform>());
+        obj.GetComponent<StoryElement>().Setup(Id, SubmenuType);
+        obj.SetActive(Active);
+    }
 }

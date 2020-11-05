@@ -5,6 +5,7 @@ using UnityEngine;
 public class SaveSlot : MonoBehaviour
 {
     public string SaveFile = "player_saves.json";
+    public string CreateFile = "creeaza.json";
     public int SaveIndex;
     public bool IsPlayerSave { get; private set; }
 
@@ -24,6 +25,6 @@ public class SaveSlot : MonoBehaviour
     }
     public void SaveScene()
     {
-        GetComponent<Save>().SaveGame(SaveFile, SaveIndex);
+        GetComponent<Save>().SaveGame(SaveFile, CreateFile, SaveIndex);
     }
 }

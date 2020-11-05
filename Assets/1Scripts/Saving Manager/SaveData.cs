@@ -24,9 +24,16 @@ public class SaveData
 
     public void ToGameObject(GameObject obj)
     {
-        string[] SplitSaveTime = SaveTime.Split(' ');
-        string date = SplitSaveTime[0];
-        string time = SplitSaveTime[1] + SplitSaveTime[2];
+        string date = DateTime.Today.ToString();
+        string time = "00:00";
+
+        try
+        {
+            date = DateTime.Parse(SaveTime).Date.ToString();
+            time = DateTime.Parse(SaveTime).TimeOfDay.ToString();
+        }
+
+        catch (FormatException) { Debug.Log("FormatException"); }
 
         Image image = obj.GetComponentsInChildren<Image>()[1];
         obj.GetComponent<SaveSlot>().SetData(IsPlayerSave);

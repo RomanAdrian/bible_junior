@@ -45,7 +45,7 @@ public class Load : MonoBehaviour
             if (currentObj == null) continue;
 
             currentObj.transform.SetParent(Canvas.transform);
-            obj.ToGameObject(currentObj, PathToThumbs);
+            obj.ToGameObject(currentObj, PathToImages);
         }
 
         foreach (ThumbnailData thumb in thumbs)
