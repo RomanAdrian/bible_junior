@@ -1348,7 +1348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &497259377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15571,9 +15571,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6019654358461029785}
-        m_TargetAssemblyTypeName: MarkScene, Assembly-CSharp
-        m_MethodName: ChangesMade
+      - m_Target: {fileID: 708100760}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
