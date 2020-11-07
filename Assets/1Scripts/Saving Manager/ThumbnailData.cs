@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,12 +15,15 @@ public class ThumbnailData
 
     public ThumbnailData(GameObject Thumbnail)
     {
+
+        Thumbnail thumb = Thumbnail.GetComponent<Thumbnail>();
+        if (thumb == null) return;
         Name = Thumbnail.name;
         Active = Thumbnail.activeSelf;
         Index = Thumbnail.transform.GetSiblingIndex();
         Image = Thumbnail.GetComponent<Image>().sprite.name;
 
-        Id = Thumbnail.GetComponent<Thumbnail>().id;
+        Id = thumb.id;
 
         TransformData transformData = new TransformData();
         transformData.PullFromTransform(Thumbnail.GetComponent<RectTransform>());

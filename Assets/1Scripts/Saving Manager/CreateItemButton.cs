@@ -11,7 +11,18 @@ public class CreateItemButton : MonoBehaviour
     public static List<string> SavedItems = new List<string>();
     public string ItemNameAndType;
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
+    {
+        SetupSavedItems();
+
+        string elementName = gameObject.GetComponent<Image>().sprite.name.Replace("_thumbnail", "");
+        string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName));
+        bool shouldBeActive = foundItem != null;
+        ItemNameAndType = foundItem;
+        gameObject.SetActive(shouldBeActive);
+    }
+
+    private void OnEnable()
     {
         SetupSavedItems();
 

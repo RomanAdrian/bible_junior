@@ -110,7 +110,7 @@ public class Save : MonoBehaviour
                fileContent = fileContent + element.Image + "," + element.SubmenuType + Environment.NewLine;
             }
 
-            File.WriteAllText(GetFilePath(createFile), "");
+            File.WriteAllText(GetFilePath(createFile), fileContent);
         }
     }
 
