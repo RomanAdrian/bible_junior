@@ -24,8 +24,9 @@ public class Load : MonoBehaviour
     {
         Buttons = GameObject.FindGameObjectWithTag("ButtonList");
         Canvas = GameObject.FindGameObjectWithTag("Canvas");
-        SaveFileName = PlayerPrefs.GetString("SaveFile");
-        SaveIndex = PlayerPrefs.GetInt("Index");
+        SaveFileName = "player_saves.json";
+        SaveIndex = SaveIndexClass.index;
+        Debug.Log(SaveIndexClass.index);
         LoadGame();
     }
 

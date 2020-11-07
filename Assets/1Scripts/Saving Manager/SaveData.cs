@@ -28,14 +28,15 @@ public class SaveData
 
         try
         {
-            date = DateTime.Parse(SaveTime).Date.ToString();
+            DateTime savetime = DateTime.Parse(SaveTime);
+            date = savetime.Date.Day + "." + savetime.Date.Month + "." + savetime.Date.Year;
             time = DateTime.Parse(SaveTime).TimeOfDay.ToString();
         }
 
         catch (FormatException) { Debug.Log("FormatException"); }
 
         //Image image = obj.GetComponentsInChildren<Image>()[1];
-        //obj.GetComponent<SaveSlot>().SetData(IsPlayerSave);
+        obj.GetComponent<SaveSlot>().SetData(IsPlayerSave);
 
         //if (File.Exists(ScreenShotPath))
         //{

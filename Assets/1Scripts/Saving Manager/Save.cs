@@ -104,12 +104,13 @@ public class Save : MonoBehaviour
         }
         else
         {
-            objList = File.ReadAllLines(GetFilePath(createFile));
-
+            String fileContent = "";
             foreach (ElementData element in SerializedElements)
             {
-                File.AppendAllText(GetFilePath(createFile), element.Image + "," + element.SubmenuType + Environment.NewLine);
+               fileContent = fileContent + element.Image + "," + element.SubmenuType + Environment.NewLine;
             }
+
+            File.WriteAllText(GetFilePath(createFile), "");
         }
     }
 

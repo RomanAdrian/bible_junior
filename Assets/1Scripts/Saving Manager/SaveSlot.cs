@@ -7,6 +7,7 @@ public class SaveSlot : MonoBehaviour
     public string SaveFile = "player_saves.json";
     public string CreateFile = "creeaza.json";
     public int SaveIndex;
+    public SceneLoader sceneLoader;
     public bool IsPlayerSave { get; private set; }
 
     // Update is called once per frame
@@ -18,9 +19,9 @@ public class SaveSlot : MonoBehaviour
     public void LoadScene()
     {
         if (!IsPlayerSave) return;
-
         PlayerPrefs.SetString("SaveFile", SaveFile);
-        PlayerPrefs.SetInt("Index", SaveIndex);
+        SaveIndexClass.index = transform.GetSiblingIndex();
+        sceneLoader.enter("Create_FromSave");
     }
     public void SaveScene()
     {

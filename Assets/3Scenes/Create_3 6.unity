@@ -721,6 +721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SUBMENU (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6940616572467775667, guid: fd81304077735c0488f5d632896a2317, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd81304077735c0488f5d632896a2317, type: 3}
 --- !u!224 &419085327 stripped
@@ -12209,7 +12213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3817198191006034109
 RectTransform:
   m_ObjectHideFlags: 0
