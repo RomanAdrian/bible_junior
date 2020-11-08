@@ -57,11 +57,13 @@ public class Save : MonoBehaviour
     {
         Transform ElementsContainer = GameObject.FindGameObjectWithTag("Canvas").transform;
         int count = ElementsContainer.childCount;
-        SerializedElements = new ElementData[count - 1];
+        SerializedElements = new ElementData[count];
 
-        for (int i = 1; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
-            SerializedElements[i -1] = new ElementData(ElementsContainer.GetChild(i).gameObject);
+            StoryElement s = ElementsContainer.GetChild(i).gameObject.GetComponent<StoryElement>();
+            if (s == null) continue;
+            SerializedElements[i] = new ElementData(ElementsContainer.GetChild(i).gameObject);
         }
     }
 
@@ -73,6 +75,8 @@ public class Save : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
+            Thumbnail thumb = ThumbContainer.GetChild(i).gameObject.GetComponent<Thumbnail>();
+            if (thumb == null) continue;
             SerializedThumbs[i] = new ThumbnailData(ThumbContainer.GetChild(i).gameObject);
         }
     }

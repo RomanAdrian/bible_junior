@@ -51,8 +51,8 @@ public class TransformData
     public void PushWideDefaultToTransform(RectTransform transform, Sprite sprite)
     {
         transform.localPosition = new Vector3(0, 0, 0);
-        transform.anchorMin = new Vector2(0, 0);
-        transform.anchorMax = new Vector2(1, 1);
+        transform.anchorMin = new Vector2(0f, 0f);
+        transform.anchorMax = new Vector2(1, 1f);
         transform.pivot = new Vector2(0.5f, 0.5f);
         transform.anchoredPosition = new Vector2(0, 0);
         transform.sizeDelta = new Vector2(0, -sprite.texture.height);

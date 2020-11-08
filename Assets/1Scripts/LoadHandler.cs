@@ -42,7 +42,6 @@ public class LoadHandler : MonoBehaviour
             else 
             {
                 oldTransform.PushWideDefaultToTransform(newElement.GetComponent<RectTransform>(), img);
-                newElement.GetComponent<Image>().SetNativeSize();
             }
 
 

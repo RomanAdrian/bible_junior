@@ -3,7 +3,7 @@ using TigerForge;
 using UnityEngine.EventSystems;
 using System;
 
-public class Thumbnail : MonoBehaviour, IPointerDownHandler
+public class Thumbnail : MonoBehaviour, IPointerUpHandler
 {
     public string id;
     public void Awake()
@@ -22,8 +22,13 @@ public class Thumbnail : MonoBehaviour, IPointerDownHandler
         EventManager.StopListening("DELETE", OnElementWasDisabled);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData)
     {
+        if (eventData.dragging)
+        {
+            return;
+        }
+
         EventManager.SetData("ENABLE_ELEMENT", id);
         EventManager.EmitEvent("ENABLE_ELEMENT");
         gameObject.SetActive(false);

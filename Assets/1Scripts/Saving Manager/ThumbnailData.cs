@@ -15,9 +15,7 @@ public class ThumbnailData
 
     public ThumbnailData(GameObject Thumbnail)
     {
-
         Thumbnail thumb = Thumbnail.GetComponent<Thumbnail>();
-        if (thumb == null) return;
         Name = Thumbnail.name;
         Active = Thumbnail.activeSelf;
         Index = Thumbnail.transform.GetSiblingIndex();

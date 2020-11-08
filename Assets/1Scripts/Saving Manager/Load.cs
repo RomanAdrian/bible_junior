@@ -40,6 +40,7 @@ public class Load : MonoBehaviour
         ElementData[] objects = save.Elements;
         ThumbnailData[] thumbs = save.Thumbs;
 
+
         foreach (ElementData obj in objects)
         {
             GameObject currentObj = Instantiate(ElementPrefab);
@@ -51,6 +52,8 @@ public class Load : MonoBehaviour
 
         foreach (ThumbnailData thumb in thumbs)
         {
+            if (thumb.Name == "" || thumb.Image == "") continue;
+
             GameObject currentObj = Instantiate(ThumbnailPrefab);
             if (currentObj == null) continue;
 
