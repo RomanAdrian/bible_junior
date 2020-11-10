@@ -16,7 +16,7 @@ public class CreateItemButton : MonoBehaviour
         SetupSavedItems();
 
         string elementName = gameObject.GetComponent<Image>().sprite.name.Replace("_thumbnail", "");
-        string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName));
+        string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName)); // split from the free roam list
         bool shouldBeActive = foundItem != null;
         ItemNameAndType = foundItem;
         gameObject.SetActive(shouldBeActive);

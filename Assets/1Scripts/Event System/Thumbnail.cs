@@ -25,7 +25,7 @@ public class Thumbnail : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (eventData.dragging && eventData.delta.x <= 0.1 && eventData.delta.y >= 0.2 )
+        if (eventData.dragging && Math.Abs(eventData.delta.y) < Math.Abs(eventData.delta.x))
         {
             return;
         }
