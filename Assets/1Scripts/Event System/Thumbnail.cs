@@ -6,6 +6,7 @@ using System;
 public class Thumbnail : MonoBehaviour, IPointerUpHandler
 {
     public string id;
+
     public void Awake()
     {
         SetId();
@@ -24,7 +25,7 @@ public class Thumbnail : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (eventData.dragging)
+        if (eventData.dragging && eventData.delta.x <= 0.1 && eventData.delta.y >= 0.2 )
         {
             return;
         }
