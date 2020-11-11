@@ -84,7 +84,6 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         if (IsAddressingDifferentObject("ENABLE_ELEMENT")) return;
 
         SetActive(true);
-        BringForward();
     }
 
     // Bring forward if received a BRING_FORWARD event (which happens when the BRING_FORWARD button was clicked in the submenu)
