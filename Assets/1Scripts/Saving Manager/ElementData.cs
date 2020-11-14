@@ -15,7 +15,6 @@ public class ElementData
 
     public ElementData(string image, string submenuType, string id, RectTransform transform)
     {
-        Name = "Element";
         Index = 1;
         Active = true;
         Image = image;

@@ -48,9 +48,9 @@ public class Save : MonoBehaviour
 
     private SaveData CreateSaveObject()
     {
-        //string ScreenShotPath = new ScreenShot().TakeHiResShot();
+        string ScreenShotPath = new ScreenShot().TakeHiResShot();
 
-        return new SaveData("name", SerializedElements, SerializedThumbs, DateTime.Now);
+        return new SaveData("name", SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath);
     }
 
     private void SerializeElements()
