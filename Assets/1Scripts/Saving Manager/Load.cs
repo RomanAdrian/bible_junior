@@ -40,6 +40,7 @@ public class Load : MonoBehaviour
         ElementData[] objects = save.Elements;
         ThumbnailData[] thumbs = save.Thumbs;
 
+        SetBackground(save.BackgroundName);
 
         foreach (ElementData obj in objects)
         {
@@ -60,6 +61,12 @@ public class Load : MonoBehaviour
             currentObj.transform.SetParent(Buttons.transform);
             thumb.ToGameObject(currentObj, PathToThumbs);
         }
+    }
+    public void SetBackground(string backgroundName)
+    {
+        Image panel = GameObject.Find("Panel").GetComponent<Image>();
+        Sprite img = Resources.Load<Sprite>(PathToImages + backgroundName);
+        panel.GetComponent<Image>().sprite = img;
     }
 
     public string GetFilePath()

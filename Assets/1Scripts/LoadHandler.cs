@@ -26,8 +26,13 @@ public class LoadHandler : MonoBehaviour
 
         foreach (string item in Items)
         {
+            if (item.Split(',')[1] == "Background") 
+            {
+                SetBackground(item.Split(',')[0]);
+                continue;
+            }
+
             string id = Random.Range(0,500).ToString();
-            Debug.Log(id);
 
             GameObject prefab = item.Split(',')[1] == "Submenu" ? ElementPrefab : WideElementPrefab;
             GameObject newElement = Instantiate(prefab);
@@ -59,5 +64,12 @@ public class LoadHandler : MonoBehaviour
         }
 
         Items.Clear();
+    }
+
+    public void SetBackground(string backgroundName)
+    {
+        Image panel = GameObject.Find("Panel").GetComponent<Image>();
+        Sprite img = Resources.Load<Sprite>(PathToImages + backgroundName);
+        panel.GetComponent<Image>().sprite = img;
     }
 }

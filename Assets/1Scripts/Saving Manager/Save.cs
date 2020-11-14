@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System;
+using UnityEngine.UI;
 
 public class Save : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Save : MonoBehaviour
     public GameObject[] StoryElements;
     public ElementData[] SerializedElements;
     public ThumbnailData[] SerializedThumbs;
+    public string BackgroundName;
     public SaveData[] Saves;
 
     public string SaveFolder;
@@ -37,6 +39,7 @@ public class Save : MonoBehaviour
             Saves = new SaveData[6];
         }
 
+        SetBackground();
         SerializeThumbs();
         SerializeElements();
 
@@ -44,24 +47,29 @@ public class Save : MonoBehaviour
         File.WriteAllText(GetFilePath(saveFile), JsonHelper.ToJson(Saves, true));
     }
 
+    private void SetBackground()
+    {
+        BackgroundName = GameObject.Find("Panel").GetComponent<Image>().sprite.name;
+    }
+
     private SaveData CreateSaveObject()
     {
         string ScreenShotPath = new ScreenShot().TakeHiResShot();
 
-        return new SaveData("name", SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath);
+        return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath);
     }
 
     private void SerializeElements()
     {
         Transform ElementsContainer = GameObject.FindGameObjectWithTag("Canvas").transform;
         int count = ElementsContainer.childCount;
-        SerializedElements = new ElementData[count];
+        SerializedElements = new ElementData[count - 1];
 
-        for (int i = 0; i < count; i++)
+        for (int i = 1; i < count; i++)
         {
             StoryElement s = ElementsContainer.GetChild(i).gameObject.GetComponent<StoryElement>();
             if (s == null) continue;
-            SerializedElements[i] = new ElementData(ElementsContainer.GetChild(i).gameObject);
+            SerializedElements[i - 1] = new ElementData(ElementsContainer.GetChild(i).gameObject);
         }
     }
 
@@ -103,6 +111,10 @@ public class Save : MonoBehaviour
 
                 if (matches.Length == 0) File.AppendAllText(GetFilePath(createFile), element.Image + "," + element.SubmenuType + Environment.NewLine);
             }
+
+            string bg = GameObject.Find("Panel").GetComponent<Image>().sprite.name;
+            string[] bgMatches = Array.FindAll(objList, s => s.Split(',')[0].Equals(bg));
+            if (bgMatches.Length == 0) File.AppendAllText(GetFilePath(createFile), bg + ",Background" + Environment.NewLine);
         }
         else
         {
@@ -111,6 +123,7 @@ public class Save : MonoBehaviour
             {
                fileContent = fileContent + element.Image + "," + element.SubmenuType + Environment.NewLine;
             }
+            fileContent = fileContent + GameObject.Find("Panel").GetComponent<Image>().sprite.name + ",Background" + Environment.NewLine;
 
             File.WriteAllText(GetFilePath(createFile), fileContent);
         }

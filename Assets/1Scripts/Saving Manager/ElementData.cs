@@ -36,7 +36,6 @@ public class ElementData
         SubmenuType = EventSystemScript.SubmenuType;
         Id = EventSystemScript.id;
 
-
         TransformData transformData = new TransformData();
         transformData.PullFromTransform(StoryElement.GetComponent<RectTransform>());
         Transform = transformData;
@@ -46,12 +45,17 @@ public class ElementData
     {
         //StoryElementPrefab.transform.SetParent(Parent.transform);
         Sprite img = Resources.Load<Sprite>(pathToImage + Image);
-        Debug.Log(pathToImage + Image);
         obj.GetComponent<Image>().sprite = img;
 
         obj.transform.SetSiblingIndex(Index + 1);
         Transform.PushToTransform(obj.GetComponent<RectTransform>());
         obj.GetComponent<StoryElement>().Setup(Id, SubmenuType);
+        if (SubmenuType == "SmallSubmenu") 
+        {
+            AspectRatioFitter a = obj.AddComponent(typeof(AspectRatioFitter)) as AspectRatioFitter;
+            a.aspectRatio = 4.640167f;
+            a.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+        }
         obj.SetActive(Active);
     }
 

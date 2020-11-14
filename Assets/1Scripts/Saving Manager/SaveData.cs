@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [Serializable]
 public class SaveData
 {
+    public string BackgroundName;
     public ElementData[] Elements;
     public ThumbnailData[] Thumbs;
     public string SaveTime;
@@ -15,6 +16,7 @@ public class SaveData
 
     public SaveData(string name, ElementData[] elements, ThumbnailData[] thumbs, DateTime saveTime, string screenShotPath, bool isPlayerSave=true)
     {
+        BackgroundName = name;
         Elements = elements;
         Thumbs = thumbs;
         SaveTime = saveTime.ToString();
