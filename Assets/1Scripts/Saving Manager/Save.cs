@@ -9,6 +9,7 @@ public class Save : MonoBehaviour
     public GameObject[] StoryElements;
     public ElementData[] SerializedElements;
     public ThumbnailData[] SerializedThumbs;
+    public string[] NarrationElements;
     public string BackgroundName;
     public SaveData[] Saves;
 
@@ -41,11 +42,26 @@ public class Save : MonoBehaviour
 
         SetBackground();
         SerializeThumbs();
+        SetNarrationElements();
         SerializeElements();
 
         Saves[index] = CreateSaveObject();
         File.WriteAllText(GetFilePath(saveFile), JsonHelper.ToJson(Saves, true));
     }
+
+    private void SetNarrationElements()
+    {
+        Transform n = GameObject.FindWithTag("Canvas").transform.Find("Naratiune").GetChild(0);
+        Image[] images = n.gameObject.GetComponentsInChildren<Image>();
+
+        NarrationElements = new string[images.Length - 1];
+
+        for (int i = 1; i < images.Length; i++)
+        {
+            NarrationElements[i - 1] = images[i].sprite.name;
+        }
+    }
+
 
     private void SetBackground()
     {
@@ -56,12 +72,12 @@ public class Save : MonoBehaviour
     {
         string ScreenShotPath = new ScreenShot().TakeHiResShot();
 
-        return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath);
+        return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath, NarrationElements);
     }
 
     private void SerializeElements()
     {
-        Transform ElementsContainer = GameObject.FindGameObjectWithTag("Canvas").transform;
+        Transform ElementsContainer = GameObject.FindGameObjectWithTag("Painting").transform;
         int count = ElementsContainer.childCount;
         SerializedElements = new ElementData[count - 1];
 

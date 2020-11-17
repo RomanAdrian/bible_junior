@@ -14,6 +14,7 @@ public class Load : MonoBehaviour
     public string PathToThumbs;
     public GameObject ElementPrefab;
     public GameObject ThumbnailPrefab;
+    public GameObject NarrationPrefab;
 
     GameObject Canvas;
     GameObject Buttons;
@@ -23,7 +24,7 @@ public class Load : MonoBehaviour
     public void Awake()
     {
         Buttons = GameObject.FindGameObjectWithTag("ButtonList");
-        Canvas = GameObject.FindGameObjectWithTag("Canvas");
+        Canvas = GameObject.FindGameObjectWithTag("Painting");
         SaveFileName = "player_saves.json";
         SaveIndex = SaveIndexClass.index;
         Debug.Log(SaveIndexClass.index);
@@ -41,6 +42,7 @@ public class Load : MonoBehaviour
         ThumbnailData[] thumbs = save.Thumbs;
 
         SetBackground(save.BackgroundName);
+        SetNarrationElements(save.NarrationElements);
 
         foreach (ElementData obj in objects)
         {
@@ -67,6 +69,35 @@ public class Load : MonoBehaviour
         Image panel = GameObject.Find("Panel").GetComponent<Image>();
         Sprite img = Resources.Load<Sprite>(PathToImages + backgroundName);
         panel.GetComponent<Image>().sprite = img;
+    }
+
+    public void SetNarrationElements(string[] narrationElements)
+    {
+        Transform naratiune = GameObject.FindWithTag("Canvas").transform.Find("Naratiune");
+        Transform content = naratiune.GetChild(0).GetChild(0).GetChild(0);
+        Transform pagination = naratiune.GetChild(1);
+
+        for (int i = 0; i < narrationElements.Length; i++)
+        {
+            GameObject currentObj = Instantiate(NarrationPrefab);
+            currentObj.transform.SetParent(content);
+            Sprite img = Resources.Load<Sprite>(PathToImages + narrationElements[i]);
+            currentObj.GetComponent<Image>().sprite = img;
+            currentObj.transform.localScale = new Vector3(0.75f, 0.79f, 0.75f);
+        }
+
+        if (pagination.childCount < narrationElements.Length)
+        {
+            Transform el = pagination.GetChild(0);
+            for (int i = 0; i <= narrationElements.Length - pagination.childCount; i++)
+            {
+                GameObject clone = Instantiate(el.gameObject);
+                clone.transform.SetParent(pagination);
+                clone.transform.localScale = new Vector3(1, 1, 1);
+                clone.transform.localPosition = new Vector3(40 * (i + 1), el.transform.localPosition.y, el.transform.localPosition.z);
+            }
+        
+        }
     }
 
     public string GetFilePath()

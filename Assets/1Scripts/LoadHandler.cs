@@ -31,7 +31,7 @@ public class LoadHandler : MonoBehaviour
                 SetBackground(item.Split(',')[0]);
                 continue;
             }
-
+             
             string id = Random.Range(0,500).ToString();
 
             GameObject prefab = item.Split(',')[1] == "Submenu" ? ElementPrefab : WideElementPrefab;

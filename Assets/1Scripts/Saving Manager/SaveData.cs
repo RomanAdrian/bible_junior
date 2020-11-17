@@ -13,14 +13,16 @@ public class SaveData
     public string SaveTime;
     public bool IsPlayerSave;
     public string ScreenShotPath;
+    public string[] NarrationElements;
 
-    public SaveData(string name, ElementData[] elements, ThumbnailData[] thumbs, DateTime saveTime, string screenShotPath, bool isPlayerSave=true)
+    public SaveData(string name, ElementData[] elements, ThumbnailData[] thumbs, DateTime saveTime, string screenShotPath, string[] narration, bool isPlayerSave=true)
     {
         BackgroundName = name;
         Elements = elements;
         Thumbs = thumbs;
         SaveTime = saveTime.ToString();
         IsPlayerSave = isPlayerSave;
+        NarrationElements = narration;
         ScreenShotPath = screenShotPath;
     }
 
