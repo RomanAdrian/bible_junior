@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.IO;
-using EasyMobile;
-using System.Linq;
 using System;
 
 public class Save : MonoBehaviour
