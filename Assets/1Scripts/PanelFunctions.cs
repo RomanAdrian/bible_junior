@@ -20,16 +20,16 @@ public class PanelFunctions : MonoBehaviour
         currentlySelected = obj;
     }
 
-    public void SizeUp()
-    {
-        Debug.Log("Panel zoom");
-        elementUI.ZoomBig();
-    }
+    //public void SizeUp()
+    //{
+    //    Debug.Log("Panel zoom");
+    //    elementUI.ZoomBig();
+    //}
 
-    public void SizeDown()
-    {
-        elementUI.ZoomSmall();
-    }
+    //public void SizeDown()
+    //{
+    //    elementUI.ZoomSmall();
+    //}
 
     // public void BringToFront()
     // {

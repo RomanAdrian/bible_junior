@@ -2999,11 +2999,11 @@ RectTransform:
   m_Father: {fileID: 272627262}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 15, y: 6.102539}
-  m_SizeDelta: {x: 24.787598, y: 832.49}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -211}
+  m_SizeDelta: {x: 0, y: 945.1201}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &441988001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,7 +3047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.21568628}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7030,7 +7030,6 @@ GameObject:
   - component: {fileID: 1117461199}
   - component: {fileID: 1117461201}
   - component: {fileID: 1117461200}
-  - component: {fileID: 1117461202}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -7153,18 +7152,6 @@ MonoBehaviour:
   m_Spacing: {x: 177.5, y: 37.6}
   m_Constraint: 1
   m_ConstraintCount: 5
---- !u!114 &1117461202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117461198}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 145030bf0c1bde643bc707c3940f77b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1142511241
 GameObject:
   m_ObjectHideFlags: 0
@@ -7786,10 +7773,10 @@ RectTransform:
   m_Father: {fileID: 441988000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.2, y: 0.5345459}
-  m_SizeDelta: {x: 2167.2927, y: 830.4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -787.0139, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1179996207
 MonoBehaviour:

@@ -54,15 +54,15 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
                     btn.colors = cb;
             }
     }
-    public void ZoomBig()
-    {
-        zoom.ZoomIn();
-    }
+    //public void ZoomBig()
+    //{
+    //    zoom.ZoomIn();
+    //}
 
-    public void ZoomSmall()
-    {
-        zoom.ZoomOut();
-    }
+    //public void ZoomSmall()
+    //{
+    //    zoom.ZoomOut();
+    //}
 
     public void Reflect()
     {
