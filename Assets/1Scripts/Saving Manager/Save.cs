@@ -20,32 +20,36 @@ public class Save : MonoBehaviour
     [SerializeField]
     private SavedGame[] saveSlots;
 
-    public void SaveGame(string saveFile, string createFile, int index)
+    public void SaveGame(string saveFile, string createFile, string SaveName)
     {
         SetUpSaveFolder();
-        CreateSaveFile(index, saveFile);
+        CreateSaveFile(SaveName, saveFile);
         AddObjectsToCreate(createFile);
 
         changesMade = false;
     }
 
-    private void CreateSaveFile(int index, string saveFile)
+    private void CreateSaveFile(string SaveName, string saveFile)
     {
-        if (File.Exists(GetFilePath(saveFile)))
-        {
-            string saveString = File.ReadAllText(GetFilePath(saveFile));
-            Saves = JsonHelper.FromJson<SaveData>(saveString);
-        }  else
-        {
-            Saves = new SaveData[6];
-        }
 
         SetBackground();
         SerializeThumbs();
         SetNarrationElements();
         SerializeElements();
 
-        Saves[index] = CreateSaveObject();
+        if (File.Exists(GetFilePath(saveFile)))
+        {
+            string saveString = File.ReadAllText(GetFilePath(saveFile));
+            Saves = JsonHelper.FromJson<SaveData>(saveString);
+            int index = Array.FindIndex(Saves, s => s.Name == SaveName);
+            Saves.SetValue(CreateSaveObject(SaveName), index);
+        }
+        else
+        {
+            Saves = new SaveData[250];
+            Saves.SetValue(CreateSaveObject(SaveName), 0);
+        }
+
         File.WriteAllText(GetFilePath(saveFile), JsonHelper.ToJson(Saves, true));
     }
 
@@ -68,11 +72,11 @@ public class Save : MonoBehaviour
         BackgroundName = GameObject.Find("Panel").GetComponent<Image>().sprite.name;
     }
 
-    private SaveData CreateSaveObject()
+    private SaveData CreateSaveObject(string saveName)
     {
         string ScreenShotPath = new ScreenShot().TakeHiResShot();
 
-        return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath, NarrationElements);
+        return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, ScreenShotPath, NarrationElements, saveName);
     }
 
     private void SerializeElements()

@@ -5,7 +5,7 @@ using System;
 
 public class Load : MonoBehaviour
 {
-    public int SaveIndex = 0;
+    public string SaveName = "";
 
     public string SaveFolder;
     public string SaveFileName = "player_saves.json";
@@ -25,9 +25,7 @@ public class Load : MonoBehaviour
     {
         Buttons = GameObject.FindGameObjectWithTag("ButtonList");
         Canvas = GameObject.FindGameObjectWithTag("Painting");
-        SaveFileName = "player_saves.json";
-        SaveIndex = SaveIndexClass.index;
-        Debug.Log(SaveIndexClass.index);
+        SaveName = PlayerPrefs.GetString("SaveName");
         LoadGame();
     }
 
@@ -35,8 +33,9 @@ public class Load : MonoBehaviour
     {
         if (!File.Exists(GetFilePath())) return;
 
-        string saveString = File.ReadAllText(GetFilePath());
-        SaveData save = JsonHelper.FromJson<SaveData>(saveString)[SaveIndex];
+        SaveData[] saveString = JsonHelper.FromJson<SaveData>(File.ReadAllText(GetFilePath()));
+
+        SaveData save = Array.Find(saveString, s => s.Name == SaveName );
 
         ElementData[] objects = save.Elements;
         ThumbnailData[] thumbs = save.Thumbs;

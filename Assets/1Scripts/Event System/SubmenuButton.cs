@@ -1,4 +1,4 @@
-﻿using TigerForge;
+using TigerForge;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

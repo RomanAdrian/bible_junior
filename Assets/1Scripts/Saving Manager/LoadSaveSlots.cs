@@ -7,6 +7,7 @@ public class LoadSaveSlots : MonoBehaviour
 {
     public string SaveFileName = "player_saves.json";
     public string SaveFolder;
+    public string isSaveSlot;
 
     public void Awake()
     {
@@ -20,7 +21,7 @@ public class LoadSaveSlots : MonoBehaviour
             if (saves[i].IsPlayerSave == false) continue;
 
             GameObject currentObj = transform.GetChild(i).gameObject;
-            saves[i].ToGameObject(currentObj);
+            saves[i].ToSaveSlot(currentObj);
         }
     }
 
