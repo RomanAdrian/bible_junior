@@ -15,6 +15,8 @@ public class PlaySound : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if (audioData == null) return; 
+
         if (!playing)
         {
             audioData.Play();

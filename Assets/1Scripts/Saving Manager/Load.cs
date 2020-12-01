@@ -98,6 +98,7 @@ public class Load : MonoBehaviour
             }
         }
 
+        if (audioSource == "" || audioSource == null) return;
         AudioSource audio = naratiune.GetComponentInChildren<AudioSource>();
         audio.clip = Resources.Load<AudioClip>(audioSource);
     }
