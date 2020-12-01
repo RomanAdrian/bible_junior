@@ -11,6 +11,7 @@ public class Save : MonoBehaviour
     public ThumbnailData[] SerializedThumbs;
     public string[] NarrationElements;
     public string BackgroundName;
+    public string AudioSource;
     public SaveData[] Saves;
 
     public string SaveFolder;
@@ -64,6 +65,8 @@ public class Save : MonoBehaviour
         {
             NarrationElements[i - 1] = images[i].sprite.name;
         }
+
+        AudioSource = GameObject.FindWithTag("Canvas").transform.Find("Naratiune").GetComponentInChildren<AudioSource>().clip.name;
     }
 
 
@@ -76,7 +79,7 @@ public class Save : MonoBehaviour
     {
         string ScreenShotPath = new ScreenShot().TakeHiResShot();
 
-        return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, ScreenShotPath, NarrationElements, saveName);
+        return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, ScreenShotPath, NarrationElements, saveName, AudioSource);
     }
 
     private void SerializeElements()

@@ -41,7 +41,7 @@ public class Load : MonoBehaviour
         ThumbnailData[] thumbs = save.Thumbs;
 
         SetBackground(save.BackgroundName);
-        SetNarrationElements(save.NarrationElements);
+        SetNarrationElements(save.NarrationElements, save.AudioSource);
 
         foreach (ElementData obj in objects)
         {
@@ -70,7 +70,7 @@ public class Load : MonoBehaviour
         panel.GetComponent<Image>().sprite = img;
     }
 
-    public void SetNarrationElements(string[] narrationElements)
+    public void SetNarrationElements(string[] narrationElements, string audioSource)
     {
         Transform naratiune = GameObject.FindWithTag("Canvas").transform.Find("Naratiune");
         Transform content = naratiune.GetChild(0).GetChild(0).GetChild(0);
@@ -81,6 +81,7 @@ public class Load : MonoBehaviour
             GameObject currentObj = Instantiate(NarrationPrefab);
             currentObj.transform.SetParent(content);
             Sprite img = Resources.Load<Sprite>(PathToImages + narrationElements[i]);
+
             currentObj.GetComponent<Image>().sprite = img;
             currentObj.transform.localScale = new Vector3(0.75f, 0.79f, 0.75f);
         }
@@ -95,8 +96,10 @@ public class Load : MonoBehaviour
                 clone.transform.localScale = new Vector3(1, 1, 1);
                 clone.transform.localPosition = new Vector3(40 * (i + 1), el.transform.localPosition.y, el.transform.localPosition.z);
             }
-        
         }
+
+        AudioSource audio = naratiune.GetComponentInChildren<AudioSource>();
+        audio.clip = Resources.Load<AudioClip>(audioSource);
     }
 
     public string GetFilePath()
@@ -108,5 +111,18 @@ public class Load : MonoBehaviour
     {
         if (SaveFolder != "") return SaveFolder;
         return Application.persistentDataPath + "/Saves/";
+    }
+
+    public string LocalizedText(string filename)
+    {
+        if (filename.EndsWith("_ro") && PlayerPrefs.GetString("Language") == "en")
+        {
+            return filename.Replace("_ro", "_en");
+        }
+        else if (filename.EndsWith("_en") && PlayerPrefs.GetString("Language") == "ro")
+        {
+            return filename.Replace("_en", "_ro");
+        }
+        else return filename;
     }
 }

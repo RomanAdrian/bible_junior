@@ -12,11 +12,12 @@ public class SaveData
     public ElementData[] Elements;
     public ThumbnailData[] Thumbs;
     public string SaveTime;
+    public string AudioSource;
     public bool IsPlayerSave;
     public string ScreenShotPath;
     public string[] NarrationElements;
 
-    public SaveData(string backgroundName, ElementData[] elements, ThumbnailData[] thumbs, string screenShotPath, string[] narration, string SaveName, bool isPlayerSave=true)
+    public SaveData(string backgroundName, ElementData[] elements, ThumbnailData[] thumbs, string screenShotPath, string[] narration, string SaveName, string audioSource, bool isPlayerSave=true)
     {
         BackgroundName = backgroundName;
         Elements = elements;
@@ -26,6 +27,7 @@ public class SaveData
         NarrationElements = narration;
         ScreenShotPath = screenShotPath;
         Name = SaveName;
+        AudioSource = audioSource;
     }
 
     public void ToSaveSlot(GameObject obj)

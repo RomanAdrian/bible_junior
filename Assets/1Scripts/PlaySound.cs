@@ -19,7 +19,6 @@ public class PlaySound : MonoBehaviour, IPointerUpHandler
         {
             audioData.Play();
             playing = true;
-
         }
         else
         {
