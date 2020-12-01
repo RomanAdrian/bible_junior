@@ -66,7 +66,8 @@ public class Save : MonoBehaviour
             NarrationElements[i - 1] = images[i].sprite.name;
         }
 
-        AudioSource = GameObject.FindWithTag("Canvas").transform.Find("Naratiune").GetComponentInChildren<AudioSource>().clip.name;
+        AudioSource a = GameObject.FindWithTag("Canvas").transform.Find("Naratiune").GetComponentInChildren<AudioSource>();
+        if (a != null && a.clip != null) AudioSource = a.clip.name;
     }
 
 

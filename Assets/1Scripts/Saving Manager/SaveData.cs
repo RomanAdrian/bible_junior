@@ -17,7 +17,7 @@ public class SaveData
     public string ScreenShotPath;
     public string[] NarrationElements;
 
-    public SaveData(string backgroundName, ElementData[] elements, ThumbnailData[] thumbs, string screenShotPath, string[] narration, string SaveName, string audioSource, bool isPlayerSave=true)
+    public SaveData(string backgroundName, ElementData[] elements, ThumbnailData[] thumbs, string screenShotPath, string[] narration, string SaveName, string audioSource = "", bool isPlayerSave=true)
     {
         BackgroundName = backgroundName;
         Elements = elements;
