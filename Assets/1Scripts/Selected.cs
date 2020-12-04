@@ -17,10 +17,7 @@ public class Selected : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (eventData.dragging)
-        {
-            return;
-        }
+        if (eventData.dragging || !btn.interactable) return;
 
         selected = !selected;
 

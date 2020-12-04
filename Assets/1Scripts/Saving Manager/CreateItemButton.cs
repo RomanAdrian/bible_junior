@@ -17,9 +17,15 @@ public class CreateItemButton : MonoBehaviour
 
         string elementName = gameObject.GetComponent<Image>().sprite.name.Replace("_thumbnail", "");
         string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName)); // split from the free roam list
-        bool shouldBeActive = foundItem != null;
         ItemNameAndType = foundItem;
-        gameObject.SetActive(shouldBeActive);
+        SetOpacity(foundItem != null);
+    }
+
+    private void SetOpacity(bool active)
+    {
+        if (active) return;
+        gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .5f);
+        gameObject.GetComponent<Button>().interactable = false;
     }
 
     private void OnEnable()
@@ -27,10 +33,9 @@ public class CreateItemButton : MonoBehaviour
         SetupSavedItems();
 
         string elementName = gameObject.GetComponent<Image>().sprite.name.Replace("_thumbnail", "");
-        string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName));
-        bool shouldBeActive = foundItem != null;
+        string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName)); // split from the free roam list
         ItemNameAndType = foundItem;
-        gameObject.SetActive(shouldBeActive);
+        SetOpacity(foundItem != null);
     }
 
     private void SetupSavedItems()
