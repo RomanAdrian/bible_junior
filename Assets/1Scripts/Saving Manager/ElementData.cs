@@ -54,7 +54,7 @@ public class ElementData
         if (SubmenuType == "SmallSubmenu")
         {
             AspectRatioFitter a = obj.AddComponent(typeof(AspectRatioFitter)) as AspectRatioFitter;
-            a.aspectRatio = 4.640167f;
+            a.aspectRatio = (float)img.texture.width / img.texture.height;
             a.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
         }
 
