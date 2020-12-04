@@ -1,6 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using UnityEngine.UI;
+using System;
 
 
 public class StorySlot : MonoBehaviour
@@ -9,8 +10,20 @@ public class StorySlot : MonoBehaviour
     public string CreateFile = "creeaza.json";
     public string SceneName = "Create_FromSave";
     public int SaveIndex;
+    public bool forLoading = false;
     public SceneLoader sceneLoader;
     public bool IsPlayerSave { get; private set; }
+
+    public void OnEnable()
+    {
+        if (!File.Exists(GetFilePath()) || forLoading == true) return;
+
+        string saveString = File.ReadAllText(GetFilePath());
+        SaveData[] saves = JsonHelper.FromJson<SaveData>(saveString);
+
+        SaveData save = Array.Find(saves, s => s.Name == SceneName);
+        if (save != null) save.ToScroll(gameObject);
+    }
 
     // Update is called once per frame
     public void SetData(bool isPlayerSave)
@@ -22,7 +35,7 @@ public class StorySlot : MonoBehaviour
     {
         PlayerPrefs.SetString("SaveFile", SaveFile);
         PlayerPrefs.SetString("SaveName", SceneName);
-        sceneLoader.enter(SceneName);
+        SceneManager.LoadScene(SceneName);
     }
 
     public void LoadSceneDynamic()
@@ -40,5 +53,10 @@ public class StorySlot : MonoBehaviour
     public void SaveSceneDynamic()
     {
         GetComponent<Save>().SaveGame(SaveFile, CreateFile, PlayerPrefs.GetString("NumeTablou"));
+    }
+
+    public string GetFilePath()
+    {
+        return Application.persistentDataPath + "/Saves/" + SaveFile;
     }
 }
