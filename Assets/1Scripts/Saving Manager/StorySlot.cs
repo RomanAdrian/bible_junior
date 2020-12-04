@@ -12,11 +12,11 @@ public class StorySlot : MonoBehaviour
     public int SaveIndex;
     public bool forLoading = false;
     public SceneLoader sceneLoader;
-    public bool IsPlayerSave { get; private set; }
+    public bool IsPlayerSave = false;
 
     public void OnEnable()
     {
-        if (!File.Exists(GetFilePath()) || forLoading == true) return;
+        if (!File.Exists(GetFilePath()) || forLoading == false) return;
 
         string saveString = File.ReadAllText(GetFilePath());
         SaveData[] saves = JsonHelper.FromJson<SaveData>(saveString);
@@ -35,7 +35,8 @@ public class StorySlot : MonoBehaviour
     {
         PlayerPrefs.SetString("SaveFile", SaveFile);
         PlayerPrefs.SetString("SaveName", SceneName);
-        SceneManager.LoadScene(SceneName);
+        if (IsPlayerSave) SceneManager.LoadScene("Tablou");
+        else SceneManager.LoadScene(SceneName);
     }
 
     public void LoadSceneDynamic()
@@ -47,7 +48,9 @@ public class StorySlot : MonoBehaviour
 
     public void SaveScene()
     {
-        GetComponent<Save>().SaveGame(SaveFile, CreateFile, SceneManager.GetActiveScene().name);
+        string activeScene = SceneManager.GetActiveScene().name;
+        string SceneName = activeScene == "Tablou" ? PlayerPrefs.GetString("SaveName") : activeScene;
+        GetComponent<Save>().SaveGame(SaveFile, CreateFile, SceneName);
     }
 
     public void SaveSceneDynamic()

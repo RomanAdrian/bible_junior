@@ -64,6 +64,7 @@ public class SaveData
     {
 
         Image image = obj.GetComponent<Image>();
+        obj.GetComponent<StorySlot>().SetData(IsPlayerSave);
 
         if (File.Exists(ScreenShotPath))
         {

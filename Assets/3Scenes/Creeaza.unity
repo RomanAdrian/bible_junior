@@ -19395,7 +19395,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 10000
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -27991,7 +27991,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147519591}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27f426e2ebbcdc04181ace059bbc268d, type: 3}
   m_Name: 
@@ -28879,7 +28879,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172248740}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27f426e2ebbcdc04181ace059bbc268d, type: 3}
   m_Name: 
@@ -31497,7 +31497,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228428634}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27f426e2ebbcdc04181ace059bbc268d, type: 3}
   m_Name: 
@@ -37376,7 +37376,7 @@ GameObject:
   - component: {fileID: 1474052493}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40562,7 +40562,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602433531}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27f426e2ebbcdc04181ace059bbc268d, type: 3}
   m_Name: 
@@ -50324,6 +50324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cceac77e33d63c4984a4c96fadf102f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BackgroundSet: 0
   PathToImages: Images/Sprites/
   ElementPrefab: {fileID: 2809208377281522069, guid: 0301de5988a0ac7409e5a39c46c57346, type: 3}
   WideElementPrefab: {fileID: 2809208377281522069, guid: 0301de5988a0ac7409e5a39c46c57346, type: 3}
