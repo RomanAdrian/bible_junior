@@ -43,8 +43,12 @@ public class Save : MonoBehaviour
             string saveString = File.ReadAllText(GetFilePath(saveFile));
             Saves = JsonHelper.FromJson<SaveData>(saveString);
             int index = Array.FindIndex(Saves, s => s.Name == SaveName);
-            if (index >= 0) Saves.SetValue(CreateSaveObject(SaveName), index);
-            else Saves.SetValue(CreateSaveObject(SaveName), 0);
+            if (index == -1)
+            { 
+                int emptyIndex = Array.FindIndex(Saves, s => s.Name == "");
+                Saves.SetValue(CreateSaveObject(SaveName), emptyIndex);
+            }
+            else Saves.SetValue(CreateSaveObject(SaveName), index);
         }
         else
         {
@@ -57,7 +61,8 @@ public class Save : MonoBehaviour
 
     private void SetNarrationElements()
     {
-        Transform n = GameObject.FindWithTag("Canvas").transform.Find("Naratiune").GetChild(0);
+        Transform naratiune = GameObject.FindWithTag("Canvas").transform.Find("Naratiune");
+        Transform n = naratiune.GetChild(0);
         Image[] images = n.gameObject.GetComponentsInChildren<Image>();
 
         NarrationElements = new string[images.Length - 1];
@@ -67,8 +72,8 @@ public class Save : MonoBehaviour
             NarrationElements[i - 1] = images[i].sprite.name;
         }
 
-        AudioSource a = GameObject.FindWithTag("Canvas").transform.Find("Naratiune").GetComponentInChildren<AudioSource>();
-        if (a != null && a.clip != null) AudioSource = a.clip.name;
+        AudioSource sunet = naratiune.GetComponentInChildren<AudioSource>();
+        if (sunet != null && sunet.clip != null) AudioSource = sunet.clip.name;
     }
 
 

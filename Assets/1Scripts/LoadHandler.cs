@@ -15,10 +15,12 @@ public class LoadHandler : MonoBehaviour
     {
         Items.Add(item);
     }
+
     public static void RemoveItem(string item)
     {
         Items.Remove(item);
     }
+
     public void LoadItems()
     {
         GameObject parent = GameObject.FindGameObjectWithTag("Canvas");

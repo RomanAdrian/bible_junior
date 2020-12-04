@@ -50,12 +50,14 @@ public class ElementData
         obj.transform.SetSiblingIndex(Index + 1);
         Transform.PushToTransform(obj.GetComponent<RectTransform>());
         obj.GetComponent<StoryElement>().Setup(Id, SubmenuType);
-        if (SubmenuType == "SmallSubmenu") 
+
+        if (SubmenuType == "SmallSubmenu")
         {
             AspectRatioFitter a = obj.AddComponent(typeof(AspectRatioFitter)) as AspectRatioFitter;
             a.aspectRatio = 4.640167f;
             a.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
         }
+
         obj.SetActive(Active);
     }
 

@@ -8841,7 +8841,7 @@ GameObject:
   - component: {fileID: 3241034065614661985}
   - component: {fileID: 3241034065614661984}
   m_Layer: 5
-  m_Name: Naratiune (1)
+  m_Name: Naratiune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10021,9 +10021,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8269121444092612289}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 4094281015901904988}
+        m_TargetAssemblyTypeName: StorySlot, Assembly-CSharp
+        m_MethodName: SaveScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10065,6 +10065,8 @@ GameObject:
   - component: {fileID: 4094281015901904984}
   - component: {fileID: 4094281015901904985}
   - component: {fileID: 4094281015901904989}
+  - component: {fileID: 4094281015901904990}
+  - component: {fileID: 4094281015901904988}
   m_Layer: 5
   m_Name: Save
   m_TagString: Untagged
@@ -10072,6 +10074,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4094281015901904988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094281015901904987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d08c2a0c21ffe647afad07568c64c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveFile: tablouri.json
+  CreateFile: creeaza.json
+  SceneName: 
+  SaveIndex: 0
+  sceneLoader: {fileID: 0}
 --- !u!114 &4094281015901904989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10086,6 +10105,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   trans: {fileID: 0}
+--- !u!114 &4094281015901904990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094281015901904987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22fe4c8e48439e4aa9caf9d28c929e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Thumbnails: []
+  StoryElements: []
+  SerializedElements: []
+  SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
+  Saves: []
+  SaveFolder: 
+  saveSlots: []
 --- !u!222 &4094281015901904991
 CanvasRenderer:
   m_ObjectHideFlags: 0

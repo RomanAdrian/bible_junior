@@ -11315,9 +11315,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8269121443122088268}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 5327225808069357528}
+        m_TargetAssemblyTypeName: StorySlot, Assembly-CSharp
+        m_MethodName: SaveScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11370,6 +11370,8 @@ GameObject:
   - component: {fileID: 5327225808069357525}
   - component: {fileID: 5327225808069357524}
   - component: {fileID: 5327225808069357520}
+  - component: {fileID: 5327225808069357529}
+  - component: {fileID: 5327225808069357528}
   m_Layer: 5
   m_Name: Save
   m_TagString: Untagged
@@ -11396,6 +11398,45 @@ RectTransform:
   m_AnchoredPosition: {x: 34.093384, y: -263.57162}
   m_SizeDelta: {x: 223.25, y: 174}
   m_Pivot: {x: 0.66, y: -1.2}
+--- !u!114 &5327225808069357528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327225808069357526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d08c2a0c21ffe647afad07568c64c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveFile: tablouri.json
+  CreateFile: creeaza.json
+  SceneName: Create_FromSave
+  SaveIndex: 0
+  sceneLoader: {fileID: 0}
+--- !u!114 &5327225808069357529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327225808069357526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22fe4c8e48439e4aa9caf9d28c929e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Thumbnails: []
+  StoryElements: []
+  SerializedElements: []
+  SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
+  Saves: []
+  SaveFolder: 
+  saveSlots: []
 --- !u!114 &5327225808423896336
 MonoBehaviour:
   m_ObjectHideFlags: 0
