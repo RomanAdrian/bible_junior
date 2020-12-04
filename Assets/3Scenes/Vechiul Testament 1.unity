@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: tablouri.json
   CreateFile: creeaza.json
-  SceneName: Ierihon3
+  SceneName: 
   SaveIndex: 0
   forLoading: 0
   sceneLoader: {fileID: 0}
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: tablouri.json
   CreateFile: creeaza.json
-  SceneName: Ierihon6
+  SceneName: 
   SaveIndex: 0
   forLoading: 0
   sceneLoader: {fileID: 0}
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: tablouri.json
   CreateFile: creeaza.json
-  SceneName: Ierihon4
+  SceneName: 
   SaveIndex: 0
   forLoading: 0
   sceneLoader: {fileID: 0}
@@ -3993,7 +3993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: tablouri.json
   CreateFile: creeaza.json
-  SceneName: Ierihon2
+  SceneName: Iesirea5
   SaveIndex: 0
   forLoading: 0
   sceneLoader: {fileID: 0}
@@ -4040,7 +4040,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1494193917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1254868493}
+        m_TargetAssemblyTypeName: StorySlot, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1254868495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4132,7 +4144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: tablouri.json
   CreateFile: creeaza.json
-  SceneName: Ierihon5
+  SceneName: 
   SaveIndex: 0
   forLoading: 0
   sceneLoader: {fileID: 0}
@@ -5254,7 +5266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: tablouri.json
   CreateFile: creeaza.json
-  SceneName: Iesirea5
+  SceneName: Iesirea1
   SaveIndex: 0
   forLoading: 0
   sceneLoader: {fileID: 0}
