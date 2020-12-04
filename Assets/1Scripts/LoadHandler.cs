@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TigerForge;
 using UnityEngine;
@@ -23,7 +23,7 @@ public class LoadHandler : MonoBehaviour
 
     public void LoadItems()
     {
-        GameObject parent = GameObject.FindGameObjectWithTag("Canvas");
+        GameObject parent = GameObject.FindGameObjectWithTag("Painting");
         GameObject thumbParent = GameObject.FindGameObjectWithTag("ButtonList");
 
         foreach (string item in Items)
@@ -49,6 +49,9 @@ public class LoadHandler : MonoBehaviour
             else 
             {
                 oldTransform.PushWideDefaultToTransform(newElement.GetComponent<RectTransform>(), img);
+                AspectRatioFitter a = newElement.AddComponent(typeof(AspectRatioFitter)) as AspectRatioFitter;
+                a.aspectRatio = (float)img.texture.width / img.texture.height;
+                a.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
             }
 
 
