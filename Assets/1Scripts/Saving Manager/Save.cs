@@ -43,7 +43,8 @@ public class Save : MonoBehaviour
             string saveString = File.ReadAllText(GetFilePath(saveFile));
             Saves = JsonHelper.FromJson<SaveData>(saveString);
             int index = Array.FindIndex(Saves, s => s.Name == SaveName);
-            Saves.SetValue(CreateSaveObject(SaveName), index);
+            if (index >= 0) Saves.SetValue(CreateSaveObject(SaveName), index);
+            else Saves.SetValue(CreateSaveObject(SaveName), 0);
         }
         else
         {
