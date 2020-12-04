@@ -692,7 +692,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 0
+  sceneLoader: {fileID: 0}
 --- !u!114 &362108955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,6 +711,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -850,7 +855,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 3
+  sceneLoader: {fileID: 0}
 --- !u!114 &367720899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,6 +874,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -1108,6 +1118,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -1125,7 +1138,7 @@ GameObject:
   - component: {fileID: 490038007}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1698,7 +1711,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 4
+  sceneLoader: {fileID: 0}
 --- !u!114 &551934955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1715,6 +1730,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -1987,13 +2005,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88826638008b6a498d505c65b582455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SaveIndex: 0
+  SaveName: 
   SaveFolder: 
   SaveFileName: player_saves.json
   PathToImages: Images/Sprites/
   PathToThumbs: Images/Sprites/
   ElementPrefab: {fileID: 2809208377281522069, guid: 0301de5988a0ac7409e5a39c46c57346, type: 3}
   ThumbnailPrefab: {fileID: 6772010285031562292, guid: a5e1f31a1965a414cbeee91290631760, type: 3}
+  NarrationPrefab: {fileID: 6864113453637810877, guid: 0f24971acde11da4896a55d508a78c48, type: 3}
 --- !u!1 &727868718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,81 +2249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFileName: player_saves.json
   SaveFolder: 
---- !u!1 &738863158
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 738863159}
-  - component: {fileID: 738863161}
-  - component: {fileID: 738863160}
-  m_Layer: 5
-  m_Name: 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &738863159
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738863158}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7493057, y: 0.48295626, z: 1}
-  m_Children: []
-  m_Father: {fileID: 791370819}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 302.3, y: 10.699997}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &738863160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738863158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.47659308, b: 0.47659308, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 842d021e55b922746ad783076cb1c630, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &738863161
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738863158}
-  m_CullTransparentMesh: 0
+  isSaveSlot: 
 --- !u!1 &748195090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,9 +2474,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1124432869}
-  - {fileID: 738863159}
+  m_Children: []
   m_Father: {fileID: 1685408068}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3514,7 +3457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &936020155
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3534,10 +3477,10 @@ RectTransform:
   m_Father: {fileID: 490038010}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.033508774, y: 0.098111115}
-  m_AnchorMax: {x: 0.97, y: 0.9592223}
-  m_AnchoredPosition: {x: -4, y: -31}
-  m_SizeDelta: {x: 144, y: 150}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &936020156
 MonoBehaviour:
@@ -3942,7 +3885,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 5
+  sceneLoader: {fileID: 0}
 --- !u!114 &1008518145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3959,6 +3904,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -4240,81 +4188,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116834253}
-  m_CullTransparentMesh: 0
---- !u!1 &1124432868
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1124432869}
-  - component: {fileID: 1124432871}
-  - component: {fileID: 1124432870}
-  m_Layer: 5
-  m_Name: 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1124432869
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124432868}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.74930567, y: 0.7885, z: 1}
-  m_Children: []
-  m_Father: {fileID: 791370819}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 10.699997}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1124432870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124432868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e62e4b5879182d843aed7d7f76927c3e, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1124432871
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124432868}
   m_CullTransparentMesh: 0
 --- !u!1 &1143024795
 GameObject:
@@ -4947,7 +4820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 123, y: -335}
+  m_AnchoredPosition: {x: 221, y: -490}
   m_SizeDelta: {x: 212.3901, y: 212.3901}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1390788154
@@ -6080,7 +5953,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 2
+  sceneLoader: {fileID: 0}
 --- !u!114 &1598927672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6097,6 +5972,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -6404,7 +6282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 71a757897c32c35448c61f0d8660d63a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e950054eaad2b9544ae96a1d00f2249f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6462,7 +6340,7 @@ RectTransform:
   m_GameObject: {fileID: 1719360131}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.4074802, y: 3.198507, z: 1}
+  m_LocalScale: {x: 5.773111, y: 4.2725058, z: 1}
   m_Children:
   - {fileID: 1685408068}
   m_Father: {fileID: 936020155}
@@ -7222,7 +7100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 1
+  sceneLoader: {fileID: 0}
 --- !u!114 &1947224242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7239,6 +7119,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -7351,7 +7234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -46, y: -360}
+  m_AnchoredPosition: {x: -140, y: -483}
   m_SizeDelta: {x: 232.03876, y: 198.16107}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &2010971689
@@ -7478,7 +7361,7 @@ GameObject:
   - component: {fileID: 2112168323}
   m_Layer: 5
   m_Name: Painting
-  m_TagString: Canvas
+  m_TagString: Painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

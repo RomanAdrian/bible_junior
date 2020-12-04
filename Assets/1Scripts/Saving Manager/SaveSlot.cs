@@ -6,6 +6,7 @@ public class SaveSlot : MonoBehaviour
 {
     public string SaveFile = "player_saves.json";
     public string CreateFile = "creeaza.json";
+    public string SceneName = "Create_FromSave";
     public int SaveIndex;
     public SceneLoader sceneLoader;
     public bool IsPlayerSave { get; private set; }
@@ -20,11 +21,11 @@ public class SaveSlot : MonoBehaviour
     {
         if (!IsPlayerSave) return;
         PlayerPrefs.SetString("SaveFile", SaveFile);
-        SaveIndexClass.index = transform.GetSiblingIndex();
-        sceneLoader.enter("Create_FromSave");
+        PlayerPrefs.SetString("SaveName", SaveIndex.ToString());
+        SceneManager.LoadScene(SceneName);
     }
     public void SaveScene()
     {
-        GetComponent<Save>().SaveGame(SaveFile, CreateFile, SaveIndex);
+        GetComponent<Save>().SaveGame(SaveFile, CreateFile, SaveIndex.ToString());
     }
 }

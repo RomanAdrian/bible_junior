@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System;
+using UnityEngine.UI;
 
 public class Save : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Save : MonoBehaviour
     public GameObject[] StoryElements;
     public ElementData[] SerializedElements;
     public ThumbnailData[] SerializedThumbs;
+    public string[] NarrationElements;
+    public string BackgroundName;
+    public string AudioSource;
     public SaveData[] Saves;
 
     public string SaveFolder;
@@ -17,43 +21,77 @@ public class Save : MonoBehaviour
     [SerializeField]
     private SavedGame[] saveSlots;
 
-    public void SaveGame(string saveFile, string createFile, int index)
+    public void SaveGame(string saveFile, string createFile, string SaveName)
     {
         SetUpSaveFolder();
-        CreateSaveFile(index, saveFile);
+        CreateSaveFile(SaveName, saveFile);
         AddObjectsToCreate(createFile);
 
         changesMade = false;
     }
 
-    private void CreateSaveFile(int index, string saveFile)
+    private void CreateSaveFile(string SaveName, string saveFile)
     {
+
+        SetBackground();
+        SerializeThumbs();
+        SetNarrationElements();
+        SerializeElements();
+
         if (File.Exists(GetFilePath(saveFile)))
         {
             string saveString = File.ReadAllText(GetFilePath(saveFile));
             Saves = JsonHelper.FromJson<SaveData>(saveString);
-        }  else
+            int index = Array.FindIndex(Saves, s => s.Name == SaveName);
+            if (index == -1)
+            { 
+                int emptyIndex = Array.FindIndex(Saves, s => s.Name == "");
+                Saves.SetValue(CreateSaveObject(SaveName), emptyIndex);
+            }
+            else Saves.SetValue(CreateSaveObject(SaveName), index);
+        }
+        else
         {
-            Saves = new SaveData[6];
+            Saves = new SaveData[250];
+            Saves.SetValue(CreateSaveObject(SaveName), 0);
         }
 
-        SerializeThumbs();
-        SerializeElements();
-
-        Saves[index] = CreateSaveObject();
         File.WriteAllText(GetFilePath(saveFile), JsonHelper.ToJson(Saves, true));
     }
 
-    private SaveData CreateSaveObject()
+    private void SetNarrationElements()
+    {
+        Transform naratiune = GameObject.FindWithTag("Canvas").transform.Find("Naratiune");
+        Transform n = naratiune.GetChild(0);
+        Image[] images = n.gameObject.GetComponentsInChildren<Image>();
+
+        NarrationElements = new string[images.Length - 1];
+
+        for (int i = 1; i < images.Length; i++)
+        {
+            NarrationElements[i - 1] = images[i].sprite.name;
+        }
+
+        AudioSource sunet = naratiune.GetComponentInChildren<AudioSource>();
+        if (sunet != null && sunet.clip != null) AudioSource = sunet.clip.name;
+    }
+
+
+    private void SetBackground()
+    {
+        BackgroundName = GameObject.Find("Panel").GetComponent<Image>().sprite.name;
+    }
+
+    private SaveData CreateSaveObject(string saveName)
     {
         string ScreenShotPath = new ScreenShot().TakeHiResShot();
 
-        return new SaveData("name", SerializedElements, SerializedThumbs, DateTime.Now, ScreenShotPath);
+        return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, ScreenShotPath, NarrationElements, saveName, AudioSource);
     }
 
     private void SerializeElements()
     {
-        Transform ElementsContainer = GameObject.FindGameObjectWithTag("Canvas").transform;
+        Transform ElementsContainer = GameObject.FindGameObjectWithTag("Painting").transform;
         int count = ElementsContainer.childCount;
         SerializedElements = new ElementData[count];
 

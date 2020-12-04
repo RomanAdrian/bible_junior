@@ -16,7 +16,7 @@ using UnityEngine.UI;
 
       public void enter(string sceneName)
       {
-          SceneManager.LoadScene( sceneName );
+          SceneManager.LoadScene(sceneName);
       }
 
       public void LoadLevel(string levelName)

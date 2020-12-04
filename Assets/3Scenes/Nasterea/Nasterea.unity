@@ -1493,6 +1493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 0
   sceneLoader: {fileID: 0}
 --- !u!114 &362108955
@@ -1511,6 +1512,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -1663,6 +1667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 3
   sceneLoader: {fileID: 0}
 --- !u!114 &367720899
@@ -1681,6 +1686,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -2038,6 +2046,8 @@ GameObject:
   - component: {fileID: 409861371}
   - component: {fileID: 409861370}
   - component: {fileID: 409861374}
+  - component: {fileID: 409861375}
+  - component: {fileID: 409861373}
   m_Layer: 5
   m_Name: Save
   m_TagString: Untagged
@@ -2107,9 +2117,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 569756063}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 409861373}
+        m_TargetAssemblyTypeName: StorySlot, Assembly-CSharp
+        m_MethodName: SaveScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2157,6 +2167,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409861368}
   m_CullTransparentMesh: 0
+--- !u!114 &409861373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409861368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d08c2a0c21ffe647afad07568c64c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveFile: tablouri.json
+  CreateFile: creeaza.json
+  SceneName: Create_FromSave
+  SaveIndex: 0
+  sceneLoader: {fileID: 0}
 --- !u!114 &409861374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2171,6 +2198,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   trans: {fileID: 0}
+--- !u!114 &409861375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409861368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22fe4c8e48439e4aa9caf9d28c929e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Thumbnails: []
+  StoryElements: []
+  SerializedElements: []
+  SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
+  Saves: []
+  SaveFolder: 
+  saveSlots: []
 --- !u!1 &416314535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,7 +2650,7 @@ GameObject:
   - component: {fileID: 490038007}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2920,6 +2969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 4
   sceneLoader: {fileID: 0}
 --- !u!114 &551934955
@@ -2938,6 +2988,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -4461,6 +4514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFileName: player_saves.json
   SaveFolder: 
+  isSaveSlot: 
 --- !u!1 &748195090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,6 +6066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 5
   sceneLoader: {fileID: 0}
 --- !u!114 &1008518145
@@ -6030,6 +6085,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -10473,6 +10531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 2
   sceneLoader: {fileID: 0}
 --- !u!114 &1598927672
@@ -10491,6 +10550,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -13340,6 +13402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SaveFile: player_saves.json
   CreateFile: creeaza.json
+  SceneName: Create_FromSave
   SaveIndex: 1
   sceneLoader: {fileID: 0}
 --- !u!114 &1947224242
@@ -13358,6 +13421,9 @@ MonoBehaviour:
   StoryElements: []
   SerializedElements: []
   SerializedThumbs: []
+  NarrationElements: []
+  BackgroundName: 
+  AudioSource: 
   Saves: []
   SaveFolder: 
   saveSlots: []
@@ -14163,7 +14229,7 @@ GameObject:
   - component: {fileID: 2112168323}
   m_Layer: 5
   m_Name: Painting
-  m_TagString: Canvas
+  m_TagString: Painting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
