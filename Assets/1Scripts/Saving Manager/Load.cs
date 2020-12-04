@@ -126,12 +126,4 @@ public class Load : MonoBehaviour
         }
         else return filename;
     }
-
-    public void SetBackground(string backgroundName)
-    {
-        Image panel = GameObject.Find("Panel").GetComponent<Image>();
-        Sprite img = Resources.Load<Sprite>(PathToImages + backgroundName);
-        panel.GetComponent<Image>().sprite = img;
-    }
-
 }
