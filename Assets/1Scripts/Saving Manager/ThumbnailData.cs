@@ -19,7 +19,8 @@ public class ThumbnailData
         Name = Thumbnail.name;
         Active = Thumbnail.activeSelf;
         Index = Thumbnail.transform.GetSiblingIndex();
-        Image = Thumbnail.GetComponent<Image>().sprite.name;
+        Image temp = Thumbnail.GetComponent<Image>();
+        if (temp != null && temp.sprite != null) Image = temp.sprite.name;
 
         Id = thumb.id;
 

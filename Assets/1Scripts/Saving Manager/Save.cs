@@ -73,7 +73,10 @@ public class Save : MonoBehaviour
 
         for (int i = 1; i < images.Length; i++)
         {
-            NarrationElements[i - 1] = images[i].sprite.name;
+            if (images[i] != null && images[i].sprite != null)
+            {
+                NarrationElements[i - 1] = images[i].sprite.name;
+            }
         }
 
         AudioSource sunet = naratiune.GetComponentInChildren<AudioSource>();
@@ -83,6 +86,9 @@ public class Save : MonoBehaviour
 
     private void SetBackground()
     {
+        Image panel = GameObject.Find("Panel").GetComponent<Image>();
+        if (panel == null || panel.sprite == null) return;
+
         BackgroundName = GameObject.Find("Panel").GetComponent<Image>().sprite.name;
     }
 
@@ -146,9 +152,13 @@ public class Save : MonoBehaviour
                 if (matches.Length == 0) File.AppendAllText(GetFilePath(createFile), element.Image + "," + element.SubmenuType + Environment.NewLine);
             }
 
-            string bg = GameObject.Find("Panel").GetComponent<Image>().sprite.name;
-            string[] bgMatches = Array.FindAll(objList, s => s.Split(',')[0].Equals(bg));
-            if (bgMatches.Length == 0) File.AppendAllText(GetFilePath(createFile), bg + ",Background" + Environment.NewLine);
+            Image img = GameObject.Find("Panel").GetComponent<Image>();
+            if (img != null && img.sprite != null)
+            {
+                string bg = img.sprite.name;
+                string[] bgMatches = Array.FindAll(objList, s => s.Split(',')[0].Equals(bg));
+                if (bgMatches.Length == 0) File.AppendAllText(GetFilePath(createFile), bg + ",Background" + Environment.NewLine);
+            }
         }
         else
         {

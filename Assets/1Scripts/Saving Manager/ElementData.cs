@@ -30,7 +30,8 @@ public class ElementData
         Name = StoryElement.name;
         Index = StoryElement.transform.GetSiblingIndex();
         Active = StoryElement.activeSelf;
-        Image = StoryElement.GetComponent<Image>().sprite.name;
+        Image temp = StoryElement.GetComponent<Image>();
+        if (temp != null && temp.sprite != null) Image = temp.sprite.name;
 
         StoryElement EventSystemScript = StoryElement.GetComponent<StoryElement>();
         SubmenuType = EventSystemScript.SubmenuType;
