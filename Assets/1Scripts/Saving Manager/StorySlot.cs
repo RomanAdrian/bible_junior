@@ -2,9 +2,9 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using System;
+using UnityEngine.EventSystems;
 
-
-public class StorySlot : MonoBehaviour
+public class StorySlot : MonoBehaviour, IPointerUpHandler
 {
     public string SaveFile = "tablouri.json";
     public string CreateFile = "creeaza.json";
@@ -23,6 +23,11 @@ public class StorySlot : MonoBehaviour
 
         SaveData save = Array.Find(saves, s => s.Name == SceneName);
         if (save != null) save.ToScroll(gameObject);
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (forLoading == true) LoadScene();
     }
 
     // Update is called once per frame
