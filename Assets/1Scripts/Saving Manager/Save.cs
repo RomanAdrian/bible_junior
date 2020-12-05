@@ -23,6 +23,7 @@ public class Save : MonoBehaviour
 
     public void SaveGame(string saveFile, string createFile, string SaveName)
     {
+        Debug.Log(saveFile + " " + SaveName);
         SetUpSaveFolder();
         CreateSaveFile(SaveName, saveFile);
         AddObjectsToCreate(createFile);
@@ -46,6 +47,7 @@ public class Save : MonoBehaviour
             if (index == -1)
             { 
                 int emptyIndex = Array.FindIndex(Saves, s => s.Name == "");
+                if (emptyIndex == -1) emptyIndex = 0;
                 Saves.SetValue(CreateSaveObject(SaveName), emptyIndex);
             }
             else Saves.SetValue(CreateSaveObject(SaveName), index);
@@ -62,6 +64,8 @@ public class Save : MonoBehaviour
     private void SetNarrationElements()
     {
         Transform naratiune = GameObject.FindWithTag("Canvas").transform.Find("Naratiune");
+        if (naratiune == null) return;
+
         Transform n = naratiune.GetChild(0);
         Image[] images = n.gameObject.GetComponentsInChildren<Image>();
 
