@@ -7,7 +7,7 @@ using UnityEngine.Android;
 
 public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragHandler
 {
-    
+
     public bool draggable = true;
     public bool movesInBothDirections = true;
 
@@ -26,11 +26,12 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
         canvas = GetComponentInParent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        po = GetComponent<PanelOpener>(); 
+        po = GetComponent<PanelOpener>();
         zoom = GetComponent<Zoom>();
         ScrollArea = GameObject.Find("Chat Side-Menu");
-        btn = GetComponent<Selectable> ();
-        movesInBothDirections = (GetComponent<StoryElement>().SubmenuType == "Submenu");
+        btn = GetComponent<Selectable>();
+
+        if (movesInBothDirections == true) movesInBothDirections = GetComponent<StoryElement>().SubmenuType == "Submenu";
     }
 
     public void OnPointerUp(PointerEventData eventData)
