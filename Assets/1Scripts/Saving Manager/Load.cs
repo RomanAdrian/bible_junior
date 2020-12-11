@@ -72,7 +72,8 @@ public class Load : MonoBehaviour
 
     public void SetNarrationElements(string[] narrationElements, string audioSource)
     {
-        Transform naratiune = GameObject.FindWithTag("Canvas").transform.Find("Naratiune");
+        Transform naratiune = GameObject.FindWithTag("SavePanelCanvas").transform.Find("GUI/Naratiune");
+        Debug.Log(naratiune);
         Transform content = naratiune.GetChild(0).GetChild(0).GetChild(0);
         Transform pagination = naratiune.GetChild(1);
 
@@ -100,6 +101,7 @@ public class Load : MonoBehaviour
 
         if (audioSource == "" || audioSource == null) return;
         AudioSource audio = naratiune.GetComponentInChildren<AudioSource>();
+        if (audio == null) return;
         audio.clip = Resources.Load<AudioClip>(audioSource);
     }
 

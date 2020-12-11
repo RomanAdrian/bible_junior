@@ -63,7 +63,7 @@ public class Save : MonoBehaviour
 
     private void SetNarrationElements()
     {
-        Transform naratiune = GameObject.FindWithTag("Canvas").transform.Find("Naratiune");
+        Transform naratiune = transform.Find("Naratiune");
         if (naratiune == null) return;
 
         Transform n = naratiune.GetChild(0);
