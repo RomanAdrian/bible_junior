@@ -47,7 +47,8 @@ public class LoadHandler : MonoBehaviour
             newElement.transform.SetParent(parent.transform);
             if (item.Split(',')[1] == "Submenu")
             {
-                oldTransform.PushDefaultToTransform(newElement.GetComponent<RectTransform>(), img);
+                if (item.Split(',').Length != 4) oldTransform.PushDefaultToTransform(newElement.GetComponent<RectTransform>(), img);
+                else oldTransform.PushDefaultToTransform(newElement.GetComponent<RectTransform>(), img, item.Split(',')[2], item.Split(',')[3]);
             }
             else 
             {

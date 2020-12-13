@@ -149,7 +149,11 @@ public class Save : MonoBehaviour
             {
                 string[] matches = Array.FindAll(objList, s => s.Split(',')[0].Equals(element.Image));
 
-                if (matches.Length == 0) File.AppendAllText(GetFilePath(createFile), element.Image + "," + element.SubmenuType + Environment.NewLine);
+                if (matches.Length == 0) File.AppendAllText(GetFilePath(createFile), element.Image + ","
+                                                                                     + element.SubmenuType + ","
+                                                                                     + element.Transform.SizeDelta[0] + ","
+                                                                                     + element.Transform.SizeDelta[1] + ","
+                                                                                     + Environment.NewLine);
             }
 
             Image img = GameObject.Find("Panel").GetComponent<Image>();

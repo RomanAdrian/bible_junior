@@ -10,32 +10,36 @@ public class CreateItemButton : MonoBehaviour
 {
     public static List<string> SavedItems = new List<string>();
     public string ItemNameAndType;
+    public bool activeByDefault = false;
+    public string SubmenuType = "Submenu";
     // Start is called before the first frame update
+
     private void Start()
     {
         SetupSavedItems();
 
+        SubmenuType = transform.parent.parent.parent.name == "1ScrollFundal" ? "SmallSubmenu" : "Submenu";
+
         string elementName = gameObject.GetComponent<Image>().sprite.name.Replace("_thumbnail", "");
         string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName)); // split from the free roam list
-        ItemNameAndType = foundItem;
+        SetItemNameAndType(foundItem);
         SetOpacity(foundItem != null);
     }
 
     private void SetOpacity(bool active)
     {
-        if (active) return;
+        if (active || activeByDefault) return;
         gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .5f);
         gameObject.GetComponent<Button>().interactable = false;
     }
 
-    private void OnEnable()
+    private void SetItemNameAndType(string foundItem)
     {
-        SetupSavedItems();
-
-        string elementName = gameObject.GetComponent<Image>().sprite.name.Replace("_thumbnail", "");
-        string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName)); // split from the free roam list
-        ItemNameAndType = foundItem;
-        SetOpacity(foundItem != null);
+        if (String.IsNullOrWhiteSpace(foundItem))
+        {
+            ItemNameAndType = gameObject.GetComponent<Image>().sprite.name.Replace("_thumbnail", "") + "," + SubmenuType;
+        }
+        else ItemNameAndType = foundItem;
     }
 
     private void SetupSavedItems()
