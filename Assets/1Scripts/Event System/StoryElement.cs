@@ -7,6 +7,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
 {
     public string id;
     public string SubmenuType;
+    private bool alreadySetUp = false;
     EventsGroup eventsGroup = new EventsGroup();
 
     // SUBSCRIBING TO EVENTS
@@ -14,14 +15,18 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
     {
         SetId(); // Sets this object's id, so we can identify if the events are addressing it or another StoryElement
 
-        // We set StoryElements to listen for these events ("ENABLE_ELEMENT", "DELETE", etc) and respond with their respective callback methods (OnReceivedEnable, OnDelete, etc) 
-        eventsGroup.Add("ENABLE_ELEMENT", OnReceivedEnable); // Triggered when you click the thumbnail and enable the StoryElement
-        eventsGroup.Add("DELETE", OnDelete);                 // Triggered when you click the delete button in the submenu
-        eventsGroup.Add("BRING_FORWARD", OnBringForward);    // Triggered when you click the bring forward button in the submenu
-        eventsGroup.Add("ZOOM_IN", OnZoomIn);                // Triggered when you zoom in in the submenu
-        eventsGroup.Add("ZOOM_OUT", OnZoomOut);              // Triggered when you zoom out in the submenu
-        eventsGroup.Add("REFLECT", OnReflect);               // Triggered when you click reflect in the submenu
-        eventsGroup.StartListening();
+        if (!alreadySetUp) 
+        {
+            // We set StoryElements to listen for these events ("ENABLE_ELEMENT", "DELETE", etc) and respond with their respective callback methods (OnReceivedEnable, OnDelete, etc) 
+            eventsGroup.Add("ENABLE_ELEMENT", OnReceivedEnable); // Triggered when you click the thumbnail and enable the StoryElement
+            eventsGroup.Add("DELETE", OnDelete);                 // Triggered when you click the delete button in the submenu
+            eventsGroup.Add("BRING_FORWARD", OnBringForward);    // Triggered when you click the bring forward button in the submenu
+            eventsGroup.Add("ZOOM_IN", OnZoomIn);                // Triggered when you zoom in in the submenu
+            eventsGroup.Add("ZOOM_OUT", OnZoomOut);              // Triggered when you zoom out in the submenu
+            eventsGroup.Add("REFLECT", OnReflect);               // Triggered when you click reflect in the submenu
+            eventsGroup.StartListening();
+            alreadySetUp = true;
+        }
 
         gameObject.SetActive(false);
     }
@@ -31,14 +36,18 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
         SetId(id); // Sets this object's id, so we can identify if the events are addressing it or another StoryElement
         SubmenuType = submenuType;
 
-        // We set StoryElements to listen for these events ("ENABLE_ELEMENT", "DELETE", etc) and respond with their respective callback methods (OnReceivedEnable, OnDelete, etc) 
-        eventsGroup.Add("ENABLE_ELEMENT", OnReceivedEnable); // Triggered when you click the thumbnail and enable the StoryElement
-        eventsGroup.Add("DELETE", OnDelete);                 // Triggered when you click the delete button in the submenu
-        eventsGroup.Add("BRING_FORWARD", OnBringForward);    // Triggered when you click the bring forward button in the submenu
-        eventsGroup.Add("ZOOM_IN", OnZoomIn);                // Triggered when you zoom in in the submenu
-        eventsGroup.Add("ZOOM_OUT", OnZoomOut);              // Triggered when you zoom out in the submenu
-        eventsGroup.Add("REFLECT", OnReflect);               // Triggered when you click reflect in the submenu
-        eventsGroup.StartListening();
+        if (!alreadySetUp)
+        {
+            // We set StoryElements to listen for these events ("ENABLE_ELEMENT", "DELETE", etc) and respond with their respective callback methods (OnReceivedEnable, OnDelete, etc) 
+            eventsGroup.Add("ENABLE_ELEMENT", OnReceivedEnable); // Triggered when you click the thumbnail and enable the StoryElement
+            eventsGroup.Add("DELETE", OnDelete);                 // Triggered when you click the delete button in the submenu
+            eventsGroup.Add("BRING_FORWARD", OnBringForward);    // Triggered when you click the bring forward button in the submenu
+            eventsGroup.Add("ZOOM_IN", OnZoomIn);                // Triggered when you zoom in in the submenu
+            eventsGroup.Add("ZOOM_OUT", OnZoomOut);              // Triggered when you zoom out in the submenu
+            eventsGroup.Add("REFLECT", OnReflect);               // Triggered when you click reflect in the submenu
+            eventsGroup.StartListening();
+            alreadySetUp = true;
+        }
     }
 
     // UNSUBSCRIBING TO EVENTS
