@@ -9,12 +9,13 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
     public string SaveFile = "tablouri.json";
     public string CreateFile = "creeaza.json";
     public string SceneName = "Create_FromSave";
-    public int SaveIndex;
     public bool forLoading = false;
-    public SceneLoader sceneLoader;
     public bool IsPlayerSave = false;
+    public string date;
+    public int dayOfWeek;
 
-    public void OnEnable()
+
+    public void Start()
     {
         if (!File.Exists(GetFilePath()) || forLoading == false) return;
 
@@ -22,7 +23,8 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
         SaveData[] saves = JsonHelper.FromJson<SaveData>(saveString);
 
         SaveData save = Array.Find(saves, s => s.Name == SceneName);
-        if (save != null) save.ToScroll(gameObject);
+        if (save != null && date == DateTime.Today.ToString("dd/MM/yyyy")) save.ToScroll(gameObject);
+        else DefaultSetup();
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -44,13 +46,6 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
         else SceneManager.LoadScene(SceneName);
     }
 
-    public void LoadSceneDynamic()
-    {
-        PlayerPrefs.SetString("SaveFile", SaveFile);
-        PlayerPrefs.SetString("SaveName", gameObject.name);
-        sceneLoader.enter(SceneName);
-    }
-
     public void SaveScene()
     {
         string activeScene = SceneManager.GetActiveScene().name;
@@ -58,13 +53,14 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
         GetComponent<Save>().SaveGame(SaveFile, CreateFile, SceneName);
     }
 
-    public void SaveSceneDynamic()
-    {
-        GetComponent<Save>().SaveGame(SaveFile, CreateFile, PlayerPrefs.GetString("NumeTablou"));
-    }
-
     public string GetFilePath()
     {
         return Application.persistentDataPath + "/Saves/" + SaveFile;
+    }
+
+    private void DefaultSetup()
+    {
+        Sprite sprite = Resources.Load<Sprite>("Images/Sprites/" + SceneName.ToLower());
+        gameObject.GetComponent<Image>().sprite = sprite;
     }
 }
