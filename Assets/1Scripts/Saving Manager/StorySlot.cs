@@ -23,13 +23,13 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
         SaveData[] saves = JsonHelper.FromJson<SaveData>(saveString);
 
         SaveData save = Array.Find(saves, s => s.Name == SceneName);
-        if (save != null && date == DateTime.Today.ToString("dd/MM/yyyy")) save.ToScroll(gameObject);
+        if (save != null && IsInThePast()) save.ToScroll(gameObject);
         else DefaultSetup();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (forLoading == true) LoadScene();
+        if (forLoading == true && !eventData.dragging && IsInThePast()) LoadScene();
     }
 
     // Update is called once per frame
@@ -60,7 +60,12 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
 
     private void DefaultSetup()
     {
-        Sprite sprite = Resources.Load<Sprite>("Images/Sprites/" + SceneName.ToLower());
+        Sprite sprite = Resources.Load<Sprite>("Images/Sprites/" + SceneName);
         gameObject.GetComponent<Image>().sprite = sprite;
+    }
+
+    private bool IsInThePast()
+    {
+       return DateTime.ParseExact(date, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) <= DateTime.Today;
     }
 }

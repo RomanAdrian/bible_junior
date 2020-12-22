@@ -177,10 +177,10 @@ MonoBehaviour:
   SaveFile: tablouri.json
   CreateFile: creeaza.json
   SceneName: Crearea4
-  SaveIndex: 0
   forLoading: 1
-  sceneLoader: {fileID: 0}
   IsPlayerSave: 0
+  date: 
+  dayOfWeek: 0
 --- !u!114 &27215018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,10 +494,10 @@ MonoBehaviour:
   SaveFile: tablouri.json
   CreateFile: creeaza.json
   SceneName: Crearea5
-  SaveIndex: 0
   forLoading: 1
-  sceneLoader: {fileID: 0}
   IsPlayerSave: 0
+  date: 
+  dayOfWeek: 0
 --- !u!114 &478531670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,10 +1098,10 @@ MonoBehaviour:
   SaveFile: tablouri.json
   CreateFile: creeaza.json
   SceneName: Crearea6
-  SaveIndex: 0
   forLoading: 1
-  sceneLoader: {fileID: 0}
   IsPlayerSave: 0
+  date: 
+  dayOfWeek: 0
 --- !u!114 &912200776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: 926765966}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: Titlu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1278,6 +1278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063245789}
   - component: {fileID: 1063245791}
+  - component: {fileID: 1063245790}
   m_Layer: 5
   m_Name: Frames
   m_TagString: Untagged
@@ -1316,6 +1317,19 @@ RectTransform:
   m_AnchoredPosition: {x: 14, y: 0}
   m_SizeDelta: {x: 2803.3984, y: 1363.3716}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1063245790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063245788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07142cccb3ce8e45b1f1abcf0b17b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dailyStories: []
 --- !u!222 &1063245791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1494,10 +1508,10 @@ MonoBehaviour:
   SaveFile: tablouri.json
   CreateFile: creeaza.json
   SceneName: Saul2
-  SaveIndex: 0
   forLoading: 1
-  sceneLoader: {fileID: 0}
   IsPlayerSave: 0
+  date: 
+  dayOfWeek: 0
 --- !u!114 &1303283072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,10 +1658,10 @@ MonoBehaviour:
   SaveFile: tablouri.json
   CreateFile: creeaza.json
   SceneName: Saul1
-  SaveIndex: 0
   forLoading: 1
-  sceneLoader: {fileID: 0}
   IsPlayerSave: 0
+  date: 
+  dayOfWeek: 0
 --- !u!114 &1364272190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,10 +1786,10 @@ MonoBehaviour:
   SaveFile: tablouri.json
   CreateFile: creeaza.json
   SceneName: Crearea3
-  SaveIndex: 0
   forLoading: 1
-  sceneLoader: {fileID: 0}
   IsPlayerSave: 0
+  date: 
+  dayOfWeek: 0
 --- !u!114 &1369801197
 MonoBehaviour:
   m_ObjectHideFlags: 0

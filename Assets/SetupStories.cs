@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class SetupStories : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class SetupStories : MonoBehaviour
             dailyStories[i].date = DateTime.Now.AddDays(i - weekDay + 1).ToString("dd/MM/yyyy");
             dailyStories[i].SceneName = FindStoryScene(dailyStories[i].date);
         }
+
+        SetTitle();
     }
 
     string FindStoryScene(string date)
@@ -45,5 +48,15 @@ public class SetupStories : MonoBehaviour
     public void SetDailyStories()
     { 
         dailyStories = GetComponentsInChildren<StorySlot>();
+    }
+
+    public void SetTitle()
+    {
+        GameObject titlu = GameObject.FindWithTag("Titlu");
+        if (titlu == null || titlu.GetComponent<Image>() == null) return;
+
+        string name = dailyStories[0].SceneName.Remove(dailyStories[0].SceneName.Length - 1) + "_Titlu";
+        Sprite sprite = Resources.Load<Sprite>("Images/Sprites/" + name);
+        titlu.GetComponent<Image>().sprite = sprite;
     }
 }
