@@ -14,14 +14,15 @@ public class CreateItemButton : MonoBehaviour
     public string ElementType;
     // Start is called before the first frame update
 
-    private void Start()
+    public void Start()
     {
         SetupSavedItems();
         SetupType();
 
         string elementName = gameObject.GetComponent<Image>().sprite.name.Replace("_thumbnail", "");
-        string foundItem = SavedItems.Find(s => s.Split(',')[0].Equals(elementName)); // split from the free roam list
+        string foundItem = SavedItems.Find(s => s.Split(',')[0].ToLower().Equals(elementName.ToLower())); // split from the free roam list
         SetItemNameAndType(foundItem);
+        SetPastElementActive(foundItem);
         SetOpacity(foundItem != null);
     }
 
@@ -44,9 +45,9 @@ public class CreateItemButton : MonoBehaviour
     private void SetupSavedItems()
     {
         if (SavedItems.Count > 0) return;
-        if (File.Exists(GetFilePath("creeaza.json")))
+        if (File.Exists(GetFilePath("create.json")))
         {
-            SavedItems = File.ReadAllLines(GetFilePath("creeaza.json")).ToList<string>();
+            SavedItems = File.ReadAllLines(GetFilePath("create.json")).ToList<string>();
         }
     }
 
@@ -59,5 +60,11 @@ public class CreateItemButton : MonoBehaviour
     private string GetFilePath(string saveFile)
     {
         return Application.persistentDataPath + "/Saves/" + saveFile;
+    }
+    private void SetPastElementActive(string item) 
+    {
+        if (String.IsNullOrWhiteSpace(item)) return;
+
+        activeByDefault = DateTime.ParseExact(item.Split(',')[2], "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) <= DateTime.Today;
     }
 }
