@@ -151,6 +151,7 @@ public class Save : MonoBehaviour
 
                 if (matches.Length == 0) File.AppendAllText(GetFilePath(createFile), element.Image + ","
                                                                                      + element.SubmenuType + ","
+                                                                                     + DateTime.Today.ToString("dd/MM/yyyy")
                                                                                      + element.Transform.SizeDelta[0] + ","
                                                                                      + element.Transform.SizeDelta[1] + ","
                                                                                      + Environment.NewLine);
