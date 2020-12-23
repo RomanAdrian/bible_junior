@@ -2,6 +2,7 @@
 using System.IO;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Load : MonoBehaviour
 {
@@ -72,8 +73,9 @@ public class Load : MonoBehaviour
 
     public void SetNarrationElements(string[] narrationElements, string audioSource)
     {
+        if (SceneManager.GetActiveScene().name == "Create_FromSave") return;
+
         Transform naratiune = GameObject.FindWithTag("SavePanelCanvas").transform.Find("GUI/Naratiune");
-        Debug.Log(naratiune);
         Transform content = naratiune.GetChild(0).GetChild(0).GetChild(0);
         Transform pagination = naratiune.GetChild(1);
 
