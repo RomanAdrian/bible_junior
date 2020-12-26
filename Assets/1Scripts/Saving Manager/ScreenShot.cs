@@ -33,7 +33,6 @@ public class ScreenShot : MonoBehaviour
         byte[] bytes = screenShot.EncodeToPNG();
         string filename = ScreenShotName(resWidth, resHeight);
         System.IO.File.WriteAllBytes(filename, bytes);
-        Debug.Log(string.Format("Took screenshot to: {0}", filename));
         takeHiResShot = false;
 
         return filename;

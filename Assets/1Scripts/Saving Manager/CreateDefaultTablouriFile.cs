@@ -13,8 +13,6 @@ public class CreateDefaultTablouriFile : MonoBehaviour
 
     public void CreateDefaultFile(string filePath, string fileName)
     {
-
-        Debug.Log("de ke " + fileName + filePath);
         if (File.Exists(filePath)) return;
 
         TextAsset content = (TextAsset)Resources.Load(fileName);

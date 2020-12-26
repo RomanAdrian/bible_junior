@@ -23,7 +23,6 @@ public class Save : MonoBehaviour
 
     public void SaveGame(string saveFile, string createFile, string SaveName)
     {
-        Debug.Log(saveFile + " " + SaveName);
         SetUpSaveFolder();
         CreateSaveFile(SaveName, saveFile);
         AddObjectsToCreate(createFile);

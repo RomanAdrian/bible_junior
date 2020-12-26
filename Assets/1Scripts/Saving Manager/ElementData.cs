@@ -66,7 +66,6 @@ public class ElementData
     {
         //StoryElementPrefab.transform.SetParent(Parent.transform);
         Sprite img = Resources.Load<Sprite>(pathToImage + Image);
-        Debug.Log(pathToImage + Image);
         obj.GetComponent<Image>().sprite = img;
 
         obj.transform.SetSiblingIndex(Index + 1);

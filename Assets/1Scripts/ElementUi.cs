@@ -82,7 +82,6 @@ public class ElementUi : MonoBehaviour, ISelectHandler, IDeselectHandler, IDragH
 
     public void OnDeselect(BaseEventData eventData)
     {
-        Debug.Log("Deselected");
         ColorBlock cb = btn.colors;
         cb.pressedColor = Color.white;
         btn.colors = cb;

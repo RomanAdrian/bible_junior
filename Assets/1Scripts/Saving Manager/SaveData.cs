@@ -42,7 +42,7 @@ public class SaveData
             time = DateTime.Parse(SaveTime).TimeOfDay.ToString();
         }
 
-        catch (FormatException) { Debug.Log("FormatException"); }
+        catch (FormatException) { }
 
         Image image = obj.GetComponentsInChildren<Image>()[1];
         obj.GetComponent<SaveSlot>().SetData(IsPlayerSave);

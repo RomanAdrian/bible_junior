@@ -15,8 +15,6 @@ public class PanelFunctions : MonoBehaviour
 
     public void setCurrentlySelected(GameObject obj)
     {
-        Debug.Log("show something");
-        Debug.Log(obj);
         currentlySelected = obj;
     }
 

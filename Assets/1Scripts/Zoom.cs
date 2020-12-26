@@ -26,13 +26,10 @@ public class Zoom : MonoBehaviour
     public void ZoomIn()
     {
         int currentSize = System.Array.IndexOf(scales, transform.localScale.y / initialScale.y);
-        Debug.Log(currentSize);
         if (currentSize < 6)
         {
             float sign = transform.localScale.x >= 0 ? 1 : -1;
             Vector3 modifiedScale = initialScale * scales[currentSize + 1];
-
-            Debug.Log("Modified Scale" + modifiedScale);
 
             transform.localScale = new Vector3(modifiedScale.x * sign, modifiedScale.y, modifiedScale.z);
         }
