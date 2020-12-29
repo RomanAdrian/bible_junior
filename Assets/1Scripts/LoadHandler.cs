@@ -55,7 +55,6 @@ public class LoadHandler : MonoBehaviour
                 oldTransform.PushWideDefaultToTransform(newElement.GetComponent<RectTransform>(), img);
                 AspectRatioFitter a = newElement.AddComponent(typeof(AspectRatioFitter)) as AspectRatioFitter;
                 a.aspectRatio = (float)img.texture.width / img.texture.height;
-                a.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
             }
 
 

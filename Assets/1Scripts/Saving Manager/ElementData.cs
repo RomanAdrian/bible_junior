@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,7 +56,6 @@ public class ElementData
         {
             AspectRatioFitter a = obj.AddComponent(typeof(AspectRatioFitter)) as AspectRatioFitter;
             a.aspectRatio = (float)img.texture.width / img.texture.height;
-            a.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
         }
 
         obj.SetActive(Active);
