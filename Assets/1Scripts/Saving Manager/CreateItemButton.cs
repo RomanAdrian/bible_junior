@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Globalization;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -65,6 +65,6 @@ public class CreateItemButton : MonoBehaviour
     {
         if (String.IsNullOrWhiteSpace(item)) return;
 
-        activeByDefault = DateTime.ParseExact(item.Split(',')[2], "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) <= DateTime.Today;
+        activeByDefault = DateTime.ParseExact(item.Split(',')[2], "dd/MM/yyyy", CultureInfo.InvariantCulture) <= DateTime.Today;
     }
 }

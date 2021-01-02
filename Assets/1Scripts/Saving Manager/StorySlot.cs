@@ -3,6 +3,7 @@ using System.IO;
 using UnityEngine.UI;
 using System;
 using UnityEngine.EventSystems;
+using System.Globalization;
 
 public class StorySlot : MonoBehaviour, IPointerUpHandler
 {
@@ -29,7 +30,19 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (forLoading == true && !eventData.dragging && IsInThePast()) LoadScene();
+        if (forLoading != true || eventData.dragging) return;
+
+        if (IsInThePast()) LoadScene();
+        else
+        {
+            GameObject canvas = GameObject.FindWithTag("Canvas");
+            if (canvas == null) return;
+
+            GameObject mesaj = canvas.transform.Find("Mesaj").gameObject;
+            if (mesaj == null) return; 
+
+            mesaj.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -66,6 +79,6 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
 
     private bool IsInThePast()
     {
-       return DateTime.ParseExact(date, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture) <= DateTime.Today;
+       return DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture) <= DateTime.Today;
     }
 }

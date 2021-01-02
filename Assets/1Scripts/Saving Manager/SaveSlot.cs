@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.IO;
+using UnityEngine.UI;
 
 public class SaveSlot : MonoBehaviour
 {
@@ -26,6 +26,16 @@ public class SaveSlot : MonoBehaviour
     }
     public void SaveScene()
     {
-        GetComponent<Save>().SaveGame(SaveFile, CreateFile, SaveIndex.ToString());
+        string screenshotPath = GetComponent<Save>().SaveGame(SaveFile, CreateFile, SaveIndex.ToString());
+        Image image = GetComponentsInChildren<Image>()[1];
+
+        if (File.Exists(screenshotPath) && image != null)
+        {
+            byte[] fileData = File.ReadAllBytes(screenshotPath);
+            Texture2D tex = new Texture2D(2, 2);
+            tex.LoadImage(fileData);
+            Sprite mySprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
+            image.sprite = mySprite;
+        }
     }
 }

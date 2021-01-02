@@ -13,6 +13,7 @@ public class Save : MonoBehaviour
     public string BackgroundName;
     public string AudioSource;
     public SaveData[] Saves;
+    private string ScreenShotPath;
 
     public string SaveFolder;
 
@@ -21,14 +22,14 @@ public class Save : MonoBehaviour
     [SerializeField]
     private SavedGame[] saveSlots;
 
-    public void SaveGame(string saveFile, string createFile, string SaveName)
+    public string SaveGame(string saveFile, string createFile, string SaveName)
     {
-        Debug.Log(saveFile + " " + SaveName);
         SetUpSaveFolder();
         CreateSaveFile(SaveName, saveFile);
         AddObjectsToCreate(createFile);
 
         changesMade = false;
+        return ScreenShotPath;
     }
 
     private void CreateSaveFile(string SaveName, string saveFile)
@@ -63,10 +64,13 @@ public class Save : MonoBehaviour
 
     private void SetNarrationElements()
     {
-        Transform naratiune = transform.Find("Naratiune");
+        Transform saveCanvas = GameObject.Find("SavePanelCanvas").transform;
+        if (saveCanvas == null) return;
+
+        Transform naratiune = saveCanvas.Find("GUI/Naratiune");
         if (naratiune == null) return;
 
-        Transform n = naratiune.GetChild(0);
+        Transform n = naratiune.Find("Naratiunea Scroll");
         Image[] images = n.gameObject.GetComponentsInChildren<Image>();
 
         NarrationElements = new string[images.Length - 1];
@@ -94,7 +98,7 @@ public class Save : MonoBehaviour
 
     private SaveData CreateSaveObject(string saveName)
     {
-        string ScreenShotPath = new ScreenShot().TakeHiResShot();
+        ScreenShotPath = new ScreenShot().TakeHiResShot();
 
         return new SaveData(BackgroundName, SerializedElements, SerializedThumbs, ScreenShotPath, NarrationElements, saveName, AudioSource);
     }
@@ -151,7 +155,7 @@ public class Save : MonoBehaviour
 
                 if (matches.Length == 0) File.AppendAllText(GetFilePath(createFile), element.Image + ","
                                                                                      + element.SubmenuType + ","
-                                                                                     + DateTime.Today.ToString("dd/MM/yyyy")
+                                                                                     + DateTime.Today.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
                                                                                      + element.Transform.SizeDelta[0] + ","
                                                                                      + element.Transform.SizeDelta[1] + ","
                                                                                      + Environment.NewLine);
