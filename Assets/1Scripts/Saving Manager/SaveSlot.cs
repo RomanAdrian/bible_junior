@@ -27,7 +27,9 @@ public class SaveSlot : MonoBehaviour
     public void SaveScene()
     {
         string screenshotPath = GetComponent<Save>().SaveGame(SaveFile, CreateFile, SaveIndex.ToString());
-        Image image = GetComponentsInChildren<Image>()[1];
+        Image[] images = GetComponentsInChildren<Image>();
+
+        Image image = images[images.Length - 1];
 
         if (File.Exists(screenshotPath) && image != null)
         {
@@ -36,6 +38,13 @@ public class SaveSlot : MonoBehaviour
             tex.LoadImage(fileData);
             Sprite mySprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
             image.sprite = mySprite;
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 1f);
+
+            if (images.Length == 4)
+            {
+                images[1].gameObject.SetActive(false);
+                images[2].gameObject.SetActive(false);
+            }
         }
     }
 }

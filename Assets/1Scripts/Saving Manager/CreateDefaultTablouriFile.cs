@@ -15,12 +15,27 @@ public class CreateDefaultTablouriFile : MonoBehaviour
 
     public void CreateDefaultFile(string filePath, string fileName)
     {
-        if (File.Exists(filePath)) return;
+        if (File.Exists(filePath))
+        {
+            TextAsset content = (TextAsset)Resources.Load(fileName);
+            String[] lines = content.text.Split('\n');
 
+            String[] savedLines = File.ReadAllLines(filePath);
+            File.AppendAllText(filePath, "\n");
 
-        TextAsset content = (TextAsset)Resources.Load(fileName);
-        Debug.Log(content.text);
-        if (content.text != "") File.WriteAllText(filePath, content.text);
+            foreach (String line in lines)
+            {
+                string element = line.Split(',')[0];
+                string found = Array.Find(savedLines, s => s.Split(',')[0] == element);
+
+                if (found == null) File.AppendAllText(filePath, line);
+            }
+        }
+        else 
+        {
+            TextAsset content = (TextAsset)Resources.Load(fileName);
+            if (content.text != "") File.WriteAllText(filePath, content.text);
+        }
     }
 
     private void CheckSizeInSaul()

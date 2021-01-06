@@ -20,7 +20,7 @@ public class SetupStories : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             dailyStories[i].dayOfWeek = i + 1;
-            dailyStories[i].date = DateTime.Now.AddDays(i - weekDay + 1).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+            dailyStories[i].date = DateTime.Now.AddDays(i - weekDay).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             dailyStories[i].SceneName = FindStoryScene(dailyStories[i].date);
         }
 

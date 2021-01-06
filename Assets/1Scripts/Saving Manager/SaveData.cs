@@ -44,7 +44,7 @@ public class SaveData
 
         catch (FormatException) { Debug.Log("FormatException"); }
 
-        Image image = obj.GetComponentsInChildren<Image>()[1];
+        Image[] images = obj.GetComponentsInChildren<Image>();
         obj.GetComponent<SaveSlot>().SetData(IsPlayerSave);
 
         if (File.Exists(ScreenShotPath))
@@ -53,7 +53,11 @@ public class SaveData
             Texture2D tex = new Texture2D(2, 2);
             tex.LoadImage(fileData);
             Sprite mySprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
-            image.sprite = mySprite;
+            images[3].sprite = mySprite;
+
+            images[1].gameObject.SetActive(false);
+            images[2].gameObject.SetActive(false);
+            images[3].color = new Color(images[3].color.r, images[3].color.g, images[3].color.b, 1f);
         }
 
         obj.GetComponentInChildren<Text>().text = "Data: " + date + "\nOra:  " + time;
