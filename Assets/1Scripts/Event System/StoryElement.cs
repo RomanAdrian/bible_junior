@@ -8,6 +8,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
     public string id;
     public string SubmenuType;
     private bool alreadySetUp = false;
+    private int index = 0;
     EventsGroup eventsGroup = new EventsGroup();
 
     // SUBSCRIBING TO EVENTS
@@ -25,6 +26,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
             eventsGroup.Add("ZOOM_OUT", OnZoomOut);              // Triggered when you zoom out in the submenu
             eventsGroup.Add("REFLECT", OnReflect);               // Triggered when you click reflect in the submenu
             eventsGroup.StartListening();
+            index = transform.GetSiblingIndex();
             alreadySetUp = true;
         }
 
@@ -46,6 +48,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
             eventsGroup.Add("ZOOM_OUT", OnZoomOut);              // Triggered when you zoom out in the submenu
             eventsGroup.Add("REFLECT", OnReflect);               // Triggered when you click reflect in the submenu
             eventsGroup.StartListening();
+            index = transform.GetSiblingIndex();
             alreadySetUp = true;
         }
     }
@@ -92,6 +95,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
     {
         if (IsAddressingDifferentObject("ENABLE_ELEMENT")) return;
 
+        transform.SetSiblingIndex(index);
         SetActive(true);
     }
 
