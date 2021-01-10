@@ -45,7 +45,11 @@ public class CreateDefaultTablouriFile : MonoBehaviour
         string saveString = File.ReadAllText(TablouriFilePath());
         SaveData[] Saves = JsonHelper.FromJson<SaveData>(saveString);
         SaveData saveInstance = Array.Find(Saves, s => s.Name == "Saul1");
+        if (saveInstance == null) return;
+
         ElementData fatGuy = Array.Find(saveInstance.Elements, e => e.Image == "P2.36");
+        if (fatGuy == null) return;
+
         fatGuy.Transform.SizeDelta = new Vector2(344, 717);
         File.WriteAllText(TablouriFilePath(), JsonHelper.ToJson(Saves, true));
     }

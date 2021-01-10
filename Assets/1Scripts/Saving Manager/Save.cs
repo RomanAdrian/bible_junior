@@ -70,16 +70,16 @@ public class Save : MonoBehaviour
         Transform naratiune = saveCanvas.Find("GUI/Naratiune");
         if (naratiune == null) return;
 
-        Transform n = naratiune.Find("Naratiunea Scroll");
+        Transform n = naratiune.Find("Naratiunea Scroll/Viewport/Content");
         Image[] images = n.gameObject.GetComponentsInChildren<Image>();
 
-        NarrationElements = new string[images.Length - 1];
+        NarrationElements = new string[images.Length];
 
-        for (int i = 1; i < images.Length; i++)
+        for (int i = 0; i < images.Length; i++)
         {
             if (images[i] != null && images[i].sprite != null)
             {
-                NarrationElements[i - 1] = images[i].sprite.name;
+                NarrationElements[i] = images[i].sprite.name;
             }
         }
 

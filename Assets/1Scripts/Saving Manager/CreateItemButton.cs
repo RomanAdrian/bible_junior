@@ -23,12 +23,12 @@ public class CreateItemButton : MonoBehaviour
         string foundItem = SavedItems.Find(s => s.Split(',')[0].ToLower().Equals(elementName.ToLower())); // split from the free roam list
         SetItemNameAndType(foundItem);
         SetPastElementActive(foundItem);
-        SetOpacity(foundItem != null);
+        SetOpacity();
     }
 
-    private void SetOpacity(bool active)
+    private void SetOpacity()
     {
-        if (active || activeByDefault) return;
+        if (activeByDefault) return;
         gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, .5f);
         gameObject.GetComponent<Button>().interactable = false;
     }
@@ -64,6 +64,12 @@ public class CreateItemButton : MonoBehaviour
     private void SetPastElementActive(string item) 
     {
         if (String.IsNullOrWhiteSpace(item)) return;
+
+        if (item.Split(',')[0] == "N6.5")
+        {
+            Debug.Log(item.Split(',')[0] + " " + DateTime.ParseExact(item.Split(',')[2], "dd/MM/yyyy", CultureInfo.InvariantCulture));
+            Debug.Log(DateTime.ParseExact(item.Split(',')[2], "dd/MM/yyyy", CultureInfo.InvariantCulture) <= DateTime.Today);
+        }
 
         activeByDefault = DateTime.ParseExact(item.Split(',')[2], "dd/MM/yyyy", CultureInfo.InvariantCulture) <= DateTime.Today;
     }
