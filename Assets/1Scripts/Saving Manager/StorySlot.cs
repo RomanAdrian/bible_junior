@@ -18,7 +18,13 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
 
     public void Start()
     {
-        if (!File.Exists(GetFilePath()) || forLoading == false) return;
+        if (forLoading == false) return;
+
+        if (!File.Exists(GetFilePath()))
+        {
+            DefaultSetup();
+            return;
+        }
 
         string saveString = File.ReadAllText(GetFilePath());
         SaveData[] saves = JsonHelper.FromJson<SaveData>(saveString);
