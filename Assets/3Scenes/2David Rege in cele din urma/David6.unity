@@ -2677,6 +2677,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453032353}
   m_CullTransparentMesh: 0
+--- !u!224 &466892236 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2362400962544577454, guid: ec2fdab95170c7a4f99cd60325b4968c, type: 3}
+  m_PrefabInstance: {fileID: 903276857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &490038006
 GameObject:
   m_ObjectHideFlags: 0
@@ -3869,8 +3874,8 @@ GameObject:
   - component: {fileID: 602970467}
   - component: {fileID: 602970466}
   - component: {fileID: 602970464}
-  - component: {fileID: 602970463}
   - component: {fileID: 602970465}
+  - component: {fileID: 602970463}
   m_Layer: 5
   m_Name: Back & Save
   m_TagString: Untagged
@@ -3906,16 +3911,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 602970461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d08c2a0c21ffe647afad07568c64c57, type: 3}
+  m_Script: {fileID: 11500000, guid: 757760b456649d743b77d02f81cdf351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SaveFile: tablouri.json
   CreateFile: creeaza.json
   SceneName: Create_FromSave
+  SaveIndex: 0
   forLoading: 0
+  sceneLoader: {fileID: 0}
   IsPlayerSave: 0
-  date: 
-  dayOfWeek: 0
 --- !u!114 &602970464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10714,28 +10719,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2fdab95170c7a4f99cd60325b4968c, type: 3}
---- !u!224 &903276858 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3876766999624852231, guid: ec2fdab95170c7a4f99cd60325b4968c, type: 3}
-  m_PrefabInstance: {fileID: 903276857}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &903276859 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3876766998664765576, guid: ec2fdab95170c7a4f99cd60325b4968c, type: 3}
-  m_PrefabInstance: {fileID: 903276857}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &903276860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903276859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51bed665f17735546869eab5829b6ced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &922171269
 GameObject:
   m_ObjectHideFlags: 0
@@ -14053,7 +14036,7 @@ RectTransform:
   m_Children:
   - {fileID: 569756059}
   - {fileID: 729044885}
-  - {fileID: 903276858}
+  - {fileID: 466892236}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17535,7 +17518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58ca6106de65d064fa8606c4bcbc1d01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b79fcc13812eae24c86f4190260cc73f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18147,7 +18130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a3ce75e11a36e96488e4ff4695dd5df5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c33e9a984895fc748b219a94851fd12a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

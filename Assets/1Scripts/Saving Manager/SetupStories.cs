@@ -5,7 +5,7 @@ using System.Globalization;
 
 public class SetupStories : MonoBehaviour
 {
-    public StorySlot[] dailyStories;
+    public StorySlotTime[] dailyStories;
     private string content = "";
     public const string dailyStoryFile = "povestirea_zilei";
 
@@ -50,7 +50,7 @@ public class SetupStories : MonoBehaviour
 
     public void SetDailyStories()
     { 
-        dailyStories = GetComponentsInChildren<StorySlot>();
+        dailyStories = GetComponentsInChildren<StorySlotTime>();
     }
 
     public void SetTitle()

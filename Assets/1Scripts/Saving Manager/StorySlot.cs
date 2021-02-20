@@ -3,55 +3,33 @@ using System.IO;
 using UnityEngine.UI;
 using System;
 using UnityEngine.EventSystems;
-using System.Globalization;
 
 public class StorySlot : MonoBehaviour, IPointerUpHandler
 {
     public string SaveFile = "tablouri.json";
     public string CreateFile = "creeaza.json";
     public string SceneName = "Create_FromSave";
+    public int SaveIndex;
     public bool forLoading = false;
+    public SceneLoader sceneLoader;
     public bool IsPlayerSave = false;
-    public string date;
-    public int dayOfWeek;
 
-
-    public void Start()
+    public void Setup()
     {
-        if (forLoading == false) return;
-
-        if (!File.Exists(GetFilePath()))
-        {
-            DefaultSetup();
-            return;
-        }
+        if (!File.Exists(GetFilePath()) || forLoading == false) return;
 
         string saveString = File.ReadAllText(GetFilePath());
         SaveData[] saves = JsonHelper.FromJson<SaveData>(saveString);
 
         SaveData save = Array.Find(saves, s => s.Name == SceneName);
-        if (save != null && IsInThePast()) save.ToScroll(gameObject);
-        else DefaultSetup();
+        if (save != null) save.ToScroll(gameObject);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (forLoading != true || eventData.dragging) return;
-
-        if (IsInThePast()) LoadScene();
-        else
-        {
-            GameObject canvas = GameObject.FindWithTag("Canvas");
-            if (canvas == null) return;
-
-            GameObject mesaj = canvas.transform.Find("Mesaj").gameObject;
-            if (mesaj == null) return; 
-
-            mesaj.SetActive(true);
-        }
+        if (forLoading == true) LoadScene();
     }
 
-    // Update is called once per frame
     public void SetData(bool isPlayerSave)
     {
         IsPlayerSave = isPlayerSave;
@@ -65,6 +43,13 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
         else SceneManager.LoadScene(SceneName);
     }
 
+    public void LoadSceneDynamic()
+    {
+        PlayerPrefs.SetString("SaveFile", SaveFile);
+        PlayerPrefs.SetString("SaveName", gameObject.name);
+        sceneLoader.enter(SceneName);
+    }
+
     public void SaveScene()
     {
         string activeScene = SceneManager.GetActiveScene().name;
@@ -72,19 +57,13 @@ public class StorySlot : MonoBehaviour, IPointerUpHandler
         GetComponent<Save>().SaveGame(SaveFile, CreateFile, SceneName);
     }
 
+    public void SaveSceneDynamic()
+    {
+        GetComponent<Save>().SaveGame(SaveFile, CreateFile, PlayerPrefs.GetString("NumeTablou"));
+    }
+
     public string GetFilePath()
     {
         return Application.persistentDataPath + "/Saves/" + SaveFile;
-    }
-
-    private void DefaultSetup()
-    {
-        Sprite sprite = Resources.Load<Sprite>("Images/Sprites/" + SceneName);
-        gameObject.GetComponent<Image>().sprite = sprite;
-    }
-
-    private bool IsInThePast()
-    {
-       return DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture) <= DateTime.Today;
     }
 }
