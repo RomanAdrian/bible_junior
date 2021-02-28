@@ -61,17 +61,4 @@ public class ElementData
 
         obj.SetActive(Active);
     }
-
-    public void ToDefaultGameObject(GameObject obj, string pathToImage)
-    {
-        //StoryElementPrefab.transform.SetParent(Parent.transform);
-        Sprite img = Resources.Load<Sprite>(pathToImage + Image);
-        Debug.Log(pathToImage + Image);
-        obj.GetComponent<Image>().sprite = img;
-
-        obj.transform.SetSiblingIndex(Index + 1);
-        Transform.PushToTransform(obj.GetComponent<RectTransform>());
-        obj.GetComponent<StoryElement>().Setup(Id, SubmenuType);
-        obj.SetActive(Active);
-    }
 }

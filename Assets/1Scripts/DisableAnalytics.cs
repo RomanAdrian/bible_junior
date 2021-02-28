@@ -13,7 +13,6 @@ public class DisableAnalytics : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
    public static void OnRuntimeMethodLoad()
     {
-        Debug.Log(DateTime.Now);
         UnityEngine.Analytics.Analytics.initializeOnStartup = false;
         UnityEngine.Analytics.Analytics.enabled = false;
         UnityEngine.Analytics.Analytics.deviceStatsEnabled = false;
