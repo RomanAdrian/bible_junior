@@ -6,9 +6,10 @@ using UnityEngine.Networking;
 
 public class LoadItems : MonoBehaviour
 {
-    public const string url = "https://run.mocky.io/v3/aaf2702e-3f40-4554-ae0a-036e0ccb4539";
+    public const string url = "https://run.mocky.io/v3/4ac972b5-39ee-4720-b829-ba3fec9b27f9";
     public const string createFileDir = "/Saves/";
     public const string createFile = "create.txt";
+    private const string resourcePath = "Images/Sprites/";
 
     private DynamicElementData[] elements;
     public GameObject itemPrefab;
@@ -23,7 +24,6 @@ public class LoadItems : MonoBehaviour
         else
         {
             StartCoroutine(GetApiData());
-            SetUpThumbnails();
         }
     }
 
@@ -40,7 +40,6 @@ public class LoadItems : MonoBehaviour
         else
         {
             elements = JsonHelper.FromJson<DynamicElementData>(request.downloadHandler.text);
-            Debug.Log(request.downloadHandler.text);
             SaveDataLocally(request.downloadHandler.text);
             SetUpThumbnails();
         }
@@ -57,7 +56,8 @@ public class LoadItems : MonoBehaviour
     {
         foreach (DynamicElementData e in elements)
         {
-            Debug.Log(e);
+            if (spritesDontExist(e)) continue;
+
             GameObject obj = Instantiate(thumbnailPrefab);
             e.ToThumbnail(obj, transform);
         }
@@ -82,5 +82,10 @@ public class LoadItems : MonoBehaviour
     private string FilePath()
     {
         return Application.persistentDataPath + createFileDir + createFile;
+    }
+
+    private bool spritesDontExist(DynamicElementData e)
+    {
+       return Resources.Load<Sprite>(resourcePath + e.name) == null || Resources.Load<Sprite>(resourcePath + e.name + "_thumbnail") == null;
     }
 }

@@ -92,7 +92,7 @@ public class StoryElement : MonoBehaviour, IPointerUpHandler, ISelectHandler
     {
         if (IsAddressingDifferentObject("ENABLE_ELEMENT")) return;
 
-        transform.SetSiblingIndex(Int32.Parse(id) + 1);
+        // transform.SetSiblingIndex(Int32.Parse(id) + 1);
         SetActive(true);
     }
 

@@ -25,6 +25,7 @@ public class Submenu : MonoBehaviour
     private void OnOpenMenu()
     {
         string eventId = EventManager.GetString("OPEN_MENU");
+        Debug.Log(eventId);
         if (eventId == id) 
             SetActive(!gameObject.activeSelf);
         else

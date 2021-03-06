@@ -18,12 +18,12 @@ public class Thumbnail : MonoBehaviour, IPointerUpHandler
         EventManager.StartListening("DELETE", OnElementWasDisabled);
     }
 
-    private void OnDestroy()
+    protected void OnDestroy()
     {
         EventManager.StopListening("DELETE", OnElementWasDisabled);
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public virtual void OnPointerUp(PointerEventData eventData)
     {
         if (eventData.dragging && Math.Abs(eventData.delta.y) < Math.Abs(eventData.delta.x))
         {
@@ -35,19 +35,19 @@ public class Thumbnail : MonoBehaviour, IPointerUpHandler
         gameObject.SetActive(false);
     }
 
-    private void OnElementWasDisabled()
+    protected void OnElementWasDisabled()
     {
         string eventId = EventManager.GetString("DELETE");
 
         if (eventId == id) gameObject.SetActive(true);
     }
 
-    private void SetId(string id)
+    protected void SetId(string id)
     {
         this.id = id;
     }
 
-    private void SetId()
+    protected void SetId()
     {
         if (!String.IsNullOrWhiteSpace(id)) return;
 
